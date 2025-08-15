@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pawsh | Pet Grooming</title>
+  <meta name="description" content="Pawsh — Pet Grooming. Μπάνιο, κούρεμα, περιποίηση, before/after gallery και online ραντεβού." />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Primary color and accents will be injected below via CSS variables -->
+  <style>
+    :root{
+      --brand: #0F5C5E;         /* π.χ. #2B0042 */
+      --accent: #EAD7B0;         /* π.χ. #44C1A9 */
+      --text:#1f2937; --muted:#6b7280; --soft:#f5f7fb; --bg:#ffffff; --card:#ffffff;
+      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #eee;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:42px;height:42px;object-fit:cover;border-radius:999px;background:var(--brand);padding:4px;box-shadow:0 0 0 2px #fff inset}
+    nav a{padding:10px 8px;border-radius:10px}
+    nav a.cta{background:var(--brand);color:#fff}
+
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:14px 18px;border-radius:999px;font-weight:700;border:2px solid transparent}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.ghost{border-color:var(--brand);color:var(--brand);background:#fff}
+    .btn.whatsapp{background:#25D366;color:#fff}
+    .btn.viber{background:#7360F2;color:#fff}
+
+    section{padding:48px 0}
+    .hero{padding:64px 0;background:linear-gradient(180deg,#fff,var(--soft))}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    @media(max-width:960px){.hero-wrap{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,4.2vw,46px);margin:0 0 12px}
+    p.lead{color:var(--muted);font-size:18px}
+
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media(max-width:960px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #eee;font-size:14px;margin:6px 6px 0 0}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{border-radius:12px;height:220px;object-fit:cover}
+    @media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery img{height:160px}}
+
+    .map-embed{width:100%;height:380px;border:0;border-radius:16px}
+    footer{padding:28px 0;border-top:1px solid #eee;color:#555}
+
+    /* Sticky mobile CTA */
+    .cta-sticky{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:10px;z-index:60}
+    @media(min-width:861px){.cta-sticky{display:none}}
+
+    /* Accent underline for headings */
+    .accent{position:relative;display:inline-block}
+    .accent::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:8px;background:linear-gradient(90deg,var(--accent),transparent);border-radius:6px}
+  </style>
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Pawsh | Pet Grooming" />
+  <meta property="og:description" content="Μπάνιο, κούρεμα, περιποίηση και online ραντεβού. Δες τον χάρτη και κλείσε ώρα!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://{{DOMAIN}}/" />
+  <meta property="og:image" content="https://{{DOMAIN}}/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Tag Manager (placeholders) -->
+  <!--
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  -->
+
+  <!-- JSON-LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Pawsh",
+    "image":"https://{{DOMAIN}}/og-image.jpg",
+    "url":"https://{{DOMAIN}}/",
+    "telephone":"+302104404084",
+    "address":{"@type":"PostalAddress","streetAddress":"Αγίας Γλυκερίας 62","addressLocality":"Γαλάτσι","postalCode":"11147","addressCountry":"GR"},
+    "openingHours":"Tu-Sa 10:00-19:00",
+    "sameAs":["https://www.instagram.com/pawsh_pet_salon/","https://www.facebook.com/profile.php?id=61578078265850","https://share.google/hPLAZj3HUmUbOQPay"],
+    "description":"Pet grooming: μπάνιο, κούρεμα, περιποίηση νυχιών. Online ραντεβού.",
+    "priceRange":"€€"
+  }
+  </script>
+</head>
+<body>
+  <!-- GTM (noscript) placeholder -->
+  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+  <!-- Mobile sticky CTA -->
+  <div class="cta-sticky">
+    <a href="#booking" class="btn primary" style="flex:1;justify-content:center">Κλείσε Ραντεβού</a>
+    <a href="https://wa.me/302104404084" class="btn whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+    <a href="viber://chat?number=%2B302104404084" class="btn viber" aria-label="Viber">Viber</a>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="/logo.png" alt="Pawsh logo" loading="eager" />
+        <strong>Pawsh</strong>
+      </div>
+      <nav>
+        <a href="#services">Υπηρεσίες</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Επικοινωνία</a>
+        <a href="#booking" class="cta">Κλείσε Ραντεβού</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <h1 class="accent">Pet Grooming με αγάπη & φροντίδα</h1>
+        <p class="lead">Μπάνιο, κούρεμα, στέγνωμα, περιποίηση νυχιών — πάντα με ασφάλεια και υπομονή. Κλείσε το ραντεβού σου online ή στείλε μας στο WhatsApp/Viber.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <a href="#booking" class="btn primary">Κλείσε Ραντεβού</a>
+          <a href="tel:+302104404084" class="btn ghost">Κάλεσέ μας</a>
+        </div>
+        <div style="margin-top:16px">
+          <span class="badge">🐶 Σκύλοι</span>
+          <span class="badge">🐱 Γάτες</span>
+          <span class="badge">✨ Before / After Gallery</span>
+          <a class="badge" href="https://share.google/hPLAZj3HUmUbOQPay" target="_blank" rel="noopener">⭐ Δες μας στο Google</a>
+        </div>
+      </div>
+      <div>
+        <div class="card"><img src="/hero.jpg" alt="Pawsh grooming" loading="eager"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="accent">Υπηρεσίες</h2>
+      <p class="lead">Υποαλλεργικά προϊόντα και επαγγελματικός εξοπλισμός, προσαρμοσμένα στις ανάγκες κάθε κατοικίδιου.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Μπάνιο & Στέγνωμα</h3><p>Καθαρισμός, conditioner και ήπιο στέγνωμα.</p></div>
+        <div class="card"><h3>Κούρεμα / Styling</h3><p>Με ψαλίδι ή μηχανή, σύμφωνα με τη φυλή.</p></div>
+        <div class="card"><h3>Νύχια & Αφτιά</h3><p>Ασφαλής περιποίηση και καθαρισμός.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2 class="accent">Before / After Gallery</h2>
+      <p class="lead">Μερικές δουλειές μας. Περισσότερα στο <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank" rel="noopener">Instagram</a>.</p>
+      <div class="gallery">
+        <img src="/gallery/1.jpg" alt="Before/After 1" loading="lazy" />
+        <img src="/gallery/2.jpg" alt="Before/After 2" loading="lazy" />
+        <img src="/gallery/3.jpg" alt="Before/After 3" loading="lazy" />
+        <img src="/gallery/4.jpg" alt="Before/After 4" loading="lazy" />
+        <img src="/gallery/5.jpg" alt="Before/After 5" loading="lazy" />
+        <img src="/gallery/6.jpg" alt="Before/After 6" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="container">
+      <h2 class="accent">Κλείσε ραντεβού</h2>
+      <p class="lead">Επίλεξε υπηρεσία και ώρα. Η επιβεβαίωση έρχεται με email/SMS.</p>
+      <!-- Replace the DIV below with your booking embed (Fresha / Setmore / SimplyBook / Square) -->
+      <div class="card" style="min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div>
+          <p style="margin:0 0 8px">Εδώ μπαίνει το <strong>booking widget</strong>.</p>
+          <code>&lt;iframe src="https://YOUR-BOOKING-WIDGET" style="width:100%;height:680px;border:0"&gt;&lt;/iframe&gt;</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="accent">Επικοινωνία & Χάρτης</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Pawsh</h3>
+          <p>Αγίας Γλυκερίας 62, 11147 Γαλάτσι</p>
+          <p>Τηλ: <a href="tel:+302104404084">+30 210 440 4084</a></p>
+          <p>
+            <a class="btn whatsapp" href="https://wa.me/302104404084" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn viber" href="viber://chat?number=%2B302104404084">Viber</a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank" rel="noopener">Facebook</a> ·
+            <a href="https://share.google/hPLAZj3HUmUbOQPay" target="_blank" rel="noopener">Google</a>
+          </p>
+          <p class="lead">Ώρες: Τρ–Σα 10:00–19:00</p>
+        </div>
+        <div class="card">
+          <!-- Google Maps embed: αντικατάστησε το src με το δικό σας iframe από το Google Maps -->
+          <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755256543649!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Pawsh • All rights reserved.</div>
+      <div style="color:#888">Made with ♥ by {{YOUR_NAME}}</div>
+    </div>
+  </footer>
+
+  <script>
+    // Fill current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
