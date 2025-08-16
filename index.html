@@ -97,23 +97,22 @@
     }
 
     .gallery-carousel {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      overflow-x: auto;
       gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
     }
 
     .gallery-carousel img {
-      width: 100%;
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      width: 250px;
+      height: 160px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
       object-fit: cover;
       object-position: center top;
-      height: 110px;
-    }
-
-    .gallery-carousel img:hover {
-      transform: scale(1.05);
     }
 
     .faq {
@@ -206,14 +205,14 @@
   </section>
 
   <section class="gallery-carousel">
-    <img src="dog 1.jpg" alt="dog 1">
-    <img src="dog 2.jpg" alt="dog 2">
-    <img src="dog 3.jpg" alt="dog 3">
-    <img src="dog 4.jpg" alt="dog 4">
-    <img src="dog 5.jpg" alt="dog 5">
-    <img src="dog 6.jpg" alt="dog 6">
-    <img src="dog 7.jpg" alt="dog 7">
-    <img src="dog 8.jpg" alt="dog 8">
+    <img src="dogs/dog1.png" alt="dog 1">
+    <img src="dogs/dog2.png" alt="dog 2">
+    <img src="dogs/dog3.png" alt="dog 3">
+    <img src="dogs/dog4.png" alt="dog 4">
+    <img src="dogs/dog5.png" alt="dog 5">
+    <img src="dogs/dog6.png" alt="dog 6">
+    <img src="dogs/dog7.png" alt="dog 7">
+    <img src="dogs/dog8.png" alt="dog 8">
   </section>
 
   <section class="faq">
