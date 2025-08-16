@@ -20,7 +20,7 @@
       justify-content: space-between;
     }
     header img {
-      height: 120px;
+      height: 240px;
     }
     header nav a {
       color: white;
@@ -49,18 +49,25 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .hero button:hover {
+      background-color: #01454d;
+      transform: scale(1.05);
     }
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       gap: 20px;
       padding: 40px;
     }
     .gallery img {
-      width: 100%;
       height: 300px;
       object-fit: cover;
       border-radius: 10px;
+      scroll-snap-align: center;
+      flex: 0 0 auto;
     }
     .section-title {
       text-align: center;
@@ -71,10 +78,25 @@
     .services, .why-us, .testimonials, .faq {
       padding: 20px 40px;
     }
+    .testimonial-box {
+      background-color: #f0f0f0;
+      border-left: 4px solid #002F35;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .testimonial-box:hover {
+      transform: scale(1.02);
+    }
     .faq-item {
       border-bottom: 1px solid #ccc;
       padding: 10px 0;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .faq-item:hover {
+      background-color: #f3f3f3;
     }
     .faq-item h4 {
       margin: 0;
@@ -102,7 +124,7 @@
       padding: 20px;
     }
     footer img {
-      height: 120px;
+      height: 240px;
       margin-bottom: 10px;
     }
     .social-icons {
@@ -125,7 +147,7 @@
       <a href="#">Αρχική</a>
       <a href="#services">Υπηρεσίες</a>
       <a href="#why-us">Γιατί Εμάς</a>
-      <a href="#testimonials">Μαρτυρίες</a>
+      <a href="#testimonials">Αξιολογήσεις</a>
       <a href="#faq">Συχνές Ερωτήσεις</a>
       <a href="#contact">Επικοινωνία</a>
     </nav>
@@ -147,10 +169,11 @@
     <p>Εξειδικευμένοι groomers, φιλικό περιβάλλον, επαγγελματικά προϊόντα και εξατομικευμένη φροντίδα για κάθε σκυλάκι.</p>
   </section>
 
-  <h2 class="section-title" id="testimonials">Τι λένε οι πελάτες μας</h2>
+  <h2 class="section-title" id="testimonials">Αξιολογήσεις</h2>
   <section class="testimonials">
-    <p>"Ο σκύλος μου λάμπει κάθε φορά που βγαίνει από το Pawsh!" – Μαρία</p>
-    <p>"Τους εμπιστεύομαι απόλυτα!" – Γιώργος</p>
+    <div class="testimonial-box">"Ο σκύλος μου λάμπει κάθε φορά που βγαίνει από το Pawsh!" – Μαρία</div>
+    <div class="testimonial-box">"Τους εμπιστεύομαι απόλυτα!" – Γιώργος</div>
+    <div class="testimonial-box">"Το καλύτερο σαλόνι για τον μικρό μου φίλο!" – Ελένη</div>
   </section>
 
   <h2 class="section-title" id="faq">Συχνές Ερωτήσεις</h2>
@@ -204,5 +227,3 @@
   </script>
 </body>
 </html>
-
-
