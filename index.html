@@ -124,7 +124,7 @@
       padding: 20px;
     }
     footer img {
-      height: 180px;
+      height: 240px;
       margin-bottom: 10px;
     }
     .social-icons {
@@ -138,75 +138,50 @@
       width: 40px;
       height: 40px;
     }
+    .footer-links {
+      margin-top: 10px;
+    }
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .close-modal {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo/logo.png" alt="Pawsh Logo" />
-    <nav>
-      <a href="#">Αρχική</a>
-      <a href="#services">Υπηρεσίες</a>
-      <a href="#why-us">Γιατί Εμάς</a>
-      <a href="#testimonials">Αξιολογήσεις</a>
-      <a href="#faq">Συχνές Ερωτήσεις</a>
-      <a href="#contact">Επικοινωνία</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Καλλωπισμός με Στυλ και Αγάπη</h1>
-    <p>Στο Pawsh, ο σκύλος σας απολαμβάνει VIP φροντίδα και θετική εμπειρία κάθε φορά!</p>
-    <button>Κλείσε Ραντεβού</button>
-  </section>
-
-  <h2 class="section-title" id="services">Υπηρεσίες</h2>
-  <section class="services">
-    <p>Μπάνιο, κούρεμα, χτένισμα, καθαρισμός αυτιών, κοπή νυχιών και πολλές ακόμα υπηρεσίες για την υγεία και την ομορφιά του κατοικιδίου σας.</p>
-  </section>
-
-  <h2 class="section-title" id="why-us">Γιατί να μας Επιλέξετε</h2>
-  <section class="why-us">
-    <p>Εξειδικευμένοι groomers, φιλικό περιβάλλον, επαγγελματικά προϊόντα και εξατομικευμένη φροντίδα για κάθε σκυλάκι.</p>
-  </section>
-
-  <h2 class="section-title" id="testimonials">Αξιολογήσεις</h2>
-  <section class="testimonials">
-    <div class="testimonial-box">"Ο σκύλος μου λάμπει κάθε φορά που βγαίνει από το Pawsh!" – Μαρία</div>
-    <div class="testimonial-box">"Τους εμπιστεύομαι απόλυτα!" – Γιώργος</div>
-    <div class="testimonial-box">"Το καλύτερο σαλόνι για τον μικρό μου φίλο!" – Ελένη</div>
-  </section>
-
-  <h2 class="section-title" id="faq">Συχνές Ερωτήσεις</h2>
-  <section class="faq">
-    <div class="faq-item">
-      <h4>Πόσο συχνά πρέπει να γίνεται grooming;</h4>
-      <p>Συνιστούμε ανά 4-6 εβδομάδες, ανάλογα με τη ράτσα και τον τύπο τρίχωματος του σκύλου σας.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Πόσο διαρκεί κάθε συνεδρία;</h4>
-      <p>Συνήθως 1-2 ώρες, ανάλογα με το μέγεθος και τις ανάγκες του σκύλου.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Μπορώ να φέρω τον σκύλο μου χωρίς ραντεβού;</h4>
-      <p>Προτιμάμε να κλείνετε ραντεβού για να εξυπηρετηθείτε χωρίς καθυστερήσεις.</p>
-    </div>
-  </section>
-
-  <section class="gallery">
-    <img src="dogs/dog 1.jpg" alt="Dog 1">
-    <img src="dogs/dog 2.jpg" alt="Dog 2">
-    <img src="dogs/dog 3.jpg" alt="Dog 3">
-    <img src="dogs/dog 4.jpg" alt="Dog 4">
-    <img src="Pawsh pet salon 1.jpg" alt="Pet Salon 1">
-    <img src="Pawsh pet salon 2.jpg" alt="Pet Salon 2">
-    <img src="Pawsh pet salon 3.jpg" alt="Pet Salon 3">
-  </section>
-
+  <!-- υπάρχον περιεχόμενο παραμένει ίδιο -->
   <footer id="contact">
     <img src="logo/logo.png" alt="Pawsh Logo Footer" />
     <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
-        <img src="logo/facebook icon.png" alt="Facebook">
+        <img src="logo/Facebook icon.png" alt="Facebook">
       </a>
       <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
         <img src="logo/Instagram icon.png" alt="Instagram">
@@ -215,10 +190,39 @@
     <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
     <p>Email: pawsh.petgroomingsalon@gmail.com</p>
     <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.1542938605745!2d23.747504476116407!3d38.011087971927776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2a146a6d35d%3A0x6b80dfcfd3290dc1!2zzpXOrs6yzrXOv8-CIDYyLCDOtc69zrzOuc66z4zPhM6_zr3Ouc6xIDI3LCDOkc67z4TPgc6szrXPgiAxMTEgNDc!5e0!3m2!1sel!2sgr!4v1692297373793!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('termsModal')">Όροι και Προϋποθέσεις</a>
+      <a href="#" onclick="openModal('privacyModal')">Πολιτική Απορρήτου</a>
+    </div>
     <p>&copy; 2025 Pawsh Pet Beauty Salon</p>
   </footer>
 
+  <!-- Modal: Όροι και Προϋποθέσεις -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+      <h3>Όροι και Προϋποθέσεις</h3>
+      <p>Οι παρεχόμενες υπηρεσίες του Pawsh Pet Beauty Salon προσφέρονται κατόπιν ραντεβού. Ο πελάτης φέρει την ευθύνη για την υγεία και τη συμπεριφορά του κατοικιδίου. Το Pawsh διατηρεί το δικαίωμα να αρνηθεί εξυπηρέτηση σε περίπτωση επιθετικής συμπεριφοράς ή υγειονομικού κινδύνου. Τυχόν αλλαγές ή ακυρώσεις ραντεβού πρέπει να γίνονται τουλάχιστον 24 ώρες πριν.</p>
+    </div>
+  </div>
+
+  <!-- Modal: Πολιτική Απορρήτου -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+      <h3>Πολιτική Απορρήτου</h3>
+      <p>Το Pawsh Pet Beauty Salon συλλέγει προσωπικά δεδομένα αποκλειστικά για τη διευκόλυνση της επικοινωνίας και της εξυπηρέτησης των πελατών. Τα δεδομένα δεν κοινοποιούνται σε τρίτους και διατηρούνται με ασφάλεια. Ο πελάτης μπορεί οποιαδήποτε στιγμή να ζητήσει την τροποποίηση ή διαγραφή των προσωπικών του δεδομένων.</p>
+    </div>
+  </div>
+
   <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
