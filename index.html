@@ -62,6 +62,21 @@
       object-fit: cover;
       border-radius: 10px;
     }
+    .section-title {
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      color: #002F35;
+    }
+    .services, .why-us, .testimonials {
+      padding: 20px 40px;
+    }
+    .footer-map {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+    }
     footer {
       background-color: #002F35;
       color: white;
@@ -90,8 +105,10 @@
     <img src="logo/logo.png" alt="Pawsh Logo" />
     <nav>
       <a href="#">Αρχική</a>
-      <a href="#">Υπηρεσίες</a>
-      <a href="#">Επικοινωνία</a>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#why-us">Γιατί Εμάς</a>
+      <a href="#testimonials">Μαρτυρίες</a>
+      <a href="#contact">Επικοινωνία</a>
     </nav>
   </header>
 
@@ -99,6 +116,22 @@
     <h1>Καλλωπισμός με Στυλ και Αγάπη</h1>
     <p>Στο Pawsh, ο σκύλος σας απολαμβάνει VIP φροντίδα και θετική εμπειρία κάθε φορά!</p>
     <button>Κλείσε Ραντεβού</button>
+  </section>
+
+  <h2 class="section-title" id="services">Υπηρεσίες</h2>
+  <section class="services">
+    <p>Μπάνιο, κούρεμα, χτένισμα, καθαρισμός αυτιών, κοπή νυχιών και πολλές ακόμα υπηρεσίες για την υγεία και την ομορφιά του κατοικιδίου σας.</p>
+  </section>
+
+  <h2 class="section-title" id="why-us">Γιατί να μας Επιλέξετε</h2>
+  <section class="why-us">
+    <p>Εξειδικευμένοι groomers, φιλικό περιβάλλον, επαγγελματικά προϊόντα και εξατομικευμένη φροντίδα για κάθε σκυλάκι.</p>
+  </section>
+
+  <h2 class="section-title" id="testimonials">Τι λένε οι πελάτες μας</h2>
+  <section class="testimonials">
+    <p>"Ο σκύλος μου λάμπει κάθε φορά που βγαίνει από το Pawsh!" – Μαρία</p>
+    <p>"Τους εμπιστεύομαι απόλυτα!" – Γιώργος</p>
   </section>
 
   <section class="gallery">
@@ -111,7 +144,9 @@
     <img src="Pawsh pet salon 3.jpg" alt="Pet Salon 3">
   </section>
 
-  <footer>
+  <iframe class="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.1542938605745!2d23.747504476116407!3d38.011087971927776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2a146a6d35d%3A0x6b80dfcfd3290dc1!2zzpXOrs6yzrXOv8-CIDYyLCDOtc69zrzOuc66z4zPhM6_zr3Ouc6xIDI3LCDOkc67z4TPgc6szrXPgiAxMTEgNDc!5e0!3m2!1sel!2sgr!4v1692297373793!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <footer id="contact">
     <img src="logo/logo.png" alt="Pawsh Logo Footer" />
     <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
@@ -122,6 +157,7 @@
       </a>
     </div>
     <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
+    <p>Email: pawsh.petgroomingsalon@gmail.com</p>
     <p>&copy; 2025 Pawsh Pet Beauty Salon</p>
   </footer>
 </body>
