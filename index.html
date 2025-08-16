@@ -1,23 +1,93 @@
 <!DOCTYPE html>
 <html lang="el">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pawsh - Καλλωπισμός Σκύλων στο Γαλάτσι. Φιλική προσέγγιση, επαγγελματική φροντίδα και υγιές τρίχωμα για κάθε σκύλο." />
-    <meta name="keywords" content="καλλωπισμός σκύλων, κουρέματα σκύλων, grooming, dog grooming, Pawsh Γαλάτσι" />
-    <meta name="author" content="Pawsh Pet Salon" />
-    <title>Pawsh | Pet Grooming Salon</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/src/index.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pawsh - Καλλωπισμός Σκύλων στο Γαλάτσι. Φιλική προσέγγιση, επαγγελματική φροντίδα και υγιές τρίχωμα για κάθε σκύλο." />
+  <meta name="keywords" content="καλλωπισμός σκύλων, κουρέματα σκύλων, grooming, dog grooming, Pawsh Γαλάτσι" />
+  <meta name="author" content="Pawsh Pet Salon" />
+  <title>Pawsh | Pet Grooming Salon</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; background-color: #fff; }
+    header, footer { background-color: #002F35; color: white; text-align: center; padding: 1rem; }
+    main { padding: 2rem; }
+    h2 { color: #002F35; }
+    #hero { text-align: center; background-color: #f0f0f0; padding: 2rem; border-radius: 10px; }
+    #hero a { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background-color: #002F35; color: white; text-decoration: none; border-radius: 5px; }
+    #services ul { list-style: none; padding-left: 0; }
+    #services li { padding: 0.5rem 0; }
+    .gallery, .shop-photos { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
+    .gallery img, .shop-photos img { width: 250px; height: auto; border-radius: 10px; object-fit: cover; }
+    .logo { max-width: 160px; display: block; margin: 0 auto 1rem; }
+    .social-icons img { width: 24px; height: 24px; margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo/logo.png" alt="Pawsh Logo" class="logo">
+    <h1>Καλωσήρθες στο Pawsh!</h1>
+    <p>Εξειδικευμένος καλλωπισμός σκύλων στο Γαλάτσι</p>
+  </header>
 
-  <body class="bg-white text-gray-800">
-    <div id="root"></div>
+  <main>
+    <section id="hero">
+      <h2>Φροντίδα με Χαμόγελο 🐶</h2>
+      <p>Κλείσε το ραντεβού σου και χάρισε στο κατοικίδιό σου την περιποίηση που του αξίζει.</p>
+      <a href="#contact">Κλείσε Ραντεβού</a>
+    </section>
 
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+    <section id="services">
+      <h2>Υπηρεσίες Καλλωπισμού</h2>
+      <ul>
+        <li>Κούρεμα φυλής, με ψαλίδι ή μηχανή</li>
+        <li>Αφαίρεση νεκρής τρίχας</li>
+        <li>Hand stripping</li>
+        <li>Καθαρισμός αυτιών</li>
+        <li>Κόψιμο νυχιών</li>
+      </ul>
+    </section>
 
-  </script>
+    <section id="gallery">
+      <h2>Μερικοί από τους Πελάτες μας 🐾</h2>
+      <div class="gallery">
+        <img src="dogs/dog1.jpg" alt="Dog 1" />
+        <img src="dogs/dog2.jpg" alt="Dog 2" />
+        <img src="dogs/dog3.jpg" alt="Dog 3" />
+        <img src="dogs/dog4.jpg" alt="Dog 4" />
+      </div>
+    </section>
+
+    <section id="space">
+      <h2>Ο Χώρος μας</h2>
+      <div class="shop-photos">
+        <img src="Pawsh pet salon/Pawsh pet salon 1.jpg" alt="Pawsh Salon 1" />
+        <img src="Pawsh pet salon/Pawsh pet salon 2.jpg" alt="Pawsh Salon 2" />
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Συχνές Ερωτήσεις</h2>
+      <p><strong>Πόσο συχνά πρέπει να καλλωπίζεται ο σκύλος μου;</strong> Εξαρτάται από τη ράτσα και τον τρόπο ζωής, αλλά ένας καλός μέσος όρος είναι κάθε μήνα.</p>
+      <p><strong>Πόσο κοστίζει;</strong> Οι τιμές διαμορφώνονται ανάλογα με τη ράτσα, την κατάσταση του τριχώματος κ.ά.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Επικοινωνία</h2>
+      <p>📍 Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
+      <p>📞 210 440 4084</p>
+      <p>📧 pawsh.petgroomingsalon@gmail.com</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank"><img src="logo/facebook icon.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank"><img src="logo/instagram icon.png" alt="Instagram" /></a>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755367580304!5m2!1sel!2sgr"
+        width="100%" height="300" style="border:0; margin-top:1rem;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pawsh Pet Grooming Salon | Όλα τα δικαιώματα διατηρούνται</p>
+  </footer>
 </body>
 </html>
