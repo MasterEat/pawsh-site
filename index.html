@@ -1,108 +1,119 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pawsh - Καλλωπισμός Κατοικίδιων</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawsh - Pet Beauty Salon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fdfdfd;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #002F35;
+      color: #F5F5F5;
+      line-height: 1.6;
     }
     header {
-      background-color: #117a7a;
-      padding: 1rem;
+      background-color: #002F35;
+      padding: 2rem;
       text-align: center;
     }
     header img {
-      max-width: 240px;
-      height: auto;
-      margin-bottom: 0.5rem;
+      width: 120px;
     }
     nav {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
     nav a {
-      margin: 0 10px;
+      color: #F5F5F5;
       text-decoration: none;
-      color: white;
+      margin: 0 1rem;
       font-weight: bold;
     }
     .hero {
-      padding: 2rem;
+      padding: 4rem 2rem;
       text-align: center;
     }
     .hero h1 {
       font-size: 2.5rem;
-      color: #117a7a;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .cta-button {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background-color: #117a7a;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-size: 1.1rem;
-    }
-    footer {
-      background-color: #117a7a;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    footer img {
-      max-width: 180px;
-      height: auto;
       margin-bottom: 1rem;
     }
-    .map-container iframe {
-      width: 100%;
-      height: 350px;
-      border: 0;
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      padding: 0.8rem 2rem;
+      background-color: #F5F5F5;
+      color: #002F35;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #FFD700;
+      color: #002F35;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #001E21;
+      text-align: center;
+      padding: 2rem;
+      color: #ccc;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo/logo.png" alt="Pawsh Logo">
+    <img src="logo/logo.png" alt="Pawsh Logo" style="max-width: 240px; height: auto; margin-bottom: 1rem;">
     <nav>
       <a href="#services">Υπηρεσίες</a>
-      <a href="#reviews">Μαρτυρίες</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Επικοινωνία</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Καλλωπισμός με Στιλ & Φροντίδα</h1>
-    <p>Στην Pawsh, ο σκύλος σας δεν είναι απλά πελάτης – είναι VIP με... ουρά!</p>
-    <a href="#booking" class="cta-button">Κλείσε Ραντεβού</a>
+    <h1>Γαβ! Η Ομορφιά Ξεκινά από την Πατουσάρα 🐾</h1>
+    <p>Καλλωπισμός σκύλων με αγάπη, υπομονή και παιχνιδιάρικη διάθεση.</p>
+    <a href="#contact"><button class="cta-button">Κλείσε Ραντεβού</button></a>
   </section>
 
-  <!-- Μπορούν να μπουν επιπλέον sections εδώ -->
+  <section class="gallery" id="gallery">
+    <img src="dogs/dog1.jpg" alt="Dog 1" />
+    <img src="dogs/dog2.jpg" alt="Dog 2" />
+    <img src="dogs/dog3.jpg" alt="Dog 3" />
+    <img src="dogs/dog4.jpg" alt="Dog 4" />
+    <img src="dogs/dog5.jpg" alt="Dog 5" />
+    <img src="dogs/dog6.jpg" alt="Dog 6" />
+  </section>
 
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755349012776!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+  <section id="contact" class="hero">
+    <h2>📍 Επικοινώνησε Μαζί μας</h2>
+    <p>📍 Αγίας Γλυκερίας 62, Γαλάτσι 111 47<br />📞 210 440 4084<br />✉️ pawsh@gmail.com</p>
+    <iframe src="https://www.google.com/maps?q=Agias+Glykerias+62,+Greece&output=embed" width="100%" height="300" style="border:0; border-radius: 10px; margin-top: 2rem;"></iframe>
+  </section>
 
   <footer>
-    <img src="logo/logo.png" alt="Pawsh Logo">
-    <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
-    <p>Ωράριο: Τρίτη–Παρασκευή 10:00–18:00 | Σάββατο 10:00–15:00</p>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">Instagram</a>
-    </p>
+    <p>&copy; 2025 Pawsh Pet Beauty Salon. All rights reserved.</p>
   </footer>
 </body>
-</html>
-
 </html>
