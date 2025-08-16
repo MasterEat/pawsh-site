@@ -4,7 +4,136 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pawsh - Pet Beauty Salon</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --main-bg: #fff;
+      --accent: #2b0042;
+      --text: #111;
+      --secondary: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--main-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #f7f7f7, #fff);
+      text-align: center;
+      padding-top: 2rem;
+    }
+
+    .logo {
+      max-width: 150px;
+    }
+
+    .btn, .sticky-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover, .sticky-cta:hover {
+      background: #47006b;
+    }
+
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .services li {
+      background: #eee;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .gallery-carousel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-carousel img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-carousel img:hover {
+      transform: scale(1.05);
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact a {
+      font-weight: bold;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    .map iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f0f0f0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .btn, .sticky-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Hero Section -->
@@ -75,7 +204,7 @@
 
   <!-- Google Map -->
   <section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755367580304!5m2!1sel!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755367580304!5m2!1sel!2sgr" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
   <!-- Sticky CTA Button -->
@@ -87,4 +216,3 @@
   </footer>
 </body>
 </html>
-
