@@ -65,6 +65,7 @@
       scroll-snap-type: x mandatory;
       gap: 20px;
       padding: 40px;
+      background-color: #fff;
     }
     .gallery img {
       height: 300px;
@@ -178,6 +179,25 @@
       font-size: 24px;
       cursor: pointer;
     }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header img {
+        height: 180px;
+        margin-bottom: 10px;
+      }
+      .gallery {
+        padding: 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -194,9 +214,9 @@
     <button>Κλείσε Ραντεβού</button>
   </section>
   <section class="gallery">
-    <img src="dog1.jpg" alt="Dog 1" />
-    <img src="dog2.jpg" alt="Dog 2" />
-    <img src="dog3.jpg" alt="Dog 3" />
+    <img src="dog1.jpg" alt="Dog 1" loading="lazy" />
+    <img src="dog2.jpg" alt="Dog 2" loading="lazy" />
+    <img src="dog3.jpg" alt="Dog 3" loading="lazy" />
   </section>
   <footer>
     <img src="logo.png" alt="Pawsh logo" />
@@ -210,7 +230,7 @@
     </div>
     <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
     <p>Email: pawsh.petgroomingsalon@gmail.com</p>
-    <iframe class="footer-map" src="https://maps.google.com/maps?q=Αγίας%20Γλυκερίας%2062,%20Γαλάτσι&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    <iframe class="footer-map" src="https://maps.google.com/maps?q=Αγίας%20Γλυκερίας%2062,%20Γαλάτσι&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
     <div class="footer-links">
       <a href="#" onclick="openModal('termsModal')">Όροι και Προϋποθέσεις</a>
       <a href="#" onclick="openModal('privacyModal')">Πολιτική Απορρήτου</a>
