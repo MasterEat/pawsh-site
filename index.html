@@ -16,16 +16,19 @@
       color: white;
       padding: 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
     }
     header img {
       height: 240px;
     }
+    header nav {
+      margin-top: 10px;
+    }
     header nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      margin: 0 10px;
       font-weight: bold;
     }
     .hero {
@@ -68,6 +71,7 @@
       border-radius: 10px;
       scroll-snap-align: center;
       flex: 0 0 auto;
+      pointer-events: none;
     }
     .section-title {
       text-align: center;
@@ -110,9 +114,9 @@
       display: block;
     }
     .footer-map {
-      width: 100%;
+      width: 90%;
       height: 300px;
-      max-width: 600px;
+      max-width: 300px;
       margin: 20px auto;
       border: none;
       display: block;
@@ -124,7 +128,7 @@
       padding: 20px;
     }
     footer img {
-      height: 240px;
+      height: 480px;
       margin-bottom: 10px;
     }
     .social-icons {
@@ -172,6 +176,20 @@
       float: right;
       font-size: 24px;
       cursor: pointer;
+    }
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery img {
+        width: 90%;
+        height: auto;
+      }
     }
   </style>
 </head>
