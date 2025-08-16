@@ -25,6 +25,30 @@
       text-decoration: none;
     }
 
+    header {
+      background: var(--accent);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    header img.logo {
+      max-height: 50px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+
     section {
       padding: 4rem 1rem;
       max-width: 960px;
@@ -107,6 +131,7 @@
 
     .map iframe {
       width: 100%;
+      max-height: 300px;
       border: none;
       border-radius: 8px;
     }
@@ -127,6 +152,23 @@
       font-size: 0.9rem;
     }
 
+    footer img.logo {
+      max-height: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-socials img {
+      width: 24px;
+      height: 24px;
+    }
+
     @media (max-width: 600px) {
       .btn, .sticky-cta {
         padding: 0.6rem 1.2rem;
@@ -136,14 +178,27 @@
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+        <img src="logo/facebook icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+        <img src="logo/instagram icon.png" alt="Instagram">
+      </a>
+    </div>
+  </header>
+
   <!-- Hero Section -->
   <section class="hero">
-    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
     <h1>Καλλωπισμός με αγάπη!</h1>
     <p>Φροντίδα & στυλ για το κατοικίδιό σου</p>
     <a href="#contact" class="btn">Κλείσε Ραντεβού</a>
   </section>
 
+  <!-- Υπόλοιπο περιεχόμενο (χωρίς αλλαγές) -->
   <!-- Services Section -->
   <section class="services">
     <h2>Υπηρεσίες</h2>
@@ -157,7 +212,6 @@
     </ul>
   </section>
 
-  <!-- Gallery Carousel -->
   <section class="gallery">
     <h2>Η δουλειά μας</h2>
     <div class="gallery-carousel">
@@ -172,7 +226,6 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="faq">
     <h2>Συχνές Ερωτήσεις</h2>
     <div class="faq-item">
@@ -185,33 +238,31 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2>Επικοινωνία</h2>
     <p>📍 Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
     <p>📞 <a href="tel:2104404084">210 440 4084</a></p>
     <p>📧 <a href="mailto:pawsh.petgroomingsalon@gmail.com">pawsh.petgroomingsalon@gmail.com</a></p>
     <p>⏰ Τρίτη - Παρασκευή 10:00–18:00<br>Σάββατο 10:00–15:00<br>Κυριακή & Δευτέρα: Κλειστά</p>
-    <div>
-      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
-        <img src="logo/facebook icon.png" alt="Facebook" class="icon">
-      </a>
-      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
-        <img src="logo/instagram icon.png" alt="Instagram" class="icon">
-      </a>
-    </div>
   </section>
 
-  <!-- Google Map -->
   <section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755367580304!5m2!1sel!2sgr" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.6302463792335!2d23.74369627610793!3d38.00908417192722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a355629c21af%3A0x57119ad1da08688a!2sPawsh!5e0!3m2!1sel!2sgr!4v1755367580304!5m2!1sel!2sgr" width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
-  <!-- Sticky CTA Button -->
   <a href="#contact" class="sticky-cta">Κλείσε Ραντεβού</a>
 
   <!-- Footer -->
   <footer>
+    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+        <img src="logo/facebook icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+        <img src="logo/instagram icon.png" alt="Instagram">
+      </a>
+    </div>
     <p>&copy; 2025 Pawsh - Pet Beauty Salon</p>
   </footer>
 </body>
