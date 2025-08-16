@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pawsh Pet Beauty Salon</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -16,19 +19,17 @@
       color: white;
       padding: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
     header img {
       height: 240px;
     }
-    header nav {
-      margin-top: 10px;
-    }
     header nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      margin-left: 20px;
       font-weight: bold;
     }
     .hero {
@@ -114,9 +115,9 @@
       display: block;
     }
     .footer-map {
-      width: 90%;
-      height: 300px;
+      width: 100%;
       max-width: 300px;
+      height: 300px;
       margin: 20px auto;
       border: none;
       display: block;
@@ -177,23 +178,68 @@
       font-size: 24px;
       cursor: pointer;
     }
-    @media screen and (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-      .gallery img {
-        width: 90%;
-        height: auto;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Περιεχόμενο εδώ, θα συνεχιστεί στα επόμενα βήματα -->
+  <header>
+    <img src="logo.png" alt="Pawsh logo" />
+    <nav>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#faq">Συχνές Ερωτήσεις</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Καλωσήρθατε στην Pawsh!</h1>
+    <p>Το αγαπημένο pet beauty salon στο Γαλάτσι</p>
+    <button>Κλείσε Ραντεβού</button>
+  </section>
+  <section class="gallery">
+    <img src="dog1.jpg" alt="Dog 1" />
+    <img src="dog2.jpg" alt="Dog 2" />
+    <img src="dog3.jpg" alt="Dog 3" />
+  </section>
+  <footer>
+    <img src="logo.png" alt="Pawsh logo" />
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">
+        <img src="Facebook icon.png" alt="Facebook" />
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="Instagram icon.png" alt="Instagram" />
+      </a>
+    </div>
+    <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
+    <p>Email: pawsh.petgroomingsalon@gmail.com</p>
+    <iframe class="footer-map" src="https://maps.google.com/maps?q=Αγίας%20Γλυκερίας%2062,%20Γαλάτσι&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('termsModal')">Όροι και Προϋποθέσεις</a>
+      <a href="#" onclick="openModal('privacyModal')">Πολιτική Απορρήτου</a>
+    </div>
+  </footer>
+
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+      <h2>Όροι και Προϋποθέσεις</h2>
+      <p>Αυτή η ιστοσελίδα παρέχει πληροφορίες και υπηρεσίες με βάση τους παρόντες όρους. Με τη χρήση της ιστοσελίδας, αποδέχεστε αυτούς τους όρους.</p>
+    </div>
+  </div>
+
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+      <h2>Πολιτική Απορρήτου</h2>
+      <p>Η προστασία των προσωπικών σας δεδομένων είναι σημαντική. Δεν κοινοποιούμε, δεν πουλάμε και δεν χρησιμοποιούμε τα δεδομένα σας χωρίς τη συγκατάθεσή σας.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </body>
 </html>
