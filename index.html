@@ -1,151 +1,128 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pawsh Pet Beauty Salon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background-color: #fefefe; color: #333; }
-    header { background-color: #003b40; color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 999; display: flex; justify-content: space-between; align-items: center; }
-    header img { height: 60px; }
-    nav a { color: white; margin-left: 1.5rem; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .hero {
-      background-color: #003b40;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #3d9a9b;
       color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .hero {
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 50px 20px;
+      background-color: #e1f5f5;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
     .hero button {
-      background-color: #f3c623;
-      color: #003b40;
+      background-color: #3d9a9b;
+      color: white;
+      padding: 10px 20px;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border-radius: 50px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-size: 1rem;
     }
-    .hero button:hover {
-      background-color: #ffd700;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
     }
-    .section { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
-    .section h2 { font-size: 2rem; margin-bottom: 1rem; color: #003b40; }
-    .features, .testimonials, .faq, .contact { margin-top: 3rem; }
-    .feature-list, .faq-list { list-style: none; padding-left: 1rem; }
-    .feature-list li::before { content: '✔'; color: #f3c623; margin-right: 0.5rem; }
-    .testimonial { margin-bottom: 2rem; padding: 1rem; border-left: 4px solid #f3c623; background: #f9f9f9; }
-    .map iframe { width: 100%; height: 300px; border: none; }
     .gallery img {
       width: 100%;
-      max-width: 300px;
-      margin: 0.5rem;
+      height: 300px;
+      object-fit: cover;
       border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .cta {
-      background-color: #f3c623;
-      color: #003b40;
-      text-align: center;
-      padding: 2rem;
-    }
-    .cta button {
-      background-color: #003b40;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      cursor: pointer;
     }
     footer {
-      background-color: #003b40;
+      background-color: #3d9a9b;
       color: white;
       text-align: center;
-      padding: 2rem;
+      padding: 20px;
+    }
+    footer img {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      margin: 10px 0;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .social-icons img {
+      width: 30px;
+      height: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo/logo.png" alt="Pawsh Logo" style="max-width: 180px; height: auto; margin-bottom: 1rem;">
+    <img src="logo.png" alt="Pawsh Logo" />
     <nav>
-      <a href="#services">Υπηρεσίες</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Επικοινωνία</a>
+      <a href="#">Αρχική</a>
+      <a href="#">Υπηρεσίες</a>
+      <a href="#">Επικοινωνία</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Κάνε τον σκύλο σου... Pawsh!</h1>
-    <p>Καλλωπισμός με αγάπη, άνεση και στυλ για κάθε ράτσα και χαρακτήρα!</p>
-    <button onclick="location.href='#contact'">Κλείσε Ραντεβού</button>
+    <h1>Καλλωπισμός με Στυλ και Αγάπη</h1>
+    <p>Στο Pawsh, ο σκύλος σας απολαμβάνει VIP φροντίδα και θετική εμπειρία κάθε φορά!</p>
+    <button>Κλείσε Ραντεβού</button>
   </section>
 
-  <section class="section features" id="services">
-    <h2>Υπηρεσίες</h2>
-    <ul class="feature-list">
-      <li>Κούρεμα με ψαλίδι ή μηχανή</li>
-      <li>Hand Stripping</li>
-      <li>Καθαρισμός αυτιών</li>
-      <li>Κοπή νυχιών</li>
-      <li>Αφαίρεση νεκρής τρίχας</li>
-      <li>Καλλωπισμός φυλής</li>
-    </ul>
-  </section>
-
-  <section class="section gallery" id="gallery">
-    <h2>Gallery</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <img src="dogs/dog1.jpg" alt="Dog 1">
-      <img src="dogs/dog2.jpg" alt="Dog 2">
-      <img src="dogs/dog3.jpg" alt="Dog 3">
-      <img src="dogs/dog4.jpg" alt="Dog 4">
-    </div>
-  </section>
-
-  <section class="section testimonials">
-    <h2>Μαρτυρίες Πελατών</h2>
-    <div class="testimonial">Η καλύτερη εμπειρία που είχαμε ποτέ! Ο σκύλος μου ένιωσε σαν στο σπίτι του. – Μαρία Κ.</div>
-    <div class="testimonial">Πολύ φιλική και επαγγελματική! Μοναδική προσέγγιση στους σκύλους. – Γιώργος Τ.</div>
-    <div class="testimonial">Δεν αλλάζουμε για τίποτα! Άριστη εξυπηρέτηση και τέλειο αποτέλεσμα. – Στέλλα Λ.</div>
-  </section>
-
-  <section class="section faq" id="faq">
-    <h2>Συχνές Ερωτήσεις</h2>
-    <ul class="faq-list">
-      <li><strong>Πόσο κοστίζει;</strong> Εξαρτάται από τη ράτσα, μέγεθος και κατάσταση του σκύλου.</li>
-      <li><strong>Κάθε πότε γίνεται καλλωπισμός;</strong> Κατά μέσο όρο κάθε μήνα, ανάλογα τη ράτσα και τον τρόπο ζωής.</li>
-      <li><strong>Χρειάζεται ραντεβού;</strong> Ναι! Κλείσε online ή τηλεφώνησέ μας.</li>
-      <li><strong>Κάνετε ειδικά κουρέματα ράτσας;</strong> Φυσικά. Κάθε σκύλος έχει το δικό του στυλ!</li>
-    </ul>
-  </section>
-
-  <section class="section contact" id="contact">
-    <h2>Επικοινωνία</h2>
-    <p>📍 Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
-    <p>📞 21 0440 4084</p>
-    <p>📧 pawsh@gmail.com</p>
-    <div class="map">
-      <iframe src="https://www.google.com/maps?q=Agias+Glykerias+62,+Galatsi,+Greece&output=embed"></iframe>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Έτοιμος για Μεταμόρφωση;</h2>
-    <button onclick="location.href='#contact'">Κλείσε Τώρα το Ραντεβού</button>
+  <section class="gallery">
+    <img src="dog1.jpg" alt="Dog 1">
+    <img src="dog2.jpg" alt="Dog 2">
+    <img src="dog3.jpg" alt="Dog 3">
+    <img src="dog4.jpg" alt="Dog 4">
+    <img src="Pawsh pet salon 1.jpg" alt="Pet Salon 1">
+    <img src="Pawsh pet salon 2.jpg" alt="Pet Salon 2">
+    <img src="Pawsh pet salon 3.jpg" alt="Pet Salon 3">
   </section>
 
   <footer>
-    <p>&copy; 2025 Pawsh - Pet Beauty Salon. All rights reserved.</p>
+    <img src="logo.png" alt="Pawsh Logo Footer" />
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+        <img src="facebook-icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+        <img src="instagram-icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>Αγίας Γλυκερίας 62, Γαλάτσι 111 47 | Τηλ: 210 440 4084</p>
+    <p>&copy; 2025 Pawsh Pet Beauty Salon</p>
   </footer>
 </body>
 </html>
