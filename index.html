@@ -240,5 +240,75 @@
     </div>
   </section>
 
+  <section class="faq">
+    <h2>Συχνές Ερωτήσεις</h2>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο κοστίζει το grooming;</div>
+      <div class="faq-answer">Οι τιμές εξαρτώνται από τη ράτσα, το μέγεθος και την κατάσταση του σκύλου.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Κάθε πότε πρέπει να γίνεται καλλωπισμός;</div>
+      <div class="faq-answer">Συνήθως κάθε μήνα, αλλά εξαρτάται από τη ράτσα και τον τρόπο ζωής του σκύλου.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Χρειάζεται ραντεβού;</div>
+      <div class="faq-answer">Ναι, για την καλύτερη εξυπηρέτησή σας, παρακαλούμε να κλείνετε ραντεβού εκ των προτέρων.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο διαρκεί η διαδικασία;</div>
+      <div class="faq-answer">Συνήθως 1-2 ώρες, ανάλογα με τις υπηρεσίες και τη συνεργασία του σκύλου.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Δέχεστε σκύλους κάθε ηλικίας;</div>
+      <div class="faq-answer">Ναι, αρκεί να μην υπάρχει πρόβλημα υγείας που να εμποδίζει τη διαδικασία.</div>
+    </div>
+  </section>
+
+  <section class="map">
+    <h2>Πού θα μας βρείτε</h2>
+    <iframe src="https://maps.google.com/maps?q=Αγίας%20Γλυκερίας%2062,%20Γαλάτσι%20%20111%2047&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen=""></iframe>
+  </section>
+
+  <footer>
+    <img class="logo" src="logo/logo.png" alt="Pawsh logo">
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+        <img src="logo/facebook icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+        <img src="logo/instagram icon.png" alt="Instagram">
+      </a>
+    </div>
+    <div class="legal-links">
+      <a onclick="document.getElementById('termsModal').style.display='block'">Όροι & Προϋποθέσεις</a> |
+      <a onclick="document.getElementById('privacyModal').style.display='block'">Πολιτική Απορρήτου</a>
+    </div>
+  </footer>
+
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('termsModal').style.display='none'">&times;</span>
+      <h2>Όροι & Προϋποθέσεις</h2>
+      <p>Η επίσκεψη και χρήση των υπηρεσιών μας συνεπάγεται αποδοχή των παρόντων όρων...</p>
+    </div>
+  </div>
+
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('privacyModal').style.display='none'">&times;</span>
+      <h2>Πολιτική Απορρήτου</h2>
+      <p>Η προστασία των προσωπικών σας δεδομένων αποτελεί για εμάς προτεραιότητα...</p>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
