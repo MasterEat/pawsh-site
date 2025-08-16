@@ -21,13 +21,8 @@
     }
 
     a {
-      color: white;
+      color: var(--accent);
       text-decoration: none;
-      cursor: pointer;
-    }
-
-    .legal-links a {
-      color: white;
     }
 
     header {
@@ -64,12 +59,10 @@
     .hero h1,
     .hero p {
       background-color: rgba(0, 0, 0, 0.5);
-      display: block;
+      display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 10px;
       color: white;
-      margin: 1rem auto;
-      width: fit-content;
     }
 
     .logo {
@@ -158,9 +151,8 @@
       text-align: center;
       padding: 2rem 1rem;
       background: var(--accent);
-      color: white;
+      color: #fff;
       font-size: 0.9rem;
-      position: relative;
     }
 
     footer img.logo {
@@ -183,50 +175,84 @@
       padding: 3px;
     }
 
-    .legal-links {
-      margin-top: 1rem;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 2rem;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 600px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
+    @media (max-width: 600px) {
+      .btn, .sticky-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-
   <header>
-    <img class="logo" src="logo/logo.png" alt="Pawsh logo">
+    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
   </header>
 
   <section class="hero">
-    <h1>Καλωσόρισες στο Pawsh!</h1>
-    <p>Επαγγελματική φροντίδα και καλλωπισμός σκύλων</p>
-    <a class="btn" href="#">Κλείσε Ραντεβού</a>
+    <h1 style="color:white;">Καλωσήρθες στο Pawsh</h1>
+    <p>Pet beauty salon στο Γαλάτσι. Λαμπερό τρίχωμα και χουζούρεμα εγγυημένα!</p>
+    <a href="#contact" class="btn">Κλείσε Ραντεβού</a>
   </section>
 
+  <section class="gallery-carousel">
+    <img src="dogs/dog1.png">
+    <img src="dogs/dog2.png">
+    <img src="dogs/dog3.png">
+    <img src="dogs/dog4.png">
+    <img src="dogs/dog5.png">
+    <img src="dogs/dog6.png">
+    <img src="dogs/dog7.png">
+    <img src="dogs/dog8.png">
+  </section>
+
+  <section class="faq">
+    <div class="faq-item">
+      <div class="faq-question">Πόσο κοστίζει ένα grooming;</div>
+      <div class="faq-answer">Ανάλογα με τη ράτσα, την κατάσταση και τις ανάγκες του σκύλου.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο συχνά πρέπει να καλλωπίζεται ένας σκύλος;</div>
+      <div class="faq-answer">Αναλόγως τη ράτσα και τον τρόπο ζωής, συνήθως κάθε μήνα.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Χρειάζομαι ραντεβού;</div>
+      <div class="faq-answer">Ναι, χρειάζεται ραντεβού ώστε να εξυπηρετηθείς άμεσα και σωστά.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Τι προϊόντα χρησιμοποιείτε;</div>
+      <div class="faq-answer">Χρησιμοποιούμε μόνο επαγγελματικά, δερματολογικά ελεγμένα προϊόντα.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο διαρκεί η περιποίηση;</div>
+      <div class="faq-answer">Η διαδικασία διαρκεί από 1 έως 2 ώρες ανάλογα με το μέγεθος και την κατάσταση του σκύλου.</div>
+    </div>
+  </section>
+
+  <section class="map">
+    <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
+  </section>
+
+  <footer>
+    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+        <img src="logo/facebook icon.png">
+      </a>
+      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+        <img src="logo/instagram icon.png">
+      </a>
+    </div>
+    <p>&copy; 2025 Pawsh Pet Salon. All rights reserved.</p>
+  </footer>
 </body>
 </html>
