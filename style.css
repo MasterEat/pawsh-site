@@ -43,9 +43,9 @@ h1, h2 {
   text-align: center;
   padding: 4rem 1rem;
   color: white;
+  max-width: 960px;
   width: 100%;
-  max-width: none;
-  margin: 0;
+  margin: 0 auto;
   min-height: 600px;
   display: flex;
   flex-direction: column;
