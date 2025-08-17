@@ -224,10 +224,10 @@ footer img.logo {
   }
 }
 
-/* Reduce header logo size on desktop screens */
+/* Increase header logo size on desktop screens */
 @media (min-width: 768px) {
   header img.logo {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 300px;
+    max-height: 300px;
   }
 }
