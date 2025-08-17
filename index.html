@@ -90,6 +90,39 @@
     </div>
   </footer>
   <script>
+    const heroImages = [
+      'Pawsh pet salon/Pawsh pet salon 1.jpg',
+      'Pawsh pet salon/Pawsh pet salon 10.jpg',
+      'Pawsh pet salon/Pawsh pet salon 11.jpg',
+      'Pawsh pet salon/Pawsh pet salon 12.jpg',
+      'Pawsh pet salon/Pawsh pet salon 13.jpg',
+      'Pawsh pet salon/Pawsh pet salon 14.jpg',
+      'Pawsh pet salon/Pawsh pet salon 16.jpg',
+      'Pawsh pet salon/Pawsh pet salon 18.jpg',
+      'Pawsh pet salon/Pawsh pet salon 19.jpg',
+      'Pawsh pet salon/Pawsh pet salon 2.jpg',
+      'Pawsh pet salon/Pawsh pet salon 20.jpg',
+      'Pawsh pet salon/Pawsh pet salon 21.jpg',
+      'Pawsh pet salon/Pawsh pet salon 22.jpg',
+      'Pawsh pet salon/Pawsh pet salon 23.jpg',
+      'Pawsh pet salon/Pawsh pet salon 24.jpg',
+      'Pawsh pet salon/Pawsh pet salon 3.jpg',
+      'Pawsh pet salon/Pawsh pet salon 4.jpg',
+      'Pawsh pet salon/Pawsh pet salon 5.jpg',
+      'Pawsh pet salon/Pawsh pet salon 6.jpg',
+      'Pawsh pet salon/Pawsh pet salon 7.jpg',
+      'Pawsh pet salon/Pawsh pet salon 8.jpg',
+      'Pawsh pet salon/Pawsh pet salon 9.jpg',
+      'Pawsh pet salon/Pawsh pet salon.jpg'
+    ];
+    let currentHero = 0;
+    const heroSection = document.querySelector('.hero');
+    heroSection.style.backgroundImage = `url('${heroImages[currentHero]}')`;
+    setInterval(() => {
+      currentHero = (currentHero + 1) % heroImages.length;
+      heroSection.style.backgroundImage = `url('${heroImages[currentHero]}')`;
+    }, 5000);
+
     document.querySelectorAll('.faq-question').forEach(function (question) {
       question.addEventListener('click', function () {
         question.parentElement.classList.toggle('active');
