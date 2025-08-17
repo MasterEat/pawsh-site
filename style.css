@@ -130,7 +130,7 @@ h1, h2 {
 }
 footer {
   background: var(--accent);
-  color: #fff;
+  color: #063d49;
   font-size: 0.9rem;
   padding: 2rem 1rem;
   display: flex;
@@ -163,7 +163,7 @@ footer img.logo {
   margin-top: 1rem;
 }
 .footer-links a {
-  color: white;
+  color: #063d49;
   margin: 0 0.5rem;
   cursor: pointer;
 }
