@@ -10,6 +10,7 @@ body {
   background: var(--main-bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 a {
   color: var(--accent);
@@ -52,7 +53,7 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero h1,
 .hero p {
@@ -69,7 +70,7 @@ h1, h2 {
   z-index: 1;
 }
 
-/* Bubble decorations on both sides of the hero section */
+/* Bubble decorations outside the hero section */
 .hero::before,
 .hero::after {
   content: "";
@@ -86,11 +87,11 @@ h1, h2 {
 }
 
 .hero::before {
-  left: 0;
+  left: -80px;
 }
 
 .hero::after {
-  right: 0;
+  right: -80px;
   transform: scaleX(-1);
 }
 .logo {
