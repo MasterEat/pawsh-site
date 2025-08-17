@@ -1,5 +1,5 @@
 window.initReviews = function () {
-  const placeId = ChIJryGcYlWjoRQRimgI2tGaEVc;
+  const placeId = 'ChIJryGcYlWjoRQRimgI2tGaEVc';
   const service = new google.maps.places.PlacesService(document.createElement('div'));
   service.getDetails(
     { placeId, fields: ['rating', 'user_ratings_total', 'reviews'] },
