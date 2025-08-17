@@ -37,12 +37,20 @@ h1, h2 {
 }
 .hero {
   background: url('Pawsh pet salon/Pawsh pet salon 24.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
   padding: 4rem 1rem;
   color: white;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hero h1,
 .hero p {
