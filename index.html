@@ -265,13 +265,26 @@
   </div>
 
   <script>
-    document.querySelector("a[href='#terms']")?.addEventListener("click", () => {
-      document.getElementById("termsModal").style.display = "flex";
-    });
-    document.querySelector("a[href='#privacy']")?.addEventListener("click", () => {
-      document.getElementById("privacyModal").style.display = "flex";
+    document.addEventListener("DOMContentLoaded", () => {
+      const termsLink = document.querySelector(".footer-links a[href='#terms']");
+      const privacyLink = document.querySelector(".footer-links a[href='#privacy']");
+
+      if (termsLink) {
+        termsLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.getElementById("termsModal").style.display = "flex";
+        });
+      }
+
+      if (privacyLink) {
+        privacyLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.getElementById("privacyModal").style.display = "flex";
+        });
+      }
     });
   </script>
 
 </body>
 </html>
+
