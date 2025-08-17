@@ -62,6 +62,12 @@
       </div>
       <div class="review-list" id="reviews-container"></div>
     </section>
+<section id="ratings">
+  <h2>Αξιολογήσεις Google</h2>
+  <div class="google-rating"></div>
+  <div class="google-review-count"></div>
+  <div class="google-reviews"></div>
+</section>
 
     <section class="map">
       <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
@@ -137,6 +143,29 @@
         question.parentElement.classList.toggle('active');
       });
     });
+    <script>
+  async function loadGoogleRatings() {
+    const placeId = 'ChIJryGcYlWjoRQRimgI2tGaEVc';
+    const apiKey = 'AIzaSyBadyPZ_8OyDfrW4JOcT7nJrE6Uh17Q9-s';
+    const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
+
+    try {
+      const res = await fetch(endpoint);
+      const data = await res.json();
+      const result = data.result;
+
+      document.querySelector('.google-rating').textContent = `Μέση βαθμολογία: ${result.rating}`;
+      document.querySelector('.google-review-count').textContent = `Σύνολο αξιολογήσεων: ${result.user_ratings_total}`;
+      document.querySelector('.google-reviews').innerHTML = result.reviews.slice(0,3).map(r =>
+        `<p><strong>${r.author_name}</strong>: ${r.text}</p>`
+      ).join('');
+    } catch(err) {
+      console.error('Google ratings fetch failed', err);
+    }
+  }
+  loadGoogleRatings();
+</script>
+
   </script>
   <script src="reviews.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initReviews" async defer></script>
