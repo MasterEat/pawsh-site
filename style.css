@@ -24,8 +24,8 @@ header {
   color: white;
 }
 header img.logo {
-  max-height: 600px;
-  max-width: 450px;
+  max-height: 150px;
+  max-width: 150px;
 }
 section {
   padding: 4rem 1rem;
