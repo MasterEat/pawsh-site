@@ -4,21 +4,18 @@
   width="200"
   height="800"
   role="img"
-  aria-label="Κάθετες υπερεαλιστικές μπουρμπουλήθρες, διάφανες με γκρι περίγραμμα"
+  aria-label="Κάθετες υπερεαλιστικές μπουρμπουλήθρες, 80% μεγαλύτερες με πιο λεπτό γκρι περίγραμμα"
 >
   <defs>
-    <!-- απαλό blur για αντανακλάσεις -->
     <filter id="soft-blur">
       <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" />
     </filter>
 
-    <!-- διακριτικό shadow για βάθος -->
     <filter id="bubble-shadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="1.3" stdDeviation="1.3"
                     flood-color="#000" flood-opacity="0.22"/>
     </filter>
 
-    <!-- σχεδόν διάφανο εσωτερικό γυάλισμα -->
     <radialGradient id="bubble-fill" cx="35%" cy="35%" r="70%">
       <stop offset="0%"   stop-color="#fff"    stop-opacity="0"/>
       <stop offset="55%"  stop-color="#fff"    stop-opacity="0.05"/>
@@ -26,50 +23,43 @@
       <stop offset="100%" stop-color="#fff"    stop-opacity="0"/>
     </radialGradient>
 
-    <!-- περιμετρικό rim highlight -->
     <radialGradient id="rim-glow" cx="50%" cy="50%" r="50%">
       <stop offset="72%" stop-color="#fff" stop-opacity="0"/>
       <stop offset="92%" stop-color="#fff" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- επαναχρησιμοποιήσιμη μπουρμπουλήθρα (base radius = 50) -->
     <symbol id="bubble" viewBox="-50 -50 100 100">
       <g filter="url(#bubble-shadow)" shape-rendering="geometricPrecision" pointer-events="none">
-        <!-- εσωτερική λάμψη -->
         <circle r="48" fill="url(#bubble-fill)"/>
-        <!-- πιο χοντρό γκρι περίγραμμα -->
-        <circle r="48" fill="none" stroke="#9aa0a6" stroke-width="4"
+        <!-- Γκρι περίγραμμα: 1/3 πιο λεπτό (4 -> 2.67) -->
+        <circle r="48" fill="none" stroke="#9aa0a6" stroke-width="2.67"
                 stroke-opacity="0.9" vector-effect="non-scaling-stroke"/>
-        <!-- λεπτή περιμετρική λάμψη -->
         <circle r="46" fill="none" stroke="url(#rim-glow)" stroke-width="2"/>
-
-        <!-- μεγάλος γυαλιστερός λεκές -->
         <ellipse cx="-14" cy="-16" rx="16" ry="10" fill="#fff" opacity="0.16"
                  filter="url(#soft-blur)"/>
-        <!-- μικρό specular glint -->
         <ellipse cx="-22" cy="-23" rx="6.5" ry="4.5" fill="#fff" opacity="0.35"
                  filter="url(#soft-blur)"/>
-        <!-- καμπύλη αντανακλάση χαμηλά -->
         <path d="M -8 24 A 28 28 0 0 0 18 10" fill="none" stroke="#fff"
               stroke-width="1.6" opacity="0.15" filter="url(#soft-blur)"/>
       </g>
     </symbol>
   </defs>
 
-  <!-- Ίδιες θέσεις/ακτίνες με το αρχικό SVG -->
+  <!-- 80% μεγαλύτερες: scales × 1.8 -->
   <g>
-    <g transform="translate(104 60)  scale(0.36)"><use href="#bubble"/></g>  <!-- r=18  => 18/50=0.36 -->
-    <g transform="translate(92  120) scale(0.20)"><use href="#bubble"/></g>  <!-- r=10  => 0.20 -->
-    <g transform="translate(108 170) scale(0.48)"><use href="#bubble"/></g>  <!-- r=24  => 0.48 -->
-    <g transform="translate(95  230) scale(0.28)"><use href="#bubble"/></g>  <!-- r=14  => 0.28 -->
-    <g transform="translate(112 290) scale(0.60)"><use href="#bubble"/></g>  <!-- r=30  => 0.60 -->
-    <g transform="translate(100 350) scale(0.16)"><use href="#bubble"/></g>  <!-- r=8   => 0.16 -->
-    <g transform="translate(106 410) scale(0.40)"><use href="#bubble"/></g>  <!-- r=20  => 0.40 -->
-    <g transform="translate(90  470) scale(0.24)"><use href="#bubble"/></g>  <!-- r=12  => 0.24 -->
-    <g transform="translate(110 530) scale(0.52)"><use href="#bubble"/></g>  <!-- r=26  => 0.52 -->
-    <g transform="translate(98  590) scale(0.18)"><use href="#bubble"/></g>  <!-- r=9   => 0.18 -->
-    <g transform="translate(114 650) scale(0.44)"><use href="#bubble"/></g>  <!-- r=22  => 0.44 -->
-    <g transform="translate(100 710) scale(0.32)"><use href="#bubble"/></g>  <!-- r=16  => 0.32 -->
+    <g transform="translate(104 60)  scale(0.648)"><use href="#bubble"/></g>
+    <g transform="translate(92  120) scale(0.36)"><use href="#bubble"/></g>
+    <g transform="translate(108 170) scale(0.864)"><use href="#bubble"/></g>
+    <g transform="translate(95  230) scale(0.504)"><use href="#bubble"/></g>
+    <g transform="translate(112 290) scale(1.08)"><use href="#bubble"/></g>
+    <g transform="translate(100 350) scale(0.288)"><use href="#bubble"/></g>
+    <g transform="translate(106 410) scale(0.72)"><use href="#bubble"/></g>
+    <g transform="translate(90  470) scale(0.432)"><use href="#bubble"/></g>
+    <g transform="translate(110 530) scale(0.936)"><use href="#bubble"/></g>
+    <g transform="translate(98  590) scale(0.324)"><use href="#bubble"/></g>
+    <g transform="translate(114 650) scale(0.792)"><use href="#bubble"/></g>
+    <g transform="translate(100 710) scale(0.576)"><use href="#bubble"/></g>
   </g>
 </svg>
+
