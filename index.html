@@ -89,5 +89,12 @@
       <p>Κυριακή: Κλειστά</p>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function (question) {
+      question.addEventListener('click', function () {
+        question.parentElement.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
