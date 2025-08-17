@@ -36,10 +36,12 @@ h1, h2 {
   color: var(--accent);
 }
 .hero {
-  background: url('Pawsh pet salon/Pawsh pet salon 24.jpg') no-repeat center center;
-  background-size: cover;
+  background: url('Pawsh pet salon/Pawsh pet salon 24.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
   color: white;
 }
 .hero h1,
