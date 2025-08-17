@@ -136,31 +136,28 @@
         question.parentElement.classList.toggle('active');
       });
     });
-    <script>
-  async function loadGoogleRatings() {
-    const placeId = 'ChIJryGcYlWjoRQRimgI2tGaEVc';
-    const apiKey = 'AIzaSyBadyPZ_8OyDfrW4JOcT7nJrE6Uh17Q9-s';
-    const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
 
-    try {
-      const res = await fetch(endpoint);
-      const data = await res.json();
-      const result = data.result;
+    async function loadGoogleRatings() {
+      const placeId = 'ChIJryGcYlWjoRQRimgI2tGaEVc';
+      const apiKey = 'AIzaSyBadyPZ_8OyDfrW4JOcT7nJrE6Uh17Q9-s'; // Restrict this key to your domain or proxy the request for security
+      const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
 
-      document.querySelector('.google-rating').textContent = `Μέση βαθμολογία: ${result.rating}`;
-      document.querySelector('.google-review-count').textContent = `Σύνολο αξιολογήσεων: ${result.user_ratings_total}`;
-      document.querySelector('.google-reviews').innerHTML = result.reviews.slice(0,3).map(r =>
-        `<p><strong>${r.author_name}</strong>: ${r.text}</p>`
-      ).join('');
-    } catch(err) {
-      console.error('Google ratings fetch failed', err);
+      try {
+        const res = await fetch(endpoint);
+        const data = await res.json();
+        const result = data.result;
+
+        document.querySelector('.google-rating').textContent = `Μέση βαθμολογία: ${result.rating}`;
+        document.querySelector('.google-review-count').textContent = `Σύνολο αξιολογήσεων: ${result.user_ratings_total}`;
+        document.querySelector('.google-reviews').innerHTML = result.reviews.slice(0, 3).map(r =>
+          `<p><strong>${r.author_name}</strong>: ${r.text}</p>`
+        ).join('');
+      } catch (err) {
+        console.error('Google ratings fetch failed', err);
+      }
     }
-  }
-  loadGoogleRatings();
-</script>
 
+    document.addEventListener('DOMContentLoaded', loadGoogleRatings);
   </script>
-  <script src="reviews.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initReviews" async defer></script>
 </body>
 </html>
