@@ -75,11 +75,12 @@ h1, h2 {
 .hero::after {
   content: "";
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 800px;
   width: 80px;
   background-image: url('bubbles.svg');
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.5;
   pointer-events: none;
@@ -92,7 +93,17 @@ h1, h2 {
 
 .hero::after {
   right: -80px;
-  transform: scaleX(-1);
+  transform: translateY(-50%) scaleX(-1);
+}
+
+@media (min-width: 960px) {
+  .hero::before {
+    left: calc(-80px - (50vw - 480px) / 2);
+  }
+
+  .hero::after {
+    right: calc(-80px - (50vw - 480px) / 2);
+  }
 }
 .logo {
   max-width: 150px;
