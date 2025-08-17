@@ -1,10 +1,10 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 240 1600"
-  width="240"
-  height="1600"
+  viewBox="0 0 260 2000"
+  width="260"
+  height="2000"
   role="img"
-  aria-label="Κάθετες υπερεαλιστικές μπουρμπουλήθρες σε ζιγκ-ζαγκ με αραιή κατανομή"
+  aria-label="Υπερεαλιστικές μπουρμπουλήθρες, αραιές και πολλές, σε ζιγκ-ζαγκ"
 >
   <defs>
     <filter id="soft-blur">
@@ -32,7 +32,7 @@
     <symbol id="bubble" viewBox="-50 -50 100 100">
       <g filter="url(#bubble-shadow)" shape-rendering="geometricPrecision" pointer-events="none">
         <circle r="48" fill="url(#bubble-fill)"/>
-        <!-- πιο λεπτό περίγραμμα -->
+        <!-- πιο λεπτό περίγραμμα (2.67 αντί για 4) -->
         <circle r="48" fill="none" stroke="#9aa0a6" stroke-width="2.67"
                 stroke-opacity="0.9" vector-effect="non-scaling-stroke"/>
         <circle r="46" fill="none" stroke="url(#rim-glow)" stroke-width="2"/>
@@ -46,17 +46,19 @@
     </symbol>
   </defs>
 
-  <!-- Ζιγκ-ζαγκ + ακόμη πιο αραιά -->
+  <!-- Ζιγκ-ζαγκ: εναλλάξ πιο δεξιά-πιο αριστερά -->
   <g>
     <g transform="translate(120  100)  scale(0.648)"><use href="#bubble"/></g>
-    <g transform="translate(135  250)  scale(0.36)"><use href="#bubble"/></g>
-    <g transform="translate(105  400)  scale(0.864)"><use href="#bubble"/></g>
-    <g transform="translate(140  550)  scale(0.504)"><use href="#bubble"/></g>
-    <g transform="translate(100  700)  scale(1.08)"><use href="#bubble"/></g>
-    <g transform="translate(130  850)  scale(0.288)"><use href="#bubble"/></g>
-    <g transform="translate(110 1000)  scale(0.72)"><use href="#bubble"/></g>
-    <g transform="translate(140 1150)  scale(0.432)"><use href="#bubble"/></g>
-    <g transform="translate(100 1300)  scale(0.936)"><use href="#bubble"/></g>
-    <g transform="translate(135 1450)  scale(0.324)"><use href="#bubble"/></g>
+    <g transform="translate(145  280)  scale(0.36)"><use href="#bubble"/></g>
+    <g transform="translate(105  460)  scale(0.864)"><use href="#bubble"/></g>
+    <g transform="translate(140  640)  scale(0.504)"><use href="#bubble"/></g>
+    <g transform="translate(100  820)  scale(1.08)"><use href="#bubble"/></g>
+    <g transform="translate(135 1000)  scale(0.288)"><use href="#bubble"/></g>
+    <g transform="translate(110 1180)  scale(0.72)"><use href="#bubble"/></g>
+    <g transform="translate(145 1360)  scale(0.432)"><use href="#bubble"/></g>
+    <g transform="translate(100 1540)  scale(0.936)"><use href="#bubble"/></g>
+    <g transform="translate(135 1720)  scale(0.324)"><use href="#bubble"/></g>
+    <g transform="translate(115 1900)  scale(0.792)"><use href="#bubble"/></g>
   </g>
 </svg>
+
