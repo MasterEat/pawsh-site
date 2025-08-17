@@ -116,9 +116,49 @@ h1, h2 {
   display: none;
   margin-top: 0.5rem;
 }
-.faq-item.active .faq-answer {
-  display: block;
-}
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .reviews {
+    text-align: center;
+  }
+
+  .review-summary {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .rating-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+  }
+
+  .rating-count {
+    color: var(--secondary);
+  }
+
+  .review-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .review {
+    background: #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .review-author {
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
 .contact-info {
   max-width: 960px;
   margin: auto;
