@@ -175,11 +175,45 @@
       padding: 3px;
     }
 
-    @media (max-width: 600px) {
-      .btn, .sticky-cta {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-      }
+    .footer-links {
+      margin-top: 1rem;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 0.5rem;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .popup h2 {
+      color: var(--accent);
+    }
+
+    .popup .close-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
     }
   </style>
   <script>
@@ -188,6 +222,19 @@
       faqItems.forEach(item => {
         item.addEventListener('click', () => {
           item.classList.toggle('active');
+        });
+      });
+
+      document.querySelectorAll('[data-popup]').forEach(link => {
+        link.addEventListener('click', () => {
+          const popupId = link.getAttribute('data-popup');
+          document.getElementById(popupId).style.display = 'block';
+        });
+      });
+
+      document.querySelectorAll('.close-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.parentElement.style.display = 'none';
         });
       });
     });
@@ -252,7 +299,23 @@
         <img src="logo/instagram icon.png">
       </a>
     </div>
+    <div class="footer-links">
+      <a data-popup="terms">Όροι & Προϋποθέσεις</a> |
+      <a data-popup="privacy">Πολιτική Απορρήτου</a>
+    </div>
     <p>&copy; 2025 Pawsh Pet Salon. All rights reserved.</p>
   </footer>
+
+  <div id="terms" class="popup">
+    <button class="close-btn">Κλείσιμο</button>
+    <h2>Όροι & Προϋποθέσεις</h2>
+    <p>Η χρήση της ιστοσελίδας συνεπάγεται την αποδοχή των όρων. Οι υπηρεσίες παρέχονται κατόπιν ραντεβού. Η επιχείρηση διατηρεί το δικαίωμα αλλαγών χωρίς προηγούμενη ειδοποίηση.</p>
+  </div>
+
+  <div id="privacy" class="popup">
+    <button class="close-btn">Κλείσιμο</button>
+    <h2>Πολιτική Απορρήτου</h2>
+    <p>Τα προσωπικά σας δεδομένα χρησιμοποιούνται αποκλειστικά για την παροχή των υπηρεσιών μας. Δεν κοινοποιούνται σε τρίτους και τηρούνται σύμφωνα με την ισχύουσα νομοθεσία.</p>
+  </div>
 </body>
 </html>
