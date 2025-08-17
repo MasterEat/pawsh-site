@@ -158,12 +158,23 @@ h1, h2 {
   margin-bottom: 2rem;
 }
 .faq-item {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #063d49;
   padding: 1rem 0;
   cursor: pointer;
 }
 .faq-question {
   font-weight: bold;
+  position: relative;
+  padding-right: 1.5rem;
+}
+.faq-question::after {
+  content: '\25B6';
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question::after {
+  transform: rotate(90deg);
 }
 .faq-answer {
   display: none;
