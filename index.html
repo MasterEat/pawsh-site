@@ -205,38 +205,6 @@
       cursor: pointer;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: white;
-      color: var(--text);
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      text-align: left;
-    }
-
-    .modal-content button {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin-top: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
     @media (max-width: 600px) {
       footer {
         flex-direction: column;
@@ -246,45 +214,85 @@
 </head>
 <body>
 
-<!-- content omitted for brevity -->
+  <header>
+    <img src="logo/logo.png" alt="Pawsh logo" class="logo">
+  </header>
 
-  <div class="modal" id="termsModal">
-    <div class="modal-content">
-      <h3>Όροι και Προϋποθέσεις</h3>
-      <p>Η χρήση της ιστοσελίδας υπόκειται σε συγκεκριμένους κανόνες και προϋποθέσεις. Παρακαλούμε διαβάστε προσεκτικά πριν συνεχίσετε.</p>
-      <button onclick="document.getElementById('termsModal').style.display='none'">Κλείσιμο</button>
+  <section class="hero">
+    <h1>Καλωσήρθες στο Pawsh</h1>
+    <p>Pet beauty salon στο Γαλάτσι. Λαμπερό τρίχωμα και χουζούρεμα εγγυημένα!</p>
+    <a href="#contact" class="btn">Κλείσε Ραντεβού</a>
+  </section>
+
+  <section class="gallery-carousel">
+    <img src="dogs/dog1.jpg">
+    <img src="dogs/dog2.jpg">
+    <img src="dogs/dog3.jpg">
+    <img src="dogs/dog4.jpg">
+    <img src="dogs/dog5.jpg">
+    <img src="dogs/dog6.jpg">
+    <img src="dogs/dog7.jpg">
+    <img src="dogs/dog8.jpg">
+  </section>
+
+  <section class="faq">
+    <h2>Συχνές Ερωτήσεις</h2>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο κοστίζει ένα grooming;</div>
+      <div class="faq-answer">Ανάλογα με τη ράτσα, την κατάσταση και τις ανάγκες του σκύλου.</div>
     </div>
-  </div>
-
-  <div class="modal" id="privacyModal">
-    <div class="modal-content">
-      <h3>Πολιτική Απορρήτου</h3>
-      <p>Τα προσωπικά σας δεδομένα προστατεύονται σύμφωνα με τον Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR). Δεν κοινοποιούνται σε τρίτους χωρίς τη συγκατάθεσή σας.</p>
-      <button onclick="document.getElementById('privacyModal').style.display='none'">Κλείσιμο</button>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο συχνά πρέπει να καλλωπίζεται ένας σκύλος;</div>
+      <div class="faq-answer">Αναλόγως τη ράτσα και τον τρόπο ζωής, συνήθως κάθε μήνα.</div>
     </div>
-  </div>
+    <div class="faq-item">
+      <div class="faq-question">Χρειάζομαι ραντεβού;</div>
+      <div class="faq-answer">Ναι, χρειάζεται ραντεβού ώστε να εξυπηρετηθείς άμεσα και σωστά.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Τι προϊόντα χρησιμοποιείτε;</div>
+      <div class="faq-answer">Χρησιμοποιούμε μόνο επαγγελματικά, δερματολογικά ελεγμένα προϊόντα.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Πόσο διαρκεί η περιποίηση;</div>
+      <div class="faq-answer">Η διαδικασία διαρκεί από 1 έως 2 ώρες ανάλογα με το μέγεθος και την κατάσταση του σκύλου.</div>
+    </div>
+  </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const termsLink = document.querySelector(".footer-links a[href='#terms']");
-      const privacyLink = document.querySelector(".footer-links a[href='#privacy']");
+  <section class="map">
+    <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
+  </section>
 
-      if (termsLink) {
-        termsLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.getElementById("termsModal").style.display = "flex";
-        });
-      }
-
-      if (privacyLink) {
-        privacyLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.getElementById("privacyModal").style.display = "flex";
-        });
-      }
-    });
-  </script>
-
+  <footer>
+    <div class="footer-column">
+      <h4>Στοιχεία Επικοινωνίας</h4>
+      <p>Διεύθυνση: Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
+      <p>Τηλέφωνο: 21 0440 4084</p>
+      <p>Email: pawsh.petgroomingsalon@gmail.com</p>
+    </div>
+    <div class="footer-column">
+      <img src="logo/logo.png" alt="Pawsh logo" class="logo">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
+          <img src="logo/facebook icon.png">
+        </a>
+        <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
+          <img src="logo/instagram icon.png">
+        </a>
+      </div>
+      <div class="footer-links">
+        <a onclick="alert('Όροι και Προϋποθέσεις: Η χρήση της ιστοσελίδας υπόκειται σε συγκεκριμένους κανόνες και προϋποθέσεις. Παρακαλούμε διαβάστε προσεκτικά πριν συνεχίσετε.')">Όροι και Προϋποθέσεις</a>
+        <a onclick="alert('Πολιτική Απορρήτου: Τα προσωπικά σας δεδομένα προστατεύονται σύμφωνα με τον Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR). Δεν κοινοποιούνται σε τρίτους χωρίς τη συγκατάθεσή σας.')">Πολιτική Απορρήτου</a>
+      </div>
+      <p style="margin-top: 1rem;">&copy; 2025 Pawsh Pet Salon. All rights reserved.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Ωράριο Καταστήματος</h4>
+      <p>Δευτέρα: Κλειστά</p>
+      <p>Τρίτη - Παρασκευή: 10:00 π.μ.–6:00 μ.μ.</p>
+      <p>Σάββατο: 10:00 π.μ.–3:00 μ.μ.</p>
+      <p>Κυριακή: Κλειστά</p>
+    </div>
+  </footer>
 </body>
 </html>
-
