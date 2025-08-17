@@ -1,23 +1,64 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 200 800"
-  width="200"
-  height="800"
+  viewBox="0 0 220 1200"
+  width="220"
+  height="1200"
   role="img"
-  aria-label="Vertical transparent bubbles with grey outline"
+  aria-label="Κάθετες υπερεαλιστικές μπουρμπουλήθρες, διάφανες με γκρι περίγραμμα"
 >
-  <g fill="none" stroke="#9aa0a6" stroke-width="2" vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision">
-    <circle cx="104" cy="60"  r="18"/>
-    <circle cx="92"  cy="120" r="10"/>
-    <circle cx="108" cy="170" r="24"/>
-    <circle cx="95"  cy="230" r="14"/>
-    <circle cx="112" cy="290" r="30"/>
-    <circle cx="100" cy="350" r="8"/>
-    <circle cx="106" cy="410" r="20"/>
-    <circle cx="90"  cy="470" r="12"/>
-    <circle cx="110" cy="530" r="26"/>
-    <circle cx="98"  cy="590" r="9"/>
-    <circle cx="114" cy="650" r="22"/>
-    <circle cx="100" cy="710" r="16"/>
+  <defs>
+    <filter id="soft-blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" />
+    </filter>
+
+    <filter id="bubble-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.4"
+                    flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <radialGradient id="bubble-fill" cx="35%" cy="35%" r="70%">
+      <stop offset="0%"   stop-color="#fff"    stop-opacity="0"/>
+      <stop offset="55%"  stop-color="#fff"    stop-opacity="0.04"/>
+      <stop offset="82%"  stop-color="#a9d7ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#fff"    stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rim-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="92%" stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+
+    <symbol id="bubble-symbol" viewBox="-50 -50 100 100">
+      <g filter="url(#bubble-shadow)" shape-rendering="geometricPrecision" pointer-events="none">
+        <circle r="48" fill="url(#bubble-fill)"/>
+        <circle r="48" fill="none" stroke="#9aa0a6" stroke-width="4"
+                stroke-opacity="0.85" vector-effect="non-scaling-stroke"/>
+        <circle r="46" fill="none" stroke="url(#rim-glow)" stroke-width="2"/>
+        <ellipse cx="-14" cy="-16" rx="16" ry="10" fill="#fff" opacity="0.16"
+                 filter="url(#soft-blur)"/>
+        <ellipse cx="-22" cy="-23" rx="6.5" ry="4.5" fill="#fff" opacity="0.35"
+                 filter="url(#soft-blur)"/>
+        <path d="M -8 24 A 28 28 0 0 0 18 10" fill="none" stroke="#fff"
+              stroke-width="1.6" opacity="0.15" filter="url(#soft-blur)"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <!-- Κάθετη στοίχιση σε ύψος 1200 -->
+  <g>
+    <use href="#bubble-symbol" transform="translate(110 80)  scale(0.60)"/>
+    <use href="#bubble-symbol" transform="translate(110 160) scale(0.35)"/>
+    <use href="#bubble-symbol" transform="translate(110 260) scale(0.90)"/>
+    <use href="#bubble-symbol" transform="translate(110 360) scale(0.50)"/>
+    <use href="#bubble-symbol" transform="translate(110 460) scale(1.10)"/>
+    <use href="#bubble-symbol" transform="translate(110 560) scale(0.40)"/>
+    <use href="#bubble-symbol" transform="translate(110 660) scale(0.95)"/>
+    <use href="#bubble-symbol" transform="translate(110 760) scale(0.55)"/>
+    <use href="#bubble-symbol" transform="translate(110 860) scale(0.75)"/>
+    <use href="#bubble-symbol" transform="translate(110 960) scale(1.05)"/>
+    <use href="#bubble-symbol" transform="translate(110 1060) scale(0.50)"/>
+    <use href="#bubble-symbol" transform="translate(110 1160) scale(0.85)"/>
   </g>
 </svg>
+
