@@ -175,3 +175,11 @@ footer img.logo {
     flex-direction: column;
   }
 }
+
+/* Reduce header logo size on desktop screens */
+@media (min-width: 768px) {
+  header img.logo {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
