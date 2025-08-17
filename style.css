@@ -276,3 +276,15 @@ footer img.logo {
     max-height: 300px;
   }
 }
+#ratings {
+  text-align: center;
+}
+#ratings h2 {
+  margin-bottom: 1rem;
+}
+#ratings .google-reviews p {
+  background: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
