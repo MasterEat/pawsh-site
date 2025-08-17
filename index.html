@@ -52,11 +52,20 @@
       <div class="faq-question">Πόσο διαρκεί η περιποίηση;</div>
       <div class="faq-answer">Η διαδικασία διαρκεί από 1 έως 2 ώρες ανάλογα με το μέγεθος και την κατάσταση του σκύλου.</div>
     </div>
-  </section>
+    </section>
 
-  <section class="map">
-    <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
-  </section>
+    <section class="reviews">
+      <h2>Αξιολογήσεις &amp; Κριτικές</h2>
+      <div class="review-summary">
+        <span class="rating-value" id="rating-value">-</span>
+        <span class="rating-count" id="rating-count"></span>
+      </div>
+      <div class="review-list" id="reviews-container"></div>
+    </section>
+
+    <section class="map">
+      <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
+    </section>
 
   <footer>
     <div class="footer-column">
@@ -128,6 +137,29 @@
         question.parentElement.classList.toggle('active');
       });
     });
+
+    const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
+    const placeId = 'YOUR_PLACE_ID';
+    const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,user_ratings_total,reviews&key=${apiKey}`;
+
+    fetch(detailsUrl)
+      .then(response => response.json())
+      .then(data => {
+        const result = data.result;
+        if (!result) return;
+        document.getElementById('rating-value').textContent = result.rating;
+        document.getElementById('rating-count').textContent = `(${result.user_ratings_total} reviews)`;
+        const container = document.getElementById('reviews-container');
+        if (result.reviews) {
+          result.reviews.slice(0, 3).forEach(r => {
+            const reviewEl = document.createElement('div');
+            reviewEl.className = 'review';
+            reviewEl.innerHTML = `<p class="review-text">"${r.text}"</p><p class="review-author">- ${r.author_name}</p>`;
+            container.appendChild(reviewEl);
+          });
+        }
+      })
+      .catch(err => console.error('Error fetching reviews:', err));
   </script>
 </body>
 </html>
