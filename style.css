@@ -105,6 +105,13 @@ h1, h2 {
     right: calc(-80px - (50vw - 480px) / 2);
   }
 }
+
+@media (max-width: 600px) {
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+}
 .logo {
   max-width: 150px;
 }
