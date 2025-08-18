@@ -158,20 +158,32 @@
 
     const track = document.querySelector('.carousel-track');
     const slides = Array.from(track.children);
-    let currentSlide = 0;
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    firstClone.id = 'first-clone';
+    lastClone.id = 'last-clone';
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
 
-    function showSlide(index) {
-      track.style.transform = `translateX(-${index * 100}%)`;
+    const allSlides = Array.from(track.children);
+    let currentSlide = 1;
+    const gap = parseInt(getComputedStyle(track).gap) || 0;
+    const slideWidth = allSlides[currentSlide].getBoundingClientRect().width + gap;
+    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+
+    function showSlide() {
+      track.style.transition = 'transform 0.5s ease';
+      track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
     }
 
     document.querySelector('.carousel-btn.next').addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
+      currentSlide++;
+      showSlide();
     });
 
     document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
-      currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
-      showSlide(currentSlide);
+      currentSlide--;
+      showSlide();
     });
   </script>
 </body>

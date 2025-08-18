@@ -142,17 +142,17 @@ h1, h2 {
 .gallery-carousel {
   position: relative;
   overflow: hidden;
-  width: 75%;
   margin: 0 auto;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
+  gap: 0.5rem;
 }
 
 .gallery-carousel img {
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - 0.5rem);
   width: 100%;
   aspect-ratio: 3 / 2;
   border-radius: 12px;
@@ -185,6 +185,7 @@ h1, h2 {
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   border-radius: 50%;
+  z-index: 2;
 }
 
 .carousel-btn.prev {
