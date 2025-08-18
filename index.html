@@ -32,6 +32,7 @@
       <img src="dogs/dog8.jpg" alt="Καλλωπισμένος σκύλος 8">
     </div>
     <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+    <div class="carousel-hover-bar"></div>
   </section>
 
   <section class="faq">
@@ -172,11 +173,6 @@
       currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
       showSlide(currentSlide);
     });
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 4000);
   </script>
 </body>
 </html>
