@@ -8,9 +8,9 @@ window.initReviews = function () {
         console.error('Error fetching reviews:', status);
         return;
       }
-      document.getElementById('rating-value').textContent = result.rating;
-      document.getElementById('rating-count').textContent = `(${result.user_ratings_total} reviews)`;
-      const container = document.getElementById('reviews-container');
+      document.querySelector('.google-rating').textContent = result.rating;
+      document.querySelector('.google-review-count').textContent = `(${result.user_ratings_total} reviews)`;
+      const container = document.querySelector('.google-reviews');
       if (result.reviews) {
         result.reviews.slice(0, 3).forEach(r => {
           const reviewEl = document.createElement('div');
