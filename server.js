@@ -3,13 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-const PLACE_ID = 'ChIJryGcYlWjoRQRimgI2tGaEVc';
-const API_KEY = process.env.GOOGLE_API_KEY;
-if (!API_KEY) {
-  throw new Error('GOOGLE_API_KEY environment variable not set');
-}
-
-
 function serveStaticFile(filePath, res) {
   fs.readFile(filePath, (err, data) => {
     if (err) {
@@ -31,23 +24,8 @@ function serveStaticFile(filePath, res) {
   });
 }
 
-const server = http.createServer(async (req, res) => {
+const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
-  if (parsedUrl.pathname === '/api/reviews') {
-    const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=rating,user_ratings_total,reviews&key=${API_KEY}`;
-    try {
-      const response = await fetch(endpoint);
-      const data = await response.json();
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      return res.end(JSON.stringify(data.result));
-    } catch (err) {
-      res.statusCode = 500;
-      res.setHeader('Content-Type', 'application/json');
-      return res.end(JSON.stringify({ error: 'Failed to fetch Google reviews' }));
-    }
-  }
-
   let pathname = parsedUrl.pathname;
   if (pathname === '/') pathname = '/index.html';
   const filePath = path.join(__dirname, pathname);
