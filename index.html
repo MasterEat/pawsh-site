@@ -20,14 +20,18 @@
   </section>
 
   <section class="gallery-carousel">
-    <img src="dogs/dog1.jpg" alt="Καλλωπισμένος σκύλος 1">
-    <img src="dogs/dog2.jpg" alt="Καλλωπισμένος σκύλος 2">
-    <img src="dogs/dog3.jpg" alt="Καλλωπισμένος σκύλος 3">
-    <img src="dogs/dog4.jpg" alt="Καλλωπισμένος σκύλος 4">
-    <img src="dogs/dog5.jpg" alt="Καλλωπισμένος σκύλος 5">
-    <img src="dogs/dog6.jpg" alt="Καλλωπισμένος σκύλος 6">
-    <img src="dogs/dog7.jpg" alt="Καλλωπισμένος σκύλος 7">
-    <img src="dogs/dog8.jpg" alt="Καλλωπισμένος σκύλος 8">
+    <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+    <div class="carousel-track">
+      <img src="dogs/dog1.jpg" alt="Καλλωπισμένος σκύλος 1">
+      <img src="dogs/dog2.jpg" alt="Καλλωπισμένος σκύλος 2">
+      <img src="dogs/dog3.jpg" alt="Καλλωπισμένος σκύλος 3">
+      <img src="dogs/dog4.jpg" alt="Καλλωπισμένος σκύλος 4">
+      <img src="dogs/dog5.jpg" alt="Καλλωπισμένος σκύλος 5">
+      <img src="dogs/dog6.jpg" alt="Καλλωπισμένος σκύλος 6">
+      <img src="dogs/dog7.jpg" alt="Καλλωπισμένος σκύλος 7">
+      <img src="dogs/dog8.jpg" alt="Καλλωπισμένος σκύλος 8">
+    </div>
+    <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
   </section>
 
   <section class="faq">
@@ -136,6 +140,29 @@
         question.parentElement.classList.toggle('active');
       });
     });
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector('.carousel-btn.next').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
+      currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+      showSlide(currentSlide);
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 4000);
   </script>
   <script src="reviews.js"></script>
 </body>
