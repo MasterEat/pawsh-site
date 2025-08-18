@@ -226,7 +226,6 @@ h1, h2 {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    overflow-x: auto;
   }
 
   .review {
@@ -234,8 +233,6 @@ h1, h2 {
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 280px;
-    height: 280px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -245,6 +242,12 @@ h1, h2 {
 
   .stars {
     color: #ffc107;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .stars {
+    color: #ffd700;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
   }
