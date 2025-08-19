@@ -66,6 +66,7 @@
   
 <section id="reviews" class="reviews">
   <h2>Κριτικές Πελατών</h2>
+  <button class="review-carousel-btn prev" aria-label="Previous review">&#10094;</button>
   <div class="review-list">
     <div class="review">
       <div class="stars">★★★★★</div>
@@ -83,6 +84,7 @@
       <p class="review-author">- Giota Sideri</p>
     </div>
   </div>
+  <button class="review-carousel-btn next" aria-label="Next review">&#10095;</button>
 </section>
 
   
@@ -190,6 +192,20 @@
       currentSlide--;
       showSlide();
     });
+
+    // Review carousel for mobile
+    const reviewList = document.querySelector('.review-list');
+    const prevReview = document.querySelector('.review-carousel-btn.prev');
+    const nextReview = document.querySelector('.review-carousel-btn.next');
+    if (reviewList && prevReview && nextReview) {
+      const scrollAmount = () => reviewList.clientWidth;
+      prevReview.addEventListener('click', () => {
+        reviewList.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      });
+      nextReview.addEventListener('click', () => {
+        reviewList.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
+    }
   </script>
 </body>
 </html>

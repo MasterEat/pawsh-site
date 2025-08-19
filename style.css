@@ -230,6 +230,7 @@ h1, h2 {
 
   .reviews {
     text-align: center;
+    position: relative;
   }
 
   .reviews h2 {
@@ -254,10 +255,8 @@ h1, h2 {
     overflow-y: auto;
   }
 
-  .stars {
-    color: #ffc107;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+  .review-carousel-btn {
+    display: none;
   }
 
   .stars {
@@ -269,6 +268,49 @@ h1, h2 {
   .review-author {
     margin-top: 0.5rem;
     font-weight: bold;
+  }
+
+  @media (min-width: 601px) {
+    .review-list {
+      gap: 1rem;
+    }
+    .review {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .review-list {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .review {
+      flex: 0 0 100%;
+    }
+    .review-list::-webkit-scrollbar {
+      display: none;
+    }
+    .review-list {
+      scrollbar-width: none;
+    }
+    .review-carousel-btn {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .review-carousel-btn.prev {
+      left: 0.5rem;
+    }
+    .review-carousel-btn.next {
+      right: 0.5rem;
+    }
   }
 .contact-info {
   max-width: 960px;
