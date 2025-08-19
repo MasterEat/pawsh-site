@@ -23,10 +23,26 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
+  position: relative;
 }
 header img.logo {
   max-height: 300px;
   max-width: 300px;
+}
+.header-socials {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+}
+.header-socials a img {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 6px;
+  padding: 3px;
 }
 section {
   padding: 4rem 1rem;
