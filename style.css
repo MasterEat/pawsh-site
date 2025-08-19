@@ -23,15 +23,10 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  position: relative;
 }
 header img.logo {
   max-height: 300px;
   max-width: 300px;
-}
-.header-socials {
-  position: absolute;
-  right: 1rem;
 }
 section {
   padding: 4rem 1rem;
