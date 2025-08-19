@@ -28,6 +28,7 @@ header img.logo {
   max-height: 300px;
   max-width: 300px;
 }
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
@@ -140,15 +141,21 @@ h1, h2 {
   border-radius: 5px;
 }
 .gallery-carousel {
-  position: relative;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
   gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-carousel img {
@@ -159,33 +166,7 @@ h1, h2 {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   object-fit: cover;
   object-position: center;
-}
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.carousel-btn.prev {
-  left: 0.5rem;
-}
-
-.carousel-btn.next {
-  right: 0.5rem;
+  scroll-snap-align: center;
 }
 .faq {
   max-width: 960px;
@@ -225,6 +206,7 @@ h1, h2 {
 
   .reviews {
     text-align: center;
+    position: relative;
   }
 
   .reviews h2 {
@@ -249,10 +231,8 @@ h1, h2 {
     overflow-y: auto;
   }
 
-  .stars {
-    color: #ffc107;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+  .review-carousel-btn {
+    display: none;
   }
 
   .stars {
@@ -264,6 +244,49 @@ h1, h2 {
   .review-author {
     margin-top: 0.5rem;
     font-weight: bold;
+  }
+
+  @media (min-width: 601px) {
+    .review-list {
+      gap: 1rem;
+    }
+    .review {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .review-list {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .review {
+      flex: 0 0 100%;
+    }
+    .review-list::-webkit-scrollbar {
+      display: none;
+    }
+    .review-list {
+      scrollbar-width: none;
+    }
+    .review-carousel-btn {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .review-carousel-btn.prev {
+      left: 0.5rem;
+    }
+    .review-carousel-btn.next {
+      right: 0.5rem;
+    }
   }
 .contact-info {
   max-width: 960px;

@@ -20,7 +20,6 @@
   </section>
 
   <section class="gallery-carousel">
-    <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
     <div class="carousel-track">
       <img src="dogs/dog1.jpg" alt="Καλλωπισμένος σκύλος 1">
       <img src="dogs/dog2.jpg" alt="Καλλωπισμένος σκύλος 2">
@@ -31,9 +30,6 @@
       <img src="dogs/dog7.jpg" alt="Καλλωπισμένος σκύλος 7">
       <img src="dogs/dog8.jpg" alt="Καλλωπισμένος σκύλος 8">
     </div>
-    <div class="hover-bar"></div>
-    <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
-    <div class="carousel-hover-bar"></div>
   </section>
 
   <section class="faq">
@@ -62,6 +58,7 @@
   
 <section id="reviews" class="reviews">
   <h2>Κριτικές Πελατών</h2>
+  <button class="review-carousel-btn prev" aria-label="Previous review">&#10094;</button>
   <div class="review-list">
     <div class="review">
       <div class="stars">★★★★★</div>
@@ -79,6 +76,7 @@
       <p class="review-author">- Giota Sideri</p>
     </div>
   </div>
+  <button class="review-carousel-btn next" aria-label="Next review">&#10095;</button>
 </section>
 
   
@@ -161,31 +159,43 @@
     const slides = Array.from(track.children);
     const firstClone = slides[0].cloneNode(true);
     const lastClone = slides[slides.length - 1].cloneNode(true);
-    firstClone.id = 'first-clone';
-    lastClone.id = 'last-clone';
     track.appendChild(firstClone);
     track.insertBefore(lastClone, slides[0]);
 
-    const allSlides = Array.from(track.children);
-    let currentSlide = 1;
     const gap = parseInt(getComputedStyle(track).gap) || 0;
-    const slideWidth = allSlides[currentSlide].getBoundingClientRect().width + gap;
-    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+    const slideWidth = slides[0].getBoundingClientRect().width + gap;
+    track.scrollLeft = slideWidth;
 
-    function showSlide() {
-      track.style.transition = 'transform 0.5s ease';
-      track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+    track.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      track.scrollLeft += e.deltaY;
+    }, { passive: false });
+
+    track.addEventListener('scroll', () => {
+      if (track.scrollLeft <= 0) {
+        track.style.scrollBehavior = 'auto';
+        track.scrollLeft = slideWidth * slides.length;
+        track.style.scrollBehavior = 'smooth';
+      } else if (track.scrollLeft >= slideWidth * (slides.length + 1)) {
+        track.style.scrollBehavior = 'auto';
+        track.scrollLeft = slideWidth;
+        track.style.scrollBehavior = 'smooth';
+      }
+    });
+
+    // Review carousel for mobile
+    const reviewList = document.querySelector('.review-list');
+    const prevReview = document.querySelector('.review-carousel-btn.prev');
+    const nextReview = document.querySelector('.review-carousel-btn.next');
+    if (reviewList && prevReview && nextReview) {
+      const scrollAmount = () => reviewList.clientWidth;
+      prevReview.addEventListener('click', () => {
+        reviewList.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      });
+      nextReview.addEventListener('click', () => {
+        reviewList.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
     }
-
-    document.querySelector('.carousel-btn.next').addEventListener('click', () => {
-      currentSlide++;
-      showSlide();
-    });
-
-    document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
-      currentSlide--;
-      showSlide();
-    });
   </script>
 </body>
 </html>
