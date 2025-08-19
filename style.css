@@ -145,15 +145,21 @@ h1, h2 {
   border-radius: 5px;
 }
 .gallery-carousel {
-  position: relative;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
   gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .gallery-carousel img {
@@ -164,33 +170,7 @@ h1, h2 {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   object-fit: cover;
   object-position: center;
-}
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.carousel-btn.prev {
-  left: 0.5rem;
-}
-
-.carousel-btn.next {
-  right: 0.5rem;
+  scroll-snap-align: center;
 }
 .faq {
   max-width: 960px;
