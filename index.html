@@ -33,6 +33,7 @@
     </div>
     <div class="hover-bar"></div>
     <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+    <div class="carousel-hover-bar"></div>
   </section>
 
   <section class="faq">
@@ -64,12 +65,12 @@
   <div class="review-list">
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>Μείναμε πλήρως ικανοποιημένοι από τις υπηρεσίες της Αλεξάνδρας! Με επαγγελματισμό και υπομονή φρόντισε το κουκί μας! Πολύ όμορφος και καθαρός χώρος που θα επισκεφθούμε ξανά! Ευχαριστούμε! Καλές δουλειές!</p>
+      <p>Μείναμε πλήρως ικανοποιημένοι από τις υπηρεσίες της Αλεξάνδρας! Με επαγγελματισμό και υπομονή φρόντισε το κοκόνι μας! Πολύ όμορφος και καθαρός χώρος που θα επισκεφθούμε ξανά! Ευχαριστούμε! Καλές δουλειές!</p>
       <p class="review-author">- nitsa flouda</p>
     </div>
     <div class="review">
       <div class="stars">★★★★★</div>
-      <p>Εξαιρετική δουλειά, πολύ φιλικό περιβάλλον και φωτεινός και περιποιημένος χώρος! Όσο για την Αλεξάνδρα, δεν έχω λόγια· προσέφερε πάρα πολύ την Άρθα και την περιποιήθηκε σαν να ήταν δική της! Σ' ευχαριστούμε πάρα πολύ και εννοείται πως θα ξαναπάμε!</p>
+      <p>Εξαιρετική δουλειά, πολύ φιλικό περιβάλλον και φωτεινός και περιποιημένος χώρος!!! Όσο για την Αλεξάνδρα, δεν έχω λόγια πρόσεξε πάρα πολύ την Αρίθα και την περιποιήθηκε σαν να ήταν δική της!!! Σ' ευχαριστούμε πάρα πολύ και εννοείται πως θα ξανάρθουμε!!!</p>
       <p class="review-author">- Eleni Stamou</p>
     </div>
     <div class="review">
@@ -184,19 +185,6 @@
     document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
       currentSlide--;
       showSlide();
-    });
-
-    track.addEventListener('transitionend', () => {
-      if (allSlides[currentSlide].id === 'first-clone') {
-        track.style.transition = 'none';
-        currentSlide = 1;
-        track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-      }
-      if (allSlides[currentSlide].id === 'last-clone') {
-        track.style.transition = 'none';
-        currentSlide = allSlides.length - 2;
-        track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-      }
     });
   </script>
 </body>

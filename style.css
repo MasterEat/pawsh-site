@@ -142,7 +142,6 @@ h1, h2 {
 .gallery-carousel {
   position: relative;
   overflow: hidden;
-  width: 25%;
   margin: 0 auto;
 }
 
@@ -162,19 +161,10 @@ h1, h2 {
   object-position: center;
 }
 
-.hover-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10px;
-  background: var(--accent);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.gallery-carousel:hover .hover-bar {
-  transform: translateY(0);
 }
 
 .carousel-btn {
@@ -245,7 +235,6 @@ h1, h2 {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    flex-wrap: wrap;
   }
 
   .review {
@@ -253,8 +242,17 @@ h1, h2 {
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    max-width: 280px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+
+  .stars {
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
 
   .stars {
