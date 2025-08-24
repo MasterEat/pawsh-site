@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Pawsh Pet Salon</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,25 +19,10 @@
     </div>
     <div class="border-b-2 border-[#d7c9a9]"></div>
     <nav class="hidden sm:flex justify-center space-x-8 py-4">
-      <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Home</a>
-      <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">About Us</a>
-      <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Gallery</a>
-      <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Services</a>
-      <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Contact</a>
-    </nav>
-    <nav id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden transition-all duration-300">
-      <div class="flex flex-col items-center py-2 space-y-2">
-        <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Home</a>
-        <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">About Us</a>
-        <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Gallery</a>
-        <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Services</a>
-        <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Contact</a>
       </div>
     </nav>
   </header>
   <main class="py-8">
-    <h1 class="text-center text-2xl font-bold">Gallery</h1>
-    <p class="text-center mt-4">Coming soon...</p>
   </main>
   <footer id="contact">
     <div class="footer-column">
@@ -76,8 +60,6 @@
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuButton && mobileMenu) {
       menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('max-h-0');
-        mobileMenu.classList.toggle('max-h-96');
       });
     }
   </script>
