@@ -30,6 +30,12 @@ header img.logo {
   max-width: 300px;
 }
 
+@media (max-width: 600px) {
+  header {
+    justify-content: flex-start;
+  }
+}
+
 .header-socials {
   position: absolute;
   right: 1rem;
