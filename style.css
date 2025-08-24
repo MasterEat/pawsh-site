@@ -333,24 +333,3 @@ footer img.logo {
   }
 }
 
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header img.logo {
-    max-width: 200px;
-    max-height: 200px;
-  }
-
-  .header-socials {
-    position: static;
-    margin-top: 0.5rem;
-  }
-
-  .hero {
-    min-height: 400px;
-    padding: 3rem 1rem;
-  }
-}

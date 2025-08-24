@@ -28,6 +28,7 @@ const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   let pathname = parsedUrl.pathname;
   if (pathname === '/') pathname = '/index.html';
+  if (pathname === '/about') pathname = '/about.html';
   const filePath = path.join(__dirname, pathname);
   serveStaticFile(filePath, res);
 });
