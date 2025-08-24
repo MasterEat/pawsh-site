@@ -51,7 +51,6 @@
       <div class="photo-placeholder" aria-label="Φωτογραφία της Αλεξάνδρας"></div>
     </div>
   </section>
-
   <footer id="contact">
     <div class="footer-column">
       <h4>Στοιχεία Επικοινωνίας</h4>
@@ -85,6 +84,7 @@
       <p>Κυριακή: Κλειστά</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="Back to top">&#8593;</button>
   <script>
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -92,6 +92,21 @@
       menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('translate-x-full');
         mobileMenu.classList.toggle('translate-x-0');
+      });
+    }
+
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 200) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>
