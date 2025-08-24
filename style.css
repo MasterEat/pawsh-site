@@ -128,6 +128,7 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .service-icon {
@@ -146,6 +147,10 @@ h1, h2 {
 .service-duration {
   font-size: 0.9rem;
   color: var(--secondary);
+}
+
+.service-card:hover {
+  transform: scale(1.05);
 }
 
 .service-link {
