@@ -5,23 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Pet grooming salon in Galatsi offering professional services">
   <title>Pawsh - Pet Beauty Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <picture>
-      <source srcset="logo/logo1.png" media="(max-width: 600px)">
-      <img src="logo/logo.png" alt="Pawsh logo" class="logo">
-    </picture>
-    <div class="header-socials">
-      <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank" rel="noopener">
-        <img src="logo/facebook icon.png" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank" rel="noopener">
-        <img src="logo/instagram icon.png" alt="Instagram">
-      </a>
+  <header class="bg-[#063d49] text-white">
+    <div class="flex items-center justify-between p-4">
+      <button id="menu-button" class="sm:hidden" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <img src="logo/logo.png" alt="Pawsh logo" class="h-16 mx-auto">
+      <div class="w-8"></div>
     </div>
+    <div class="border-b-2 border-[#d7c9a9]"></div>
+    <nav class="hidden sm:flex justify-center space-x-8 py-4">
+      <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Home</a>
+      <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">About Us</a>
+      <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Gallery</a>
+      <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Services</a>
+      <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Contact</a>
+    </nav>
+    <nav id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden transition-all duration-300">
+      <div class="flex flex-col items-center py-2 space-y-2">
+        <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Home</a>
+        <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">About Us</a>
+        <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Gallery</a>
+        <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Services</a>
+        <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Contact</a>
+      </div>
+    </nav>
   </header>
 
   <section class="hero">
@@ -158,7 +173,7 @@
       <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
     </section>
 
-  <footer>
+  <footer id="contact">
     <div class="footer-column">
       <h4>Στοιχεία Επικοινωνίας</h4>
       <p>Διεύθυνση: Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
@@ -176,7 +191,6 @@
         </a>
       </div>
       <div class="footer-links">
-        <a href="about.html">Σχετικά με εμάς</a>
         <a href="terms.html" target="_blank" rel="noopener">Όροι και Προϋποθέσεις</a>
         <a href="privacy.html" target="_blank" rel="noopener">Πολιτική Απορρήτου</a>
       </div>
@@ -191,6 +205,14 @@
     </div>
   </footer>
   <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('max-h-0');
+        mobileMenu.classList.toggle('max-h-96');
+      });
+    }
     const heroImages = [
       'Pawsh pet salon/Pawsh pet salon 1.jpg',
       'Pawsh pet salon/Pawsh pet salon 10.jpg',
