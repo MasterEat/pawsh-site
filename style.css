@@ -65,53 +65,10 @@ h1, h2 {
   color: white;
 }
 
-/* Ensure hero content appears above decorative elements */
+/* Ensure hero content remains on top */
 .hero > * {
   position: relative;
   z-index: 1;
-}
-
-/* Bubble decorations outside the hero section */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 800px;
-  width: 80px;
-  background-image: url('bubbles.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero::before {
-  left: -80px;
-}
-
-.hero::after {
-  right: -80px;
-  transform: translateY(-50%) scaleX(-1);
-}
-
-@media (min-width: 960px) {
-  .hero::before {
-    left: calc(-80px - (50vw - 480px) / 2);
-  }
-
-  .hero::after {
-    right: calc(-80px - (50vw - 480px) / 2);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero::before,
-  .hero::after {
-    display: none;
-  }
 }
 .logo {
   max-width: 150px;
