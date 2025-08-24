@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Συλλογή - Pawsh Pet Salon</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,25 +19,10 @@
     </div>
     <div class="border-b-2 border-[#d7c9a9]"></div>
     <nav class="hidden sm:flex justify-center space-x-8 py-4">
-      <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Αρχική</a>
-      <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Σχετικά με εμάς</a>
-      <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Συλλογή</a>
-      <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Υπηρεσίες</a>
-      <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Επικοινωνία</a>
-    </nav>
-    <nav id="mobile-menu" class="sm:hidden fixed top-0 right-0 h-full w-2/3 bg-[#063d49] text-white transform translate-x-full transition-transform duration-300 z-40">
-      <div class="flex flex-col items-center mt-20 space-y-4">
-        <a href="index.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Αρχική</a>
-        <a href="about.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Σχετικά με εμάς</a>
-        <a href="gallery.html" class="transition-colors duration-300 hover:text-[#d7c9a9]">Συλλογή</a>
-        <a href="#services" class="transition-colors duration-300 hover:text-[#d7c9a9]">Υπηρεσίες</a>
-        <a href="#contact" class="transition-colors duration-300 hover:text-[#d7c9a9]">Επικοινωνία</a>
       </div>
     </nav>
   </header>
   <main class="py-8">
-    <h1 class="text-center text-2xl font-bold">Συλλογή</h1>
-    <p class="text-center mt-4">Έρχεται σύντομα...</p>
   </main>
   <footer id="contact">
     <div class="footer-column">
@@ -76,8 +60,6 @@
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuButton && mobileMenu) {
       menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
       });
     }
   </script>
