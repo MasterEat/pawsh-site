@@ -236,6 +236,7 @@
       <p>Κυριακή: Κλειστά</p>
     </div>
   </footer>
+  <button id="back-to-top" aria-label="Back to top">&#8593;</button>
   <script>
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -327,6 +328,21 @@
       });
       nextReview.addEventListener('click', () => {
         reviewList.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 200) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   </script>
