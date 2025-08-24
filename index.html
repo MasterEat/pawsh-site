@@ -166,6 +166,10 @@
     const slideWidth = slides[0].getBoundingClientRect().width + gap;
     track.scrollLeft = slideWidth;
 
+    setInterval(() => {
+      track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    }, 3000);
+
     track.addEventListener('wheel', (e) => {
       e.preventDefault();
       track.scrollLeft += e.deltaY;
