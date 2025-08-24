@@ -332,46 +332,4 @@ footer img.logo {
     max-height: 450px;
   }
 }
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  gap: 2rem;
-}
-.about-text {
-  flex: 1 1 300px;
-}
-.about-image {
-  flex: 1 1 250px;
-  text-align: right;
-}
-.about-image img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-.photo-placeholder {
-  width: 250px;
-  height: 250px;
-  background: #eee;
-  border-radius: 8px;
-  margin-left: auto;
-}
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-.team-member img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-.team-member h3 {
-  margin-top: 0.5rem;
-}
+
