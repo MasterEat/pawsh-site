@@ -315,6 +315,9 @@ footer {
 footer img.logo {
   max-height: 180px;
   margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .footer-socials {
   display: flex;
