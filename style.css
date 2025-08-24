@@ -355,6 +355,7 @@ footer img.logo {
 @media (max-width: 600px) {
   footer {
     flex-direction: column;
+    gap: 1rem;
   }
 }
 
