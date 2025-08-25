@@ -324,6 +324,9 @@ footer {
 .footer-column {
   flex: 1 1 300px;
 }
+.footer-column p:last-child {
+  margin-bottom: 0;
+}
 footer img.logo {
   max-height: 180px;
   margin-bottom: 1rem;
@@ -355,7 +358,7 @@ footer img.logo {
 @media (max-width: 600px) {
   footer {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
   }
 }
 
