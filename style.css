@@ -21,6 +21,10 @@ header {
   color: white;
 }
 
+header nav a {
+  color: white;
+}
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
