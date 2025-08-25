@@ -372,6 +372,7 @@ footer img.logo {
   background-repeat: repeat;
   transition: transform 0.3s ease;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
 
 /* Paw print background for gallery page */
