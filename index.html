@@ -9,56 +9,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="bg-[#063d49] text-white">
-      <button id="menu-button" class="sm:hidden absolute left-4 top-1/2 -translate-y-1/2" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <a href="index.html">
-        <picture>
-          <source media="(max-width: 600px)" srcset="logo/logo1.png">
-          <img src="logo/logo.png" alt="Pawsh logo" class="h-16 mx-auto">
-        </picture>
-      </a>
-      <div class="header-socials hidden sm:flex">
-        <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
-          <img src="logo/facebook icon.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
-          <img src="logo/instagram icon.png" alt="Instagram">
-        </a>
-      </div>
-    <div class="border-b-2 border-[#d7c9a9]"></div>
-    <nav class="hidden sm:flex justify-center space-x-8 py-4 text-[#d7c9a9]">
-      <a href="index.html" class="transition-colors duration-300 hover:text-white">Αρχική</a>
-      <a href="about.html" class="transition-colors duration-300 hover:text-white">Σχετικά με εμάς</a>
-      <a href="gallery.html" class="transition-colors duration-300 hover:text-white">Συλλογή</a>
-      <a href="#services" class="transition-colors duration-300 hover:text-white">Υπηρεσίες</a>
-      <a href="#contact" class="transition-colors duration-300 hover:text-white">Επικοινωνία</a>
-    </nav>
-    <nav id="mobile-menu" class="sm:hidden fixed top-0 right-0 h-full w-2/3 bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-40">
-      <div class="flex flex-col items-center mt-20 space-y-4">
-        <a href="index.html" class="transition-colors duration-300 hover:text-white">Αρχική</a>
-        <a href="about.html" class="transition-colors duration-300 hover:text-white">Σχετικά με εμάς</a>
-        <a href="gallery.html" class="transition-colors duration-300 hover:text-white">Συλλογή</a>
-        <a href="#services" class="transition-colors duration-300 hover:text-white">Υπηρεσίες</a>
-        <a href="#contact" class="transition-colors duration-300 hover:text-white">Επικοινωνία</a>
-      </div>
-      <div class="absolute bottom-4 left-0 right-0 flex flex-col items-center space-y-4">
-        <a href="https://pawshpetbeautysalon.setmore.com" class="btn" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
-        <a href="tel:+302104404084" class="font-bold">Τηλέφωνο: 21 0440 4084</a>
-        <div class="flex justify-center space-x-4">
-          <a href="https://www.facebook.com/profile.php?id=61578078265850" target="_blank">
-            <img src="logo/facebook icon.png" alt="Facebook" class="h-8 w-8 rounded-full border border-black bg-transparent">
-          </a>
-          <a href="https://www.instagram.com/pawsh_pet_salon/" target="_blank">
-            <img src="logo/instagram icon.png" alt="Instagram" class="h-8 w-8 rounded-full border border-black bg-transparent">
+  
           </a>
         </div>
       </div>
-    </nav>
+      <div class="border-b border-white/10"></div>
+      <nav aria-label="Main" class="bg-[#063d49]">
+        <ul class="max-w-7xl mx-auto px-4 flex justify-center space-x-6">
+          <li><a href="index.html" class="px-3 py-2 rounded hover:text-[#d7c9a9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d7c9a9]">Αρχική</a></li>
+          <li><a href="about.html" class="px-3 py-2 rounded hover:text-[#d7c9a9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d7c9a9]">Σχετικά με εμάς</a></li>
+          <li><a href="gallery.html" class="px-3 py-2 rounded hover:text-[#d7c9a9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d7c9a9]">Συλλογή</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <section class="hero">
@@ -242,14 +205,6 @@
   </footer>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuButton && mobileMenu) {
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
-      });
-    }
     const heroImages = [
       'Pawsh pet salon/Pawsh pet salon 1.jpg',
       'Pawsh pet salon/Pawsh pet salon 10.jpg',
