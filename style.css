@@ -18,39 +18,7 @@ a {
 }
 header {
   background: var(--accent);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
-  position: relative;
-}
-header img.logo {
-  max-height: 300px;
-  max-width: 300px;
-}
-
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
-  }
-}
-
-.header-socials {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  gap: 0.5rem;
-}
-
-.header-socials a img {
-  width: 36px;
-  height: 36px;
-  background: white;
-  border-radius: 50%;
-  padding: 3px;
 }
 
 section {
