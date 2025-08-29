@@ -147,34 +147,6 @@ h1, h2 {
   font-weight: bold;
   color: var(--accent);
 }
-.gallery-carousel {
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-carousel img {
-  flex: 0 0 calc(100% - 0.5rem);
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  object-fit: cover;
-  object-position: center;
-  scroll-snap-align: center;
-}
 .faq {
   max-width: 960px;
   margin: auto;
@@ -399,5 +371,100 @@ footer img.logo {
 
 .paw-box:hover {
   transform: scale(1.05);
+}
+
+.doghouse-gallery-wrap{
+  max-width:1100px; margin:40px auto; padding:0 20px;
+  --frame-pad: 28px;
+  --corner-radius: 16px;
+  --img-radius: 14px;
+  --border-color: rgba(255,255,255,.65);
+  --shadow: 0 12px 30px rgba(0,0,0,.25);
+  --thumb-size: 78px;
+  --wood-url: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=2000&auto=format&fit=crop');
+  --accent: #ffffff;
+  background:#111; color:#fff;
+}
+
+.wood-frame{
+  position: relative;
+  background: var(--wood-url) center/cover no-repeat, #8b5a2b;
+  border-radius: calc(var(--corner-radius) + 4px);
+  padding: var(--frame-pad);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  backdrop-filter: blur(0.5px);
+}
+.wood-frame::before{
+  content:""; position:absolute; inset:10px;
+  border-radius: var(--corner-radius);
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.18), inset 0 0 0 6px rgba(255,255,255,.14);
+  pointer-events:none;
+}
+
+.swiper.doghouse-main{ border-radius: var(--corner-radius); }
+.dog-slide{
+  overflow:hidden; border-radius: var(--img-radius);
+  position: relative; border:1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18); background:#111;
+}
+.dog-slide img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition: transform .35s ease, box-shadow .35s ease;
+  aspect-ratio: 4 / 3; /* αν οι εικόνες είναι τετράγωνες, αλλάξ' το σε 1 / 1 */
+}
+.dog-slide:hover img{ transform: scale(1.03); box-shadow: 0 12px 32px rgba(0,0,0,.25); }
+
+.doghouse-nav{ --btn-size:44px; color:white; filter:drop-shadow(0 4px 12px rgba(0,0,0,.4)); }
+.doghouse-nav .swiper-button-prev, .doghouse-nav .swiper-button-next{
+  width:var(--btn-size); height:var(--btn-size); border-radius:999px;
+  background: rgba(0,0,0,.35); backdrop-filter: blur(3px);
+}
+.doghouse-nav .swiper-button-prev:after, .doghouse-nav .swiper-button-next:after{ font-size:18px; }
+
+.swiper-pagination-bullets .swiper-pagination-bullet{ background: rgba(255,255,255,.8); opacity:1; }
+.swiper-pagination-bullet-active{ background:#fff; }
+
+.doghouse-thumbs{ margin-top:14px; padding:8px 2px; }
+.doghouse-thumbs .swiper-slide{
+  width:var(--thumb-size); height: calc(var(--thumb-size) * 0.66);
+  opacity:.55; border-radius:10px; overflow:hidden;
+  border:1px solid rgba(255,255,255,.4);
+  transition: opacity .2s ease, transform .2s ease; background:#111;
+}
+.doghouse-thumbs .swiper-slide-thumb-active{
+  opacity:1; transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.22);
+}
+.doghouse-thumbs img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* LIGHTBOX */
+.lightbox{
+  position: fixed; inset:0; display:none;
+  align-items:center; justify-content:center;
+  background: rgba(0,0,0,.8); z-index:9999;
+}
+.lightbox.open{ display:flex; }
+.lightbox img{
+  max-width: 92vw; max-height: 88vh;
+  border-radius: 12px; border:1px solid rgba(255,255,255,.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,.6); background:#000;
+}
+.lb-close, .lb-prev, .lb-next{
+  position:absolute; top:50%; transform: translateY(-50%);
+  width:44px; height:44px; border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(0,0,0,.45); color:#fff;
+  border:1px solid rgba(255,255,255,.2); cursor:pointer; user-select:none;
+}
+.lb-close{ top:24px; right:24px; transform:none; }
+.lb-prev{ left:24px; } .lb-next{ right:24px; }
+.lb-close:focus, .lb-prev:focus, .lb-next:focus{ outline:2px solid rgba(255,255,255,.6); }
+
+@media (max-width:768px){
+  .doghouse-gallery-wrap{ --frame-pad:18px; --corner-radius:14px; --img-radius:12px; }
+  .doghouse-nav{ --btn-size:40px; }
+  .lb-prev{ left:12px; } .lb-next{ right:12px; }
+  .lb-close{ right:12px; top:12px; }
 }
 
