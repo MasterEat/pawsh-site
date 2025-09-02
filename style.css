@@ -103,9 +103,9 @@ h1, h2 {
 }
 
 .services-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
 }
 
@@ -118,6 +118,7 @@ h1, h2 {
   flex-direction: column;
   gap: 0.5rem;
   transition: transform 0.3s ease;
+  flex: 1 1 280px;
 }
 
 .service-icon {
