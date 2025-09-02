@@ -354,20 +354,11 @@ footer img.logo {
 
 /* Paw print background for gallery page */
 .gallery-paw-bg {
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23063d49'%3E%3Ccircle cx='9' cy='7' r='3'/%3E%3Ccircle cx='23' cy='7' r='3'/%3E%3Ccircle cx='16' cy='3' r='3'/%3E%3Ccircle cx='7' cy='19' r='3'/%3E%3Ccircle cx='25' cy='19' r='3'/%3E%3Cpath d='M16 10c-6 0-9 4-9 8s3 8 9 8 9-4 9-8-3-8-9-8z'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23063d49'%3E%3Ccircle cx='9' cy='7' r='3'/%3E%3Ccircle cx='23' cy='7' r='3'/%3E%3Ccircle cx='16' cy='3' r='3'/%3E%3Ccircle cx='7' cy='19' r='3'/%3E%3Ccircle cx='25' cy='19' r='3'/%3E%3Cpath d='M16 10c-6 0-9 4-9 8s3 8 9 8 9-4 9-8-3-8-9-8z'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 300px 300px;
-  background-position: 0 0, 150px 150px;
-}
-
-/* Paw print background for gallery page */
-.gallery-paw-bg {
   color: #063d49;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96' fill='currentColor'%3E%3Cg transform='translate(32 32)'%3E%3Ccircle cx='9' cy='7' r='3'/%3E%3Ccircle cx='23' cy='7' r='3'/%3E%3Ccircle cx='16' cy='3' r='3'/%3E%3Ccircle cx='7' cy='19' r='3'/%3E%3Ccircle cx='25' cy='19' r='3'/%3E%3Cpath d='M16 10c-6 0-9 4-9 8s3 8 9 8 9-4 9-8-3-8-9-8z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("logo/paw.svg"), url("logo/paw.svg");
   background-repeat: repeat;
-  background-size: 200px 200px;
+  background-size: 350px 350px;
+  background-position: 0 0, 175px 175px;
 }
 
 .paw-box:hover {

@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://www.pawsh.gr/">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -106,26 +106,66 @@
       <a href="https://pawshpetbeautysalon.setmore.com" class="btn" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
     </section>
 
-<section id="gallery" aria-label="Gallery σκύλων">
-  <div class="gallery-carousel">
-    <div class="glider">
-      <img src="dogs/dog1.jpg" alt="Dog 1">
-      <img src="dogs/dog2.jpg" alt="Dog 2">
-      <img src="dogs/dog3.jpg" alt="Dog 3">
-      <img src="dogs/dog4.jpg" alt="Dog 4">
-      <img src="dogs/dog5.jpg" alt="Dog 5">
-      <img src="dogs/dog6.png" alt="Dog 6">
-      <img src="dogs/dog7.png" alt="Dog 7">
-      <img src="dogs/dog8.png" alt="Dog 8">
-      <img src="dogs/dog9.png" alt="Dog 9">
-      <img src="dogs/dog10.png" alt="Dog 10">
-      <img src="dogs/dog11.png" alt="Dog 11">
-      <img src="dogs/dog12.png" alt="Dog 12">
-      <img src="dogs/dog13.png" alt="Dog 13">
-      <img src="dogs/dog14.png" alt="Dog 14">
+<section id="gallery" class="doghouse-gallery-wrap" aria-label="Gallery σκύλων">
+  <div class="wood-frame">
+
+    <!-- Κύριος slider -->
+    <div class="swiper doghouse-main">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide dog-slide"><img src="dog1.png"  alt="Σκύλος 1"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog2.png"  alt="Σκύλος 2"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog3.png"  alt="Σκύλος 3"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog4.png"  alt="Σκύλος 4"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog5.png"  alt="Σκύλος 5"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog6.png"  alt="Σκύλος 6"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog7.png"  alt="Σκύλος 7"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog8.png"  alt="Σκύλος 8"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog9.png"  alt="Σκύλος 9"  loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog10.png" alt="Σκύλος 10" loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog11.png" alt="Σκύλος 11" loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog12.png" alt="Σκύλος 12" loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog13.png" alt="Σκύλος 13" loading="lazy"></div>
+        <div class="swiper-slide dog-slide"><img src="dog14.png" alt="Σκύλος 14" loading="lazy"></div>
+      </div>
+
+      <!-- Πλοήγηση -->
+      <div class="doghouse-nav">
+        <div class="swiper-button-prev" aria-label="Προηγούμενη εικόνα"></div>
+        <div class="swiper-button-next" aria-label="Επόμενη εικόνα"></div>
+      </div>
+      <div class="swiper-pagination" aria-label="Σελιδοποίηση"></div>
     </div>
+
+    <!-- Thumbnails -->
+    <div class="swiper doghouse-thumbs" aria-hidden="false">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="dog1.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog2.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog3.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog4.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog5.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog6.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog7.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog8.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog9.png"  alt=""></div>
+        <div class="swiper-slide"><img src="dog10.png" alt=""></div>
+        <div class="swiper-slide"><img src="dog11.png" alt=""></div>
+        <div class="swiper-slide"><img src="dog12.png" alt=""></div>
+        <div class="swiper-slide"><img src="dog13.png" alt=""></div>
+        <div class="swiper-slide"><img src="dog14.png" alt=""></div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Προβολή εικόνας">
+  <button class="lb-close" id="lbClose" aria-label="Κλείσιμο">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Προηγούμενη">❮</button>
+  <img id="lbImg" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Επόμενη">❯</button>
+</div>
 
   <section class="faq">
     <h2>Συχνές Ερωτήσεις</h2>
@@ -233,33 +273,112 @@
     </div>
   </footer>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script>
-    window.addEventListener('load', function(){
-      new Glider(document.querySelector('.glider'), {
-        slidesToShow: 1.2,
-        slidesToScroll: 1,
-        draggable: true,
-        dots: false,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2.5,
-              slidesToScroll: 1,
-            }
-          },
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3.5,
-              slidesToScroll: 1,
-            }
-          }
-        ]
-      });
+    // Thumbnails
+    const thumbs = new Swiper(".doghouse-thumbs", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      freeMode: true,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+      slideToClickedSlide: true,
+      a11y: true,
     });
+
+    // Main coverflow
+    const main = new Swiper(".doghouse-main", {
+      loop: true,
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 18,
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 24,
+        stretch: 0,
+        depth: 140,
+        modifier: 1,
+        slideShadows: true,
+      },
+      keyboard: { enabled: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      thumbs: { swiper: thumbs },
+      preloadImages: false,
+      lazy: true,
+      a11y: {
+        enabled: true,
+        prevSlideMessage: "Προηγούμενη εικόνα",
+        nextSlideMessage: "Επόμενη εικόνα",
+      },
+    });
+
+    /* LIGHTBOX (vanilla) */
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const btnClose = document.getElementById('lbClose');
+      const btnPrev  = document.getElementById('lbPrev');
+      const btnNext  = document.getElementById('lbNext');
+
+      const slides = Array.from(document.querySelectorAll('.doghouse-main .dog-slide img'));
+
+      function openLightbox(){
+        const realIndex = main.realIndex;
+        const img = slides[realIndex];
+        if(!img) return;
+        lbImg.src = img.currentSrc || img.src;
+        lbImg.alt = img.alt || "";
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      }
+      function closeLightbox(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = "";
+      }
+      function syncImage(){
+        setTimeout(()=>{
+          const realIndex = main.realIndex;
+          const img = slides[realIndex];
+          if(img){
+            lbImg.src = img.currentSrc || img.src;
+            lbImg.alt = img.alt || "";
+          }
+        }, 30);
+      }
+      function showNext(){ main.slideNext(); syncImage(); }
+      function showPrev(){ main.slidePrev(); syncImage(); }
+
+      slides.forEach(img=>{
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', openLightbox);
+      });
+
+      btnClose.addEventListener('click', closeLightbox);
+      btnNext.addEventListener('click', showNext);
+      btnPrev.addEventListener('click', showPrev);
+
+      window.addEventListener('keydown', (e)=>{
+        if(lb.classList.contains('open')){
+          if(e.key === 'Escape') closeLightbox();
+          if(e.key === 'ArrowRight') showNext();
+          if(e.key === 'ArrowLeft') showPrev();
+        }
+      });
+
+      lb.addEventListener('click', (e)=>{
+        if(e.target === lb) closeLightbox();
+      });
+    })();
   </script>
 
   <script>
