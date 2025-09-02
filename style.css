@@ -379,3 +379,42 @@ footer img.logo {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+/* Swiper gallery on homepage */
+.doghouse-gallery-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.doghouse-main {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.doghouse-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.doghouse-thumbs {
+  margin-top: 1rem;
+}
+
+.doghouse-thumbs .swiper-slide {
+  width: 80px;
+  height: 80px;
+  opacity: 0.4;
+}
+
+.doghouse-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.doghouse-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
