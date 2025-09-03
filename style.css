@@ -51,14 +51,15 @@ h1, h2 {
   overflow: hidden;
 }
 
-/* Ensure the Swiper container and slides fill the hero section */
-.hero-swiper,
-.hero-swiper .swiper-slide {
+/* Ensure the Swiper container fills the hero section */
+.hero-swiper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
+  --swiper-theme-color: #fff;
 }
 
 /* Allow the wrapper to occupy space so images become visible */
@@ -66,9 +67,10 @@ h1, h2 {
   height: 100%;
 }
 
-.hero-swiper {
-  z-index: 0;
-  --swiper-theme-color: #fff;
+/* Make each slide occupy the full container */
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-swiper .swiper-slide img {
