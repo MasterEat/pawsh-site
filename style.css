@@ -418,3 +418,25 @@ footer img.logo {
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* Desktop-only gallery sizing */
+@media (max-width: 767px) {
+  #gallery {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .doghouse-gallery-wrap {
+    max-width: 600px;
+  }
+  .doghouse-main {
+    width: 600px;
+    height: 600px;
+  }
+  .doghouse-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
