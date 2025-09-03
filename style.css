@@ -33,26 +33,43 @@ section {
 h1, h2 {
   color: var(--accent);
 }
-  .hero {
-    background: url('Pawsh pet salon/Pawsh pet salon 1.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #d7c9a9;
-    text-align: center;
-    padding: 4rem 1rem;
-    color: white;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: visible;
-  }
+
+.hero {
+  background-color: #d7c9a9;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: white;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-swiper,
+.hero-swiper .swiper-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swiper {
+  z-index: 0;
+  --swiper-theme-color: #fff;
+}
+
+.hero-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hero h1,
 .hero p {
   background-color: rgba(0, 0, 0, 0.5);

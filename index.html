@@ -72,6 +72,20 @@
     </div>
 
   <section class="hero">
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon1.jpg" alt="Salon photo 1" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon2.jpg" alt="Salon photo 2" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon3.jpg" alt="Salon photo 3" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon4.jpg" alt="Salon photo 4" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon5.jpg" alt="Salon photo 5" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon6.jpg" alt="Salon photo 6" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon7.jpg" alt="Salon photo 7" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon8.jpg" alt="Salon photo 8" loading="lazy"></div>
+        <div class="swiper-slide"><img src="Pawsh pet salon/Pawsh pet salon9.jpg" alt="Salon photo 9" loading="lazy"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
     <h1>Καλώς ήρθες στο Pawsh</h1>
     <a href="https://pawshpetbeautysalon.setmore.com" class="btn" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
   </section>
@@ -332,6 +346,20 @@
       },
     });
 
+    // Hero slider
+    const heroSwiper = new Swiper(".hero-swiper", {
+      loop: true,
+      effect: "fade",
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".hero-swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+
     /* LIGHTBOX (vanilla) */
     (function(){
       const lb = document.getElementById('lightbox');
@@ -401,23 +429,6 @@
         mobileMenu.classList.toggle('translate-x-0');
       });
     }
-
-    const heroImages = [
-      'Pawsh pet salon/Pawsh pet salon 1.jpg',
-      'Pawsh pet salon/Pawsh pet salon 2.jpg',
-      'Pawsh pet salon/Pawsh pet salon 3.jpg',
-      'Pawsh pet salon/Pawsh pet salon 4.jpg',
-      'Pawsh pet salon/Pawsh pet salon 5.jpg',
-      'Pawsh pet salon/Pawsh pet salon 6.jpg',
-      'Pawsh pet salon/Pawsh pet salon 7.jpg'
-    ];
-    let currentHero = 0;
-    const heroSection = document.querySelector('.hero');
-    heroSection.style.backgroundImage = `url('${heroImages[currentHero]}')`;
-    setInterval(() => {
-      currentHero = (currentHero + 1) % heroImages.length;
-      heroSection.style.backgroundImage = `url('${heroImages[currentHero]}')`;
-    }, 5000);
 
     document.querySelectorAll('.faq-question').forEach(function (question) {
       question.addEventListener('click', function () {
