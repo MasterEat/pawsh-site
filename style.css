@@ -484,13 +484,7 @@ footer img.logo {
   transform: translateY(-50%);
 }
 
-/* Desktop-only gallery sizing */
-@media (max-width: 767px) {
-  #gallery {
-    display: none;
-  }
-}
-
+/* Responsive gallery sizing */
 @media (min-width: 768px) {
   .doghouse-gallery-wrap {
     max-width: 600px;
