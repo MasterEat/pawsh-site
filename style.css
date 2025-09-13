@@ -547,3 +547,13 @@ footer img.logo {
   filter: brightness(0.2) invert(0);
 }
 
+
+.social-icon {
+  color: #ffffff; /* ή το αρχικό χρώμα */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #063d49; /* το πετρόλ χρώμα */
+}
+
