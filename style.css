@@ -16,6 +16,21 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
+
+.radial-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.radial-icon img {
+  width: 20px;
+  height: 20px;
+}
 header {
   background: var(--accent);
   color: white;
