@@ -51,6 +51,16 @@ h1, h2 {
     color: var(--accent);
   }
 
+#services .btn,
+#reviews .btn {
+  color: #d7c9a9;
+}
+
+#services .btn:hover,
+#reviews .btn:hover {
+  color: var(--accent);
+}
+
   .philosophy-content {
     display: flex;
     flex-direction: column;
