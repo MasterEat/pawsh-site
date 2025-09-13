@@ -315,6 +315,9 @@ footer img.logo {
     flex-direction: column;
     gap: 0;
   }
+  .footer-column {
+    flex: 1 1 auto;
+  }
 }
 
 /* Further increase header logo size on desktop screens */
