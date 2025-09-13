@@ -497,3 +497,45 @@ footer img.logo {
   white-space: nowrap;
   border: 0;
 }
+
+.radial-icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.radial-icon img {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  z-index: 2;
+  transition: filter 0.3s ease;
+  filter: brightness(0) invert(1); /* λευκό σε σκούρο φόντο */
+}
+
+.radial-icon::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-color: #d7c9a9; /* ανοιχτό χρώμα γεμίσματος */
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.radial-icon:hover::before {
+  transform: scale(1);
+}
+
+.radial-icon:hover img {
+  filter: brightness(0.2) invert(0);
+}
+
