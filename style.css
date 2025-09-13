@@ -315,6 +315,13 @@ footer img.logo {
     flex-direction: column;
     gap: 0;
   }
+  .footer-column {
+    flex: 1 1 auto;
+  }
+  .footer-column:nth-child(1) p:last-child,
+  .footer-column:nth-child(2) p:last-child {
+    margin-bottom: 2rem;
+  }
 }
 
 /* Further increase header logo size on desktop screens */
