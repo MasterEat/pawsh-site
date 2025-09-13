@@ -146,6 +146,12 @@ h1, h2 {
   font-weight: bold;
   color: var(--accent);
 }
+
+/* Ensure CTA buttons in services and reviews have space from previous content */
+.services .hero-cta,
+.reviews .hero-cta {
+  margin-top: 1rem;
+}
 .faq {
   max-width: 960px;
   margin: auto;
