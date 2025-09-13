@@ -310,13 +310,6 @@ footer img.logo {
   gap: 1rem;
   margin-top: 1rem;
 }
-.footer-socials a img {
-  width: 36px;
-  height: 36px;
-  background: white;
-  border-radius: 6px;
-  padding: 3px;
-}
 .footer-links {
   margin-top: 1rem;
 }
