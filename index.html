@@ -85,7 +85,9 @@
 
   <section class="hero">
     <div class="slides">
-
+      <img src="assets/hero/grooming-session-hero.jpg" alt="Επαγγελματικός καλλωπισμός σκύλου στο Pawsh" class="slide active" fetchpriority="high">
+      <img src="assets/hero/dog-bath-hero.jpg" alt="Σκύλος που απολαμβάνει μπάνιο στο Pawsh" class="slide">
+      <img src="assets/hero/happy-dog-hero.jpg" alt="Χαρούμενος σκύλος τυλιγμένος με πετσέτα στο Pawsh" class="slide">
     </div>
     <div class="hero-content">
       <h1>Καλώς ήρθες στο Pawsh</h1>
@@ -187,11 +189,16 @@
   <script>
     const slides = document.querySelectorAll('.hero .slide');
     let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
+    if (slides.length) {
       slides[current].classList.add('active');
-    }, 5000);
+      if (slides.length > 1) {
+        setInterval(() => {
+          slides[current].classList.remove('active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('active');
+        }, 5000);
+      }
+    }
   </script>
 
   <section id="philosophy" class="philosophy">
