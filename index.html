@@ -85,9 +85,14 @@
 
   <section class="hero">
     <div class="slides">
-      <img src="assets/hero/grooming-session-hero.jpg" alt="Επαγγελματικός καλλωπισμός σκύλου στο Pawsh" class="slide active" fetchpriority="high">
-      <img src="assets/hero/dog-bath-hero.jpg" alt="Σκύλος που απολαμβάνει μπάνιο στο Pawsh" class="slide">
-      <img src="assets/hero/happy-dog-hero.jpg" alt="Χαρούμενος σκύλος τυλιγμένος με πετσέτα στο Pawsh" class="slide">
+      <img src="assets/hero/salon1.png" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active" fetchpriority="high">
+      <img src="assets/hero/salon2.png" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide">
+      <img src="assets/hero/salon3.png" alt="Λουσάτος σκύλος με μπλε φουλάρι μέσα στο σαλόνι του Pawsh" class="slide">
+      <img src="assets/hero/salon4.png" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide">
+      <img src="assets/hero/salon5.png" alt="Σκυλάκι που στεγνώνει με πετσέτα στο Pawsh" class="slide">
+      <img src="assets/hero/salon6.png" alt="Σκύλος που απολαμβάνει μπάνιο αφρού στο Pawsh" class="slide">
+      <img src="assets/hero/salon7.png" alt="Groomer χτενίζει προσεκτικά σκύλο στο Pawsh" class="slide">
+      <img src="assets/hero/salon8.png" alt="Χαρούμενος σκύλος περιμένει λιχουδιά στο Pawsh" class="slide">
     </div>
     <div class="hero-content">
       <h1>Καλώς ήρθες στο Pawsh</h1>
@@ -176,6 +181,21 @@
     #services .hero-cta:hover,
     #reviews .hero-cta:hover {
       border: 2px solid #063d49;
+    }
+    @media (max-width: 767px) {
+      .hero {
+        height: clamp(22rem, 75vh, 32rem);
+        min-height: clamp(22rem, 75vh, 32rem);
+      }
+      .hero .slide {
+        object-position: center 30%;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content h2 {
+        font-size: 1.25rem;
+      }
     }
     @media (min-width: 768px) {
       .hero-content {
