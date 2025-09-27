@@ -900,6 +900,12 @@ body.pawsh-gallery-no-scroll {
   overflow: hidden;
 }
 
+@media (min-width: 1024px) {
+  .pawsh-gallery-scroller {
+    height: 320px;
+  }
+}
+
 @media (max-width: 920px) {
   .pawsh-gallery-scroller {
     height: 220px;
