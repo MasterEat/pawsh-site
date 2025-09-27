@@ -246,3 +246,146 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const servicesSection = document.querySelector('#services');
+  if (!servicesSection) {
+    return;
+  }
+
+  const cards = Array.from(servicesSection.querySelectorAll('.pawsh-service-card'));
+  if (!cards.length) {
+    return;
+  }
+
+  const mediaQuery = window.matchMedia('(max-width: 640px)');
+  const baseZIndex = 10;
+  let highestZ = baseZIndex;
+  let currentActiveCard = null;
+  let scrollHandler = null;
+
+  const clearCardState = () => {
+    cards.forEach((card) => {
+      card.style.zIndex = '';
+      card.classList.remove('pawsh-service-card-active');
+    });
+  };
+
+  const initializeZIndexes = () => {
+    highestZ = baseZIndex + cards.length;
+    cards.forEach((card, index) => {
+      card.style.zIndex = String(baseZIndex + cards.length - index);
+    });
+  };
+
+  const getStickyTop = () => {
+    if (!cards.length) {
+      return 0;
+    }
+
+    const computedTop = window.getComputedStyle(cards[0]).top;
+    if (computedTop.endsWith('px')) {
+      return parseFloat(computedTop) || 0;
+    }
+    if (computedTop.endsWith('rem')) {
+      const rootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+      return (parseFloat(computedTop) || 0) * rootFontSize;
+    }
+    const numericTop = parseFloat(computedTop);
+    return Number.isNaN(numericTop) ? 0 : numericTop;
+  };
+
+  const setActiveCard = (card) => {
+    if (currentActiveCard === card) {
+      return;
+    }
+
+    currentActiveCard = card;
+    cards.forEach((item) => {
+      if (item === card) {
+        item.classList.add('pawsh-service-card-active');
+      } else {
+        item.classList.remove('pawsh-service-card-active');
+      }
+    });
+
+    if (card) {
+      highestZ += 1;
+      card.style.zIndex = String(highestZ);
+    }
+  };
+
+  const updateActiveCard = () => {
+    if (!mediaQuery.matches) {
+      return;
+    }
+
+    const stickyTop = getStickyTop();
+    let candidate = null;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.bottom <= stickyTop + 1) {
+        return;
+      }
+
+      if (rect.top <= stickyTop + 1) {
+        candidate = card;
+      } else if (!candidate) {
+        candidate = card;
+      }
+    });
+
+    if (!candidate && cards.length) {
+      candidate = cards[cards.length - 1];
+    }
+
+    if (!candidate && currentActiveCard) {
+      currentActiveCard.classList.remove('pawsh-service-card-active');
+      currentActiveCard = null;
+      return;
+    }
+
+    setActiveCard(candidate || null);
+  };
+
+  const enableEffect = () => {
+    initializeZIndexes();
+    updateActiveCard();
+
+    if (!scrollHandler) {
+      scrollHandler = () => {
+        updateActiveCard();
+      };
+      document.addEventListener('scroll', scrollHandler, { passive: true });
+      window.addEventListener('resize', updateActiveCard);
+    }
+  };
+
+  const disableEffect = () => {
+    if (scrollHandler) {
+      document.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('resize', updateActiveCard);
+      scrollHandler = null;
+    }
+    currentActiveCard = null;
+    highestZ = baseZIndex;
+    clearCardState();
+  };
+
+  const handleChange = () => {
+    if (mediaQuery.matches) {
+      enableEffect();
+    } else {
+      disableEffect();
+    }
+  };
+
+  handleChange();
+
+  if (typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', handleChange);
+  } else if (typeof mediaQuery.addListener === 'function') {
+    mediaQuery.addListener(handleChange);
+  }
+});
