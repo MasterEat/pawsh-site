@@ -713,6 +713,15 @@ footer img.logo {
 
 
 /* Pawsh gallery */
+.pawsh-gallery-heading {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: #063d49;
+  font-weight: 700;
+  margin: 4rem auto 1.5rem;
+  padding: 0 1rem;
+}
+
 .pawsh-gallery-section {
   padding: 3rem 0;
 }
