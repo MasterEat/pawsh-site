@@ -802,13 +802,19 @@ body.pawsh-gallery-no-scroll {
   }
 
   .pawsh-gallery-scroller {
-    height: 200px;
+    height: calc(100vw - 2rem);
     padding-inline: 1rem;
     --pawsh-gallery-gap: 1rem;
   }
 
   .pawsh-gallery-track {
     grid-auto-columns: 100%;
+    align-items: stretch;
+  }
+
+  .pawsh-gallery-slide {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .pawsh-gallery-lightbox {
