@@ -80,6 +80,33 @@
 
   <main class="py-8">
     <img src="logo/logo2.png" alt="Pawsh alternate logo" class="mx-auto" loading="lazy" width="4688" height="4688">
+
+    <section class="pawsh-compare-grid" aria-label="Σύγκριση φωτογραφιών πριν και μετά">
+      <div class="pawsh-compare">
+        <img class="pc-after" src="images/after1.jpg" alt="Μετά" loading="lazy">
+        <img class="pc-before" src="images/before1.jpg" alt="Πριν" loading="lazy">
+        <input type="range" class="pc-slider" min="0" max="100" value="50" aria-label="Σύγκριση πριν και μετά 1">
+        <div class="pc-handle"><span></span></div>
+      </div>
+      <div class="pawsh-compare">
+        <img class="pc-after" src="images/after2.jpg" alt="Μετά" loading="lazy">
+        <img class="pc-before" src="images/before2.jpg" alt="Πριν" loading="lazy">
+        <input type="range" class="pc-slider" min="0" max="100" value="50" aria-label="Σύγκριση πριν και μετά 2">
+        <div class="pc-handle"><span></span></div>
+      </div>
+      <div class="pawsh-compare">
+        <img class="pc-after" src="images/after3.jpg" alt="Μετά" loading="lazy">
+        <img class="pc-before" src="images/before3.jpg" alt="Πριν" loading="lazy">
+        <input type="range" class="pc-slider" min="0" max="100" value="50" aria-label="Σύγκριση πριν και μετά 3">
+        <div class="pc-handle"><span></span></div>
+      </div>
+      <div class="pawsh-compare">
+        <img class="pc-after" src="images/after4.jpg" alt="Μετά" loading="lazy">
+        <img class="pc-before" src="images/before4.jpg" alt="Πριν" loading="lazy">
+        <input type="range" class="pc-slider" min="0" max="100" value="50" aria-label="Σύγκριση πριν και μετά 4">
+        <div class="pc-handle"><span></span></div>
+      </div>
+    </section>
   </main>
   <footer id="contact">
     <div class="footer-column">
@@ -152,6 +179,102 @@
 
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    const compareElements = document.querySelectorAll('.pawsh-compare');
+    if (compareElements.length) {
+      const clampPosition = (value) => Math.min(100, Math.max(0, Number(value)));
+
+      const updatePosition = (element, value) => {
+        const clamped = clampPosition(value);
+        element.style.setProperty('--pc-position', clamped);
+        const slider = element.querySelector('.pc-slider');
+        if (slider) {
+          slider.value = clamped;
+        }
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const slider = entry.target.querySelector('.pc-slider');
+            const initialValue = slider ? slider.value : 50;
+            updatePosition(entry.target, initialValue);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      compareElements.forEach((compare) => {
+        const slider = compare.querySelector('.pc-slider');
+        if (!slider) {
+          return;
+        }
+
+        const moveHandle = (clientX) => {
+          if (typeof clientX !== 'number' || Number.isNaN(clientX)) {
+            return;
+          }
+          const rect = compare.getBoundingClientRect();
+          if (!rect.width) {
+            return;
+          }
+          const percentage = ((clientX - rect.left) / rect.width) * 100;
+          updatePosition(compare, percentage);
+        };
+
+        slider.addEventListener('input', (event) => {
+          updatePosition(compare, event.target.value);
+        });
+
+        const startPointerDrag = (event) => {
+          if (event.pointerType === 'mouse' && event.button !== 0) {
+            return;
+          }
+
+          const pointerId = event.pointerId;
+          if (typeof event.preventDefault === 'function') {
+            event.preventDefault();
+          }
+
+          const pointerMove = (moveEvent) => {
+            if (moveEvent.pointerId !== pointerId) {
+              return;
+            }
+            moveHandle(moveEvent.clientX);
+          };
+
+          const stopPointerDrag = (stopEvent) => {
+            if (stopEvent.pointerId !== pointerId) {
+              return;
+            }
+            document.removeEventListener('pointermove', pointerMove);
+            document.removeEventListener('pointerup', stopPointerDrag);
+            document.removeEventListener('pointercancel', stopPointerDrag);
+            compare.classList.remove('pc-active');
+          };
+
+          moveHandle(event.clientX);
+          document.addEventListener('pointermove', pointerMove);
+          document.addEventListener('pointerup', stopPointerDrag);
+          document.addEventListener('pointercancel', stopPointerDrag);
+          compare.classList.add('pc-active');
+        };
+
+        const handle = compare.querySelector('.pc-handle');
+        if (handle) {
+          handle.addEventListener('pointerdown', startPointerDrag);
+        }
+
+        compare.addEventListener('pointerdown', (event) => {
+          if (event.target === slider) {
+            return;
+          }
+          startPointerDrag(event);
+        });
+
+        observer.observe(compare);
       });
     }
 
