@@ -442,7 +442,7 @@ footer img.logo {
 .pawsh-compare .pc-before {
   z-index: 2;
   clip-path: inset(0 calc(100% - var(--pc-position) * 1%) 0 0);
-  transition: clip-path 0.25s ease;
+  transition: clip-path 80ms linear;
 }
 
 .pawsh-compare .pc-slider {
