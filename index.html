@@ -406,6 +406,16 @@
       <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
     </section>
 
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-modal="true" aria-hidden="true">
+    <h2 class="cookie-banner__heading">Μια μικρή ενημέρωση για τα cookies</h2>
+    <p>Χρησιμοποιούμε cookies για να κάνουμε την εμπειρία σας ακόμη καλύτερη, να μετρήσουμε την επισκεψιμότητα και να προσαρμόσουμε το περιεχόμενο σύμφωνα με τις ανάγκες των μικρών σας φίλων. Μπορείτε να επιλέξετε «Αποδοχή όλων» για πλήρη εμπειρία ή να διαχειριστείτε τις προτιμήσεις σας.</p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__button cookie-banner__button--primary" id="cookie-accept">Αποδοχή όλων</button>
+      <a href="cookies.html" class="cookie-banner__link">Διαχείριση επιλογών</a>
+    </div>
+    <p class="cookie-banner__fine-print">Περισσότερες πληροφορίες θα βρείτε στην <a href="privacy.html">Πολιτική Απορρήτου</a> και την <a href="cookies.html">Πολιτική Cookies</a>.</p>
+  </div>
+
   <footer id="contact">
     <div class="footer-column">
       <h4>Στοιχεία Επικοινωνίας</h4>
@@ -500,6 +510,51 @@
 
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    if (cookieBanner && cookieAccept) {
+      const storageKey = 'pawsh_cookie_consent';
+      const storageAvailable = (() => {
+        try {
+          const testKey = '__pawsh_cookie_test__';
+          localStorage.setItem(testKey, '1');
+          localStorage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      const hasConsent = storageAvailable
+        ? localStorage.getItem(storageKey)
+        : document.cookie.split(';').some((cookie) => cookie.trim().startsWith(`${storageKey}=`));
+
+      const showBanner = () => {
+        cookieBanner.classList.add('is-visible');
+        cookieBanner.setAttribute('aria-hidden', 'false');
+      };
+
+      const hideBanner = () => {
+        cookieBanner.classList.remove('is-visible');
+        cookieBanner.setAttribute('aria-hidden', 'true');
+      };
+
+      if (!hasConsent) {
+        requestAnimationFrame(showBanner);
+      }
+
+      cookieAccept.addEventListener('click', () => {
+        if (storageAvailable) {
+          localStorage.setItem(storageKey, 'accepted');
+        } else {
+          const expiry = new Date();
+          expiry.setFullYear(expiry.getFullYear() + 1);
+          document.cookie = `${storageKey}=accepted; expires=${expiry.toUTCString()}; path=/`;
+        }
+        hideBanner();
       });
     }
   </script>
