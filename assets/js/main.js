@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = [];
   const totalImages = 29;
 
+
   for (let i = 1; i <= totalImages; i += 1) {
-    const imageSrc = `./dogs/dog${i}.jpg`;
+    const imageFileName = `${imageFilePrefix}${i}.jpg`;
+    const imageSrc = `./dogs/${imageFileName}`;
     const imageAlt = altTextMap.get(i) || `Pawsh gallery photo ${i}`;
 
     const slide = document.createElement('div');
