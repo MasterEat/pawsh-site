@@ -44,11 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
     [22, 'Σκύλος 22'],
     [23, 'Σκύλος 23'],
     [24, 'Σκύλος 24'],
+    [25, 'Σκύλος 25'],
+    [26, 'Σκύλος 26'],
+    [27, 'Σκύλος 27'],
+    [28, 'Σκύλος 28'],
+    [29, 'Σκύλος 29'],
   ]);
 
   const slidesData = [];
   const slides = [];
-  const totalImages = 27;
+  const totalImages = 29;
 
   for (let i = 1; i <= totalImages; i += 1) {
     const imageSrc = `./dogs/dog${i}.jpg`;
