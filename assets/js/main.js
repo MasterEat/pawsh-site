@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const slidesData = [];
   const slides = [];
   const totalImages = 29;
+  const imageFilePrefix = 'dog';
 
 
   for (let i = 1; i <= totalImages; i += 1) {
