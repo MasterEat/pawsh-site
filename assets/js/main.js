@@ -52,11 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     [30, 'Σκύλος 30'],
     [31, 'Σκύλος 31'],
     [32, 'Σκύλος 32'],
+    [33, 'Σκύλος 33'],
+    [34, 'Σκύλος 34'],
+    [35, 'Σκύλος 35'],
+    [36, 'Σκύλος 36'],
+    [37, 'Σκύλος 37'],
   ]);
 
   const slidesData = [];
   const slides = [];
-  const totalImages = 32;
+  const totalImages = 37;
   const imageFilePrefix = 'dog';
 
 
