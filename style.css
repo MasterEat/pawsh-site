@@ -1232,3 +1232,260 @@ footer a {
     font-size: 0.92rem;
   }
 }
+
+
+.contact-hero-section {
+  padding-bottom: 1.5rem;
+}
+
+.contact-hero-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(246, 234, 208, 0.95));
+  border: 1px solid rgba(6, 61, 73, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 20px 44px rgba(6, 61, 73, 0.12);
+  padding: 2rem;
+}
+
+.contact-eyebrow,
+.contact-form-kicker,
+.contact-detail-label {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.contact-eyebrow,
+.contact-form-kicker {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.contact-hero-card h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.contact-hero-card p,
+.contact-map-header p {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--secondary);
+}
+
+.contact-hero-card .trust-note {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.contact-page-section {
+  padding-top: 1rem;
+}
+
+.contact-page-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(6, 61, 73, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(6, 61, 73, 0.1);
+  padding: 1.5rem;
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.contact-business-name {
+  margin-top: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.contact-detail-list,
+.hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-detail-list li,
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(6, 61, 73, 0.1);
+}
+
+.contact-detail-list li:first-child,
+.hours-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.contact-detail-list li {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-detail-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.contact-detail-list a,
+.map-link a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.contact-detail-list a:hover,
+.map-link a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.contact-form label span {
+  font-weight: 400;
+  color: var(--secondary);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(6, 61, 73, 0.16);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  font: inherit;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(6, 61, 73, 0.12);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 9rem;
+}
+
+.contact-submit-btn {
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.95rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 14px 28px rgba(6, 61, 73, 0.2);
+}
+
+.contact-submit-btn:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+.contact-helper-note {
+  margin: 1rem 0 0;
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+
+.contact-map-section {
+  margin-top: 0;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.contact-map-header {
+  margin-bottom: 1rem;
+}
+
+.map-embed {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(6, 61, 73, 0.12);
+  background: #fff;
+}
+
+.map-link {
+  margin-top: 0.85rem;
+}
+
+.sticky-booking-btn {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999;
+  display: none;
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.sticky-booking-btn:hover {
+  opacity: 0.95;
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .contact-page-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card,
+  .contact-hero-card {
+    padding: 1.25rem;
+  }
+
+  .hours-list li {
+    font-size: 0.98rem;
+  }
+
+  .sticky-booking-btn {
+    display: block;
+  }
+}
