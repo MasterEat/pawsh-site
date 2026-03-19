@@ -1078,3 +1078,67 @@ body.pawsh-gallery-no-scroll {
     width: 100%;
   }
 }
+
+.hero-description {
+  max-width: 720px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #f7f2e6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.65);
+}
+
+.areas-served {
+  text-align: center;
+}
+
+.areas-served p {
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
+  color: var(--secondary);
+}
+
+.areas-served-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.areas-served-list li {
+  background: #fff;
+  border: 1px solid rgba(6, 61, 73, 0.16);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gallery-intro,
+.gallery-cta {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.gallery-cta {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.map-link {
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
