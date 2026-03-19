@@ -111,11 +111,8 @@
 
       <!-- Mobile header -->
       <div class="flex items-center justify-between px-4 py-2 md:hidden">
-        <button id="menu-button" aria-expanded="false" class="flex h-12 w-12 flex-col items-center justify-center space-y-1.5 focus:outline-none">
-          <span class="sr-only">Toggle menu</span>
-          <span data-bar="top" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
-          <span data-bar="middle" class="block h-0.5 w-8 bg-[#d7c9a9] transition-opacity duration-300 ease-in-out"></span>
-          <span data-bar="bottom" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
+        <button id="menu-button" class="menu-button flex h-12 w-12 items-center justify-center focus:outline-none" aria-label="Menu" aria-expanded="false">
+          <img src="svg/hamburger.svg" alt="menu" />
         </button>
         <a href="index.html" class="mx-auto"><img src="logo/logo1.png" alt="Pawsh logo" class="h-16"></a>
         <div class="w-8"></div>
@@ -123,7 +120,7 @@
     </header>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden">
       <nav class="flex flex-col space-y-4">
         <a href="index.html">Αρχική</a>
         <a href="about.html">The Story</a>
@@ -528,27 +525,17 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const menuButton = document.getElementById("menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
     if (menuButton && mobileMenu) {
-      const topBar = menuButton.querySelector('[data-bar="top"]');
-      const middleBar = menuButton.querySelector('[data-bar="middle"]');
-      const bottomBar = menuButton.querySelector('[data-bar="bottom"]');
+      menuButton.addEventListener("click", () => {
+        menuButton.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        mobileMenu.classList.toggle("translate-x-full");
+        mobileMenu.classList.toggle("translate-x-0");
 
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
-
-        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', String(!isOpen));
-
-        if (topBar && middleBar && bottomBar) {
-          topBar.classList.toggle('translate-y-2');
-          topBar.classList.toggle('rotate-45');
-          middleBar.classList.toggle('opacity-0');
-          bottomBar.classList.toggle('-translate-y-2');
-          bottomBar.classList.toggle('-rotate-45');
-        }
+        const isOpen = menuButton.classList.contains("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
       });
     }
 
