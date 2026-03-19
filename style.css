@@ -171,6 +171,81 @@ h1, h2 {
   color: var(--accent);
 }
 
+
+.google-review-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: rgba(215, 201, 169, 0.18);
+  border: 1px solid rgba(215, 201, 169, 0.75);
+  color: #f6ead0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(8px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.google-review-badge:hover {
+  transform: translateY(-1px);
+  background: rgba(215, 201, 169, 0.28);
+  border-color: #f6ead0;
+}
+
+.hero-description {
+  max-width: 720px;
+}
+
+.hero-actions,
+.reviews-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cta-trust-note {
+  margin: 0;
+  color: rgba(246, 234, 208, 0.95);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.reviews-intro {
+  max-width: 700px;
+  margin: 0 auto 0.75rem;
+  color: var(--secondary);
+}
+
+.reviews-inline-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.reviews-inline-cta:hover {
+  text-decoration: underline;
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.hero-cta-secondary:hover {
+  background: var(--accent);
+  color: var(--main-bg);
+}
+
 /* Ensure CTA buttons in services and reviews have space from previous content */
 .services .hero-cta,
 .reviews .hero-cta {
@@ -299,6 +374,10 @@ h1, h2 {
   .review-author {
     margin-top: 0.5rem;
     font-weight: bold;
+  }
+
+  .reviews-actions {
+    margin-top: 1.5rem;
   }
 
   @media (max-width: 600px) {
@@ -1141,4 +1220,15 @@ footer a {
   color: inherit;
   text-decoration: underline;
   text-underline-offset: 0.15em;
+}
+
+@media (max-width: 767px) {
+  .google-review-badge {
+    font-size: 0.92rem;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .cta-trust-note {
+    font-size: 0.92rem;
+  }
 }
