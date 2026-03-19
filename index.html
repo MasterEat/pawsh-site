@@ -6,7 +6,7 @@
   <meta name="title" content="Pawsh – Pet Grooming στο Γαλάτσι">
   <meta name="description" content="Εξειδικευμένες υπηρεσίες καλλωπισμού σκύλων με αγάπη και θετική προσέγγιση. Βρείτε μας στο Γαλάτσι.">
   <meta name="keywords" content="Pawsh, pet grooming, καλλωπισμός σκύλων, κομμωτήριο σκύλων, spa σκύλων, grooming Galatsi, dog grooming Athens">
-  <meta name="author" content="Pawsh Pet Grooming">
+  <meta name="author" content="Pawsh Pet Beauty Salon">
   <meta name="robots" content="index, follow">
   <title>Pawsh – Pet Grooming στο Γαλάτσι</title>
   <link rel="canonical" href="https://www.pawsh.gr/">
@@ -26,35 +26,63 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Pawsh Pet Grooming",
-      "image": "https://www.pawsh.gr/assets/img/logo.png",
-      "url": "https://www.pawsh.gr",
-      "telephone": "+30-210-440-4084",
-      "email": "pawsh@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Αγίας Γλυκερίας 62",
-        "addressLocality": "Γαλάτσι",
-        "postalCode": "11147",
-        "addressCountry": "GR"
-      },
-      "openingHours": [
-        "Tu-Fri 10:00-18:00",
-        "Sat 10:00-15:00"
-      ],
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578078265850",
-        "https://www.instagram.com/pawsh_pet_salon/",
-        "https://booking.setmore.com/scheduleAppointment/pawsh"
-      ],
-      "priceRange": "€"
+      "@graph": [
+        {
+          "@type": "PetGrooming",
+          "@id": "https://www.pawsh.gr/#localbusiness",
+          "name": "Pawsh Pet Beauty Salon",
+          "url": "https://www.pawsh.gr/",
+          "image": "https://www.pawsh.gr/logo/logo.png",
+          "logo": "https://www.pawsh.gr/logo/logo.png",
+          "description": "Premium pet grooming και καλλωπισμός σκύλων στο Γαλάτσι με θετική προσέγγιση, ασφάλεια και φροντίδα προσαρμοσμένη στις ανάγκες κάθε σκύλου.",
+          "telephone": "+30 2104404084",
+          "email": "pawsh.petgroomingsalon@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Αγίας Γλυκερίας 62",
+            "addressLocality": "Γαλάτσι",
+            "postalCode": "111 47",
+            "addressCountry": "Ελλάδα"
+          },
+          "openingHoursSpecification": [
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "11:00", "closes": "20:00"},
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "18:00"},
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "11:00", "closes": "20:00"},
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "20:00"},
+            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00"}
+          ],
+          "areaServed": [
+            {"@type": "City", "name": "Γαλάτσι"},
+            {"@type": "City", "name": "Κυψέλη"},
+            {"@type": "City", "name": "Πατήσια"},
+            {"@type": "City", "name": "Ψυχικό"},
+            {"@type": "City", "name": "Φιλοθέη"}
+          ],
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61578078265850",
+            "https://www.instagram.com/pawsh_pet_salon/",
+            "https://pawshpetbeautysalon.setmore.com"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.pawsh.gr/#faq",
+          "mainEntity": [
+            {"@type": "Question", "name": "Πόσο κοστίζει ένα grooming;", "acceptedAnswer": {"@type": "Answer", "text": "Ανάλογα με τη ράτσα, το μέγεθος, την κατάσταση και τις ανάγκες του σκύλου."}},
+            {"@type": "Question", "name": "Πόσο συχνά πρέπει να καλλωπίζεται ένας σκύλος;", "acceptedAnswer": {"@type": "Answer", "text": "Αναλόγως τη ράτσα και τον τρόπο ζωής, συνήθως κάθε μήνα."}},
+            {"@type": "Question", "name": "Χρειάζομαι ραντεβού;", "acceptedAnswer": {"@type": "Answer", "text": "Ναι, χρειάζεται ραντεβού ώστε να εξυπηρετηθείς άμεσα και σωστά."}},
+            {"@type": "Question", "name": "Τι προϊόντα χρησιμοποιείτε;", "acceptedAnswer": {"@type": "Answer", "text": "Χρησιμοποιούμε μόνο επαγγελματικά, δερματολογικά ελεγμένα προϊόντα."}},
+            {"@type": "Question", "name": "Πόσο διαρκεί η περιποίηση;", "acceptedAnswer": {"@type": "Answer", "text": "Η διάρκεια της διαδικασίας εξαρτάται από το μέγεθος, την κατάσταση και την συμπεριφορά του σκύλου."}},
+            {"@type": "Question", "name": "Μπορώ να μείνω με τον σκύλο μου κατά τη διάρκεια του grooming;", "acceptedAnswer": {"@type": "Answer", "text": "Ναι, μπορείτε να παρακολουθείτε αν θέλετε, αρκεί να μην αγχώνεται ο σκύλος."}}
+          ]
+        }
+      ]
     }
   </script>
 </head>
   <body>
     <h2 class="sr-only">Καλλωπισμός Σκύλων στο Γαλάτσι με Ασφάλεια, Αγάπη & Θετική Προσέγγιση</h2>
-    <p class="sr-only">Στο Pawsh προσφέρουμε επαγγελματικές υπηρεσίες pet grooming και κομμωτηρίου σκύλων στο Γαλάτσι. Εξυπηρετούμε περιοχές όπως Κυψέλη, Πατήσια, Φιλοθέη και Ψυχικό, με στόχο τη χαρά και την ευεξία κάθε κατοικιδίου.</p>
+    <p class="sr-only">Στο Pawsh Pet Beauty Salon προσφέρουμε επαγγελματικές υπηρεσίες pet grooming, κομμωτηρίου σκύλων και καλλωπισμού σκύλων στο Γαλάτσι. Εξυπηρετούμε κηδεμόνες από Γαλάτσι, Κυψέλη, Πατήσια, Ψυχικό και Φιλοθέη, με στόχο τη χαρά και την ευεξία κάθε κατοικιδίου.</p>
     <header class="bg-[#063d49] text-white">
       <!-- Desktop header -->
       <div class="hidden md:block">
@@ -96,10 +124,13 @@
         <a href="about.html">The Story</a>
         <a href="gallery.html">Gallery</a>
       </nav>
-      <div class="mt-auto flex flex-col items-center space-y-4">
+            <div class="mt-auto flex flex-col items-center space-y-4 text-center">
         <a href="https://pawshpetbeautysalon.setmore.com" class="btn" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
-        <p>Τηλέφωνο: 2104404084</p>
+        <a href="tel:+302104404084">Τηλέφωνο: +30 2104404084</a>
+        <a href="mailto:pawsh.petgroomingsalon@gmail.com">Email: pawsh.petgroomingsalon@gmail.com</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Αγίας Γλυκερίας 62, Γαλάτσι 111 47, Ελλάδα</a>
         <div class="flex space-x-4">
+
           <a href="https://www.facebook.com/profile.php?id=61578078265850" class="radial-icon" aria-label="Facebook" target="_blank" rel="noopener">
             <img src="logo/facebooklogo.svg" alt="Facebook Icon">
           </a>
@@ -124,6 +155,7 @@
     <div class="hero-content">
       <h1>Καλώς ήρθες στο Pawsh</h1>
       <h2>For posh paws!</h2>
+      <p class="hero-description">Το Pawsh Pet Beauty Salon είναι ένα premium κομμωτήριο σκύλων στο Γαλάτσι, όπου το pet grooming και ο καλλωπισμός σκύλων στο Γαλάτσι γίνονται με ηρεμία, ασφάλεια και εξατομικευμένη φροντίδα.</p>
       <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" aria-label="Κλείσε Ραντεβού" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
     </div>
   </section>
@@ -269,7 +301,7 @@
 
     <section id="services" class="services">
       <h2>Οι Υπηρεσίες μας</h2>
-      <p class="services-intro">Επαγγελματικές υπηρεσίες καλλωπισμού προσαρμοσμένες στις ανάγκες του κατοικίδιού σας</p>
+      <p class="services-intro">Επαγγελματικές υπηρεσίες καλλωπισμού προσαρμοσμένες στις ανάγκες του κατοικίδιού σας, για όσους αναζητούν pet grooming στο Γαλάτσι με premium αισθητική και ουσιαστική φροντίδα.</p>
       <div class="services-grid">
         <div class="pawsh-service-card">
           <div class="service-card">
@@ -309,6 +341,18 @@
       </div>
       <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
     </section>
+
+  <section class="areas-served" aria-labelledby="areas-served-title">
+    <h2 id="areas-served-title">Περιοχές που εξυπηρετούμε</h2>
+    <p>Υποδεχόμαστε καθημερινά κηδεμόνες που αναζητούν ποιοτικό καλλωπισμό σκύλων στο Γαλάτσι και σε κοντινές περιοχές, πάντα με την ίδια προσοχή στη λεπτομέρεια και τη φροντίδα.</p>
+    <ul class="areas-served-list">
+      <li>Γαλάτσι</li>
+      <li>Κυψέλη</li>
+      <li>Πατήσια</li>
+      <li>Ψυχικό</li>
+      <li>Φιλοθέη</li>
+    </ul>
+  </section>
 
 <h2 class="pawsh-gallery-heading">Pawsh Models</h2>
 <section id="gallery" class="pawsh-gallery-section" aria-label="Gallery σκύλων">
@@ -402,7 +446,8 @@
 
   
     <section class="map">
-      <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47&output=embed"></iframe>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Άνοιξε τη διεύθυνση στο Google Maps</a>
+      <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47,+Ελλάδα&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-modal="true" aria-hidden="true">
@@ -418,13 +463,13 @@
   <footer id="contact">
     <div class="footer-column">
       <h4>Στοιχεία Επικοινωνίας</h4>
-      <p>Διεύθυνση: Αγίας Γλυκερίας 62, Γαλάτσι 111 47</p>
-      <p>Τηλέφωνο: 21 0440 4084</p>
-      <p>Email: pawsh.petgroomingsalon@gmail.com</p>
+      <p>Διεύθυνση: <a href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Αγίας Γλυκερίας 62, Γαλάτσι 111 47, Ελλάδα</a></p>
+      <p>Τηλέφωνο: <a href="tel:+302104404084">+30 2104404084</a></p>
+      <p>Email: <a href="mailto:pawsh.petgroomingsalon@gmail.com">pawsh.petgroomingsalon@gmail.com</a></p>
     </div>
     <div class="footer-column">
       <a href="index.html">
-        <img src="logo/logo2.png" alt="Pawsh logo" class="logo">
+        <img src="logo/logo2.png" alt="Pawsh Pet Beauty Salon logo" class="logo">
       </a>
       <div class="footer-socials">
         <a href="https://www.facebook.com/profile.php?id=61578078265850" class="radial-icon" aria-label="Facebook" target="_blank" rel="noopener">
@@ -438,17 +483,17 @@
         <a href="terms.html" target="_blank" rel="noopener">Όροι και Προϋποθέσεις</a>
         <a href="privacy.html" target="_blank" rel="noopener">Πολιτική Απορρήτου</a>
       </div>
-      <p style="margin-top: 1rem;">&copy; 2025 Pawsh Pet Salon. All rights reserved.</p>
+      <p style="margin-top: 1rem;">&copy; 2025 Pawsh Pet Beauty Salon. All rights reserved.</p>
     </div>
     <div class="footer-column">
       <h4>Ωράριο Καταστήματος</h4>
-      <p>Δευτέρα: Κλειστά</p>
+      <p>Δευτέρα: Closed</p>
       <p>Τρίτη: 11:00 - 20:00</p>
       <p>Τετάρτη: 10:00 - 18:00</p>
       <p>Πέμπτη: 11:00 - 20:00</p>
       <p>Παρασκευή: 11:00 - 20:00</p>
       <p>Σάββατο: 10:00 - 17:00</p>
-      <p>Κυριακή: Κλειστά</p>
+      <p>Κυριακή: Closed</p>
     </div>
   </footer>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
