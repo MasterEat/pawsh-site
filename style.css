@@ -40,6 +40,16 @@ header nav a {
   color: white;
 }
 
+.menu-button img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.menu-button.open img {
+  transform: rotate(180deg);
+}
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
