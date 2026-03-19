@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 60">
+  <path d="
+    M15,10 
+    C5,10 5,25 15,25 
+    C5,25 5,40 15,40 
+    C20,40 25,35 30,30 
+    L70,30 
+    C75,35 80,40 85,40 
+    C95,40 95,25 85,25 
+    C95,25 95,10 85,10 
+    C80,10 75,15 70,20 
+    L30,20 
+    C25,15 20,10 15,10
+    Z" 
+    fill="white"
+    stroke="black"
+    stroke-width="0.05"
+    stroke-linejoin="round"
+  />
+</svg>
