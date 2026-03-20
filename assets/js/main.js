@@ -1,3 +1,26 @@
+function initMobileMenuButton() {
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu') || document.querySelector('.mobile-menu');
+
+  if (!menuButton || !mobileMenu || menuButton.dataset.menuInit === 'true') {
+    return;
+  }
+
+  menuButton.dataset.menuInit = 'true';
+
+  menuButton.addEventListener('click', () => {
+    menuButton.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    mobileMenu.classList.toggle('translate-x-full');
+    mobileMenu.classList.toggle('translate-x-0');
+
+    const isOpen = menuButton.classList.contains('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initMobileMenuButton);
+
 document.addEventListener('DOMContentLoaded', () => {
   const gallerySection = document.querySelector('#gallery');
   if (!gallerySection) {
