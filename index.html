@@ -188,7 +188,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
       opacity: 0;
       transform: scale(1);
       transform-origin: center center;
@@ -304,6 +303,18 @@
     #reviews .hero-cta:hover {
       border: 2px solid #063d49;
     }
+    @media (min-width: 1024px) {
+      .hero .slides {
+        display: grid;
+        place-items: center;
+      }
+      .hero .slide {
+        max-width: none;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+
     @media (max-width: 768px) {
       .hero {
         height: clamp(22rem, 75vh, 32rem);
