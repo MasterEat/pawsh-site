@@ -52,7 +52,7 @@
       <div class="mobile-language-switcher text-[#d7c9a9]" aria-label="Language switcher"><span aria-current="true">GR</span> | <a href="en/services.html">EN</a></div>
     </div>
   </header>
-  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden">
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden"><button type="button" class="mobile-menu__close" aria-label="Close menu"><span aria-hidden="true">×</span></button>
     <nav class="flex flex-col space-y-4">
       <a href="index.html">Αρχική</a>
       <a href="about.html">Η Ιστορία μας</a>
@@ -98,15 +98,22 @@
       const topBar = menuButton.querySelector('[data-bar="top"]');
       const middleBar = menuButton.querySelector('[data-bar="middle"]');
       const bottomBar = menuButton.querySelector('[data-bar="bottom"]');
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
-        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', String(!isOpen));
+      const closeMenuButton = mobileMenu.querySelector('.mobile-menu__close');
+      const setMenuState = (open) => {
+        mobileMenu.classList.toggle('translate-x-full', !open);
+        mobileMenu.classList.toggle('translate-x-0', open);
+        menuButton.setAttribute('aria-expanded', String(open));
         if (topBar && middleBar && bottomBar) {
-          topBar.classList.toggle('translate-y-2'); topBar.classList.toggle('rotate-45'); middleBar.classList.toggle('opacity-0'); bottomBar.classList.toggle('-translate-y-2'); bottomBar.classList.toggle('-rotate-45');
+          topBar.classList.toggle('translate-y-2', open); topBar.classList.toggle('rotate-45', open); middleBar.classList.toggle('opacity-0', open); bottomBar.classList.toggle('-translate-y-2', open); bottomBar.classList.toggle('-rotate-45', open);
         }
+      };
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        setMenuState(!isOpen);
       });
+      if (closeMenuButton) {
+        closeMenuButton.addEventListener('click', () => setMenuState(false));
+      }
     }
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {

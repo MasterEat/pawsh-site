@@ -134,11 +134,7 @@ header nav a {
   color: inherit;
 }
 
-@media (max-width: 767px) {
-  .mobile-menu__email {
-    font-size: 0.5625rem;
-    line-height: 1.4;
-    overflow-wrap: anywhere;
+
   }
 }
 
