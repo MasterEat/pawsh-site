@@ -148,14 +148,9 @@
 
   <section class="hero">
     <div class="slides">
-      <img src="assets/hero/salon1.png" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active" fetchpriority="high">
-      <img src="assets/hero/salon2.png" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide">
-      <img src="assets/hero/salon3.png" alt="Λουσάτος σκύλος με μπλε φουλάρι μέσα στο σαλόνι του Pawsh" class="slide">
-      <img src="assets/hero/salon4.png" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide">
-      <img src="assets/hero/salon5.png" alt="Σκυλάκι που στεγνώνει με πετσέτα στο Pawsh" class="slide">
-      <img src="assets/hero/salon6.png" alt="Σκύλος που απολαμβάνει μπάνιο αφρού στο Pawsh" class="slide">
-      <img src="assets/hero/salon7.png" alt="Groomer χτενίζει προσεκτικά σκύλο στο Pawsh" class="slide">
-      <img src="assets/hero/salon8.png" alt="Χαρούμενος σκύλος περιμένει λιχουδιά στο Pawsh" class="slide">
+      <img src="assets/hero/salon1.webp" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active" fetchpriority="high">
+      <img src="assets/hero/salon2.webp" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide">
+      <img src="assets/hero/salon4.webp" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide">
     </div>
     <div class="hero-content">
       <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="Δες τις αξιολογήσεις του Pawsh στο Google">⭐ 5.0 από 80+ αξιολογήσεις στο Google</a>
@@ -172,33 +167,38 @@
       height: 70vh;
       min-height: 70vh;
       overflow: hidden;
+      isolation: isolate;
     }
     .hero .slides {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
     }
     .hero .slide {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0;
+      transform: scale(1);
+      transform-origin: center center;
       transition: opacity 1s ease-in-out;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
     }
     .hero .slide.active {
       opacity: 1;
+      animation: hero-ken-burns 6s ease-in-out forwards;
     }
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.35);
       z-index: 1;
+      pointer-events: none;
     }
     .hero-content {
       position: relative;
@@ -206,10 +206,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
       gap: 1rem;
       padding: 0 1.5rem;
+      height: 100%;
       color: var(--main-bg);
+    }
+    .hero-content > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: hero-content-fade 0.8s ease forwards;
+      animation-delay: 0.3s;
+      will-change: transform, opacity;
     }
     .hero-content h1 {
       font-size: 2.5rem;
@@ -237,6 +246,37 @@
     .hero-cta:hover {
       background: var(--main-bg);
       color: var(--accent);
+    }
+
+    @keyframes hero-ken-burns {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+    @keyframes hero-content-fade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero .slide,
+      .hero-content > * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      .hero .slide.active,
+      .hero-content > * {
+        opacity: 1;
+      }
     }
     #services .hero-cta,
     #reviews .hero-cta {
@@ -272,15 +312,33 @@
 
   <script>
     const slides = document.querySelectorAll('.hero .slide');
+    const heroContentItems = document.querySelectorAll('.hero-content > *');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = 0;
+
+    const restartHeroContentAnimation = () => {
+      if (reducedMotion.matches) {
+        return;
+      }
+
+      heroContentItems.forEach((item) => {
+        item.style.animation = 'none';
+        void item.offsetWidth;
+        item.style.animation = '';
+      });
+    };
+
     if (slides.length) {
       slides[current].classList.add('active');
-      if (slides.length > 1) {
+      restartHeroContentAnimation();
+
+      if (slides.length > 1 && !reducedMotion.matches) {
         setInterval(() => {
           slides[current].classList.remove('active');
           current = (current + 1) % slides.length;
           slides[current].classList.add('active');
-        }, 5000);
+          restartHeroContentAnimation();
+        }, 6000);
       }
     }
   </script>
