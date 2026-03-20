@@ -112,7 +112,7 @@
       <!-- Mobile header -->
       <div class="flex items-center justify-between px-4 py-2 md:hidden">
         <button id="menu-button" class="menu-button flex h-12 w-12 items-center justify-center focus:outline-none" aria-label="Menu" aria-expanded="false">
-          <img src="svg/hamburger.svg" alt="menu" />
+          <img src="svg/hamburger.svg" alt="" aria-hidden="true">
         </button>
         <a href="index.html" class="mx-auto"><img src="logo/logo1.png" alt="Pawsh logo" class="h-16"></a>
         <div class="w-8"></div>
@@ -605,20 +605,6 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    const menuButton = document.getElementById("menu-button");
-    const mobileMenu = document.querySelector(".mobile-menu");
-    if (menuButton && mobileMenu) {
-      menuButton.addEventListener("click", () => {
-        menuButton.classList.toggle("open");
-        mobileMenu.classList.toggle("open");
-        mobileMenu.classList.toggle("translate-x-full");
-        mobileMenu.classList.toggle("translate-x-0");
-
-        const isOpen = menuButton.classList.contains("open");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-      });
-    }
-
     document.querySelectorAll('.faq-question').forEach(function (question) {
       question.addEventListener('click', function () {
         question.parentElement.classList.toggle('active');
