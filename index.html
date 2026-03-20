@@ -227,13 +227,6 @@
       height: 100%;
       color: var(--main-bg);
     }
-    .hero-content > * {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: hero-content-fade 0.8s ease forwards;
-      animation-delay: 0.3s;
-      will-change: transform, opacity;
-    }
     .hero-content h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -294,25 +287,13 @@
         transform: scale(1.08);
       }
     }
-    @keyframes hero-content-fade {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
     @media (prefers-reduced-motion: reduce) {
-      .hero .slide,
-      .hero-content > * {
+      .hero .slide {
         animation: none !important;
         transition: none !important;
         transform: none !important;
       }
-      .hero .slide.active,
-      .hero-content > * {
+      .hero .slide.active {
         opacity: 1;
       }
     }
@@ -365,32 +346,17 @@
 
   <script>
     const slides = document.querySelectorAll('.hero .slide');
-    const heroContentItems = document.querySelectorAll('.hero-content > *');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = 0;
 
-    const restartHeroContentAnimation = () => {
-      if (reducedMotion.matches) {
-        return;
-      }
-
-      heroContentItems.forEach((item) => {
-        item.style.animation = 'none';
-        void item.offsetWidth;
-        item.style.animation = '';
-      });
-    };
-
     if (slides.length) {
       slides[current].classList.add('active');
-      restartHeroContentAnimation();
 
       if (slides.length > 1 && !reducedMotion.matches) {
         setInterval(() => {
           slides[current].classList.remove('active');
           current = (current + 1) % slides.length;
           slides[current].classList.add('active');
-          restartHeroContentAnimation();
         }, 6000);
       }
     }
