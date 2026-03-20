@@ -148,15 +148,20 @@
 
   <section class="hero">
     <div class="slides">
-      <img src="assets/hero/salon1.webp" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active" fetchpriority="high">
-      <img src="assets/hero/salon2.webp" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide">
-      <img src="assets/hero/salon4.webp" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide">
+      <img src="assets/hero/salon1.webp" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active slide--salon1" fetchpriority="high">
+      <img src="assets/hero/salon2.webp" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide slide--salon2">
+      <img src="assets/hero/salon4.webp" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide slide--salon4">
     </div>
     <div class="hero-content">
       <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="Δες τις αξιολογήσεις του Pawsh στο Google">⭐ 5.0 από 80+ αξιολογήσεις στο Google</a>
       <h1>Καλώς ήρθες στο Pawsh</h1>
       <h2>For posh paws!</h2>
-
+      <div class="hero-actions">
+        <div class="hero-cta-group">
+          <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Κλείσε ραντεβού</a>
+          <a href="tel:+302104404084" class="hero-cta hero-cta-ghost">Καλέστε μας</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -191,6 +196,15 @@
     .hero .slide.active {
       opacity: 1;
       animation: hero-ken-burns 6s ease-in-out forwards;
+    }
+    .hero .slide--salon1 {
+      object-position: center 34%;
+    }
+    .hero .slide--salon2 {
+      object-position: center 42%;
+    }
+    .hero .slide--salon4 {
+      object-position: center 24%;
     }
     .hero::after {
       content: "";
@@ -233,7 +247,9 @@
       color: #d7c9a9;
     }
     .hero-cta {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--accent);
       color: var(--main-bg);
       padding: 0.75rem 1.5rem;
@@ -241,11 +257,33 @@
       font-weight: bold;
       text-decoration: none;
       border: 2px solid var(--main-bg);
-      transition: background 0.3s ease, color 0.3s ease;
+      min-width: 13rem;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     }
     .hero-cta:hover {
       background: var(--main-bg);
       color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.875rem;
+    }
+    .hero-cta-ghost {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fffaf0;
+      border-color: rgba(255, 250, 240, 0.72);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(4px);
+    }
+    .hero-cta-ghost:hover {
+      background: rgba(255, 250, 240, 0.12);
+      color: #ffffff;
+      border-color: rgba(255, 250, 240, 0.95);
     }
 
     @keyframes hero-ken-burns {
@@ -286,13 +324,19 @@
     #reviews .hero-cta:hover {
       border: 2px solid #063d49;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       .hero {
         height: clamp(22rem, 75vh, 32rem);
         min-height: clamp(22rem, 75vh, 32rem);
       }
-      .hero .slide {
-        object-position: center 30%;
+      .hero .slide--salon1 {
+        object-position: 58% 32%;
+      }
+      .hero .slide--salon2 {
+        object-position: 62% 40%;
+      }
+      .hero .slide--salon4 {
+        object-position: 55% 24%;
       }
       .hero-content h1 {
         font-size: 2rem;
@@ -300,8 +344,17 @@
       .hero-content h2 {
         font-size: 1.25rem;
       }
+      .hero-cta-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .hero-cta {
+        width: min(100%, 22rem);
+      }
     }
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       .hero-content {
         align-items: center;
         text-align: center;
