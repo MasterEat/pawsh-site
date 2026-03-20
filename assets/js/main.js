@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    const setMenuState = (isOpen) => {
+      menuButton.classList.toggle('open', isOpen);
+      mobileMenu.classList.toggle('open', isOpen);
+      mobileMenu.classList.toggle('translate-x-full', !isOpen);
+      mobileMenu.classList.toggle('translate-x-0', isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    setMenuState(false);
+
+    menuButton.addEventListener('click', () => {
+      setMenuState(!menuButton.classList.contains('open'));
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const gallerySection = document.querySelector('#gallery');
   if (!gallerySection) {
     return;
