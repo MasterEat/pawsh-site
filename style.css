@@ -40,14 +40,58 @@ header nav a {
   color: white;
 }
 
+.menu-button {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
 .menu-button img {
+  position: relative;
+  z-index: 1;
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }
 
+.menu-button__indicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transform: translate(-50%, -50%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.menu-button__indicator span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  border-radius: 999px;
+  background: rgba(215, 201, 169, 0.75);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 .menu-button.open img {
   transform: rotate(180deg);
+}
+
+.menu-button.open .menu-button__indicator span:nth-child(1) {
+  transform: translateY(5px);
+}
+
+.menu-button.open .menu-button__indicator span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.open .menu-button__indicator span:nth-child(3) {
+  transform: translateY(-5px);
 }
 
 .mobile-header {
