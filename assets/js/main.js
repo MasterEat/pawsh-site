@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = [];
   const totalImages = 37;
   const imageFilePrefix = 'dog';
-
+  const galleryPathPrefix = (gallerySection.dataset.galleryPathPrefix || '.').replace(/\/$/, '');
 
   for (let i = 1; i <= totalImages; i += 1) {
     const imageFileName = `${imageFilePrefix}${i}.jpg`;
-    const imageSrc = `./dogs/${imageFileName}`;
+    const imageSrc = `${galleryPathPrefix}/dogs/${imageFileName}`;
     const imageAlt = altTextMap.get(i) || `Pawsh gallery photo ${i}`;
 
     const slide = document.createElement('div');
