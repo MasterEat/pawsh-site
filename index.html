@@ -133,7 +133,7 @@
     </header>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden"><button type="button" class="mobile-menu__close" aria-label="Close menu"><span aria-hidden="true">×</span></button>
       <nav class="flex flex-col space-y-4">
         <a href="index.html">Αρχική</a>
         <a href="about.html">Η Ιστορία μας</a>
@@ -634,15 +634,24 @@
     const menuButton = document.getElementById("menu-button");
     const mobileMenu = document.querySelector(".mobile-menu");
     if (menuButton && mobileMenu) {
-      menuButton.addEventListener("click", () => {
-        menuButton.classList.toggle("open");
-        mobileMenu.classList.toggle("open");
-        mobileMenu.classList.toggle("translate-x-full");
-        mobileMenu.classList.toggle("translate-x-0");
+      const closeMenuButton = mobileMenu.querySelector('.mobile-menu__close');
 
-        const isOpen = menuButton.classList.contains("open");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
+      const setMenuState = (open) => {
+        menuButton.classList.toggle('open', open);
+        mobileMenu.classList.toggle('open', open);
+        mobileMenu.classList.toggle('translate-x-full', !open);
+        mobileMenu.classList.toggle('translate-x-0', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = !menuButton.classList.contains('open');
+        setMenuState(isOpen);
       });
+
+      if (closeMenuButton) {
+        closeMenuButton.addEventListener('click', () => setMenuState(false));
+      }
     }
 
     document.querySelectorAll('.faq-question').forEach(function (question) {
