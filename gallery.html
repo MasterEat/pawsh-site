@@ -49,11 +49,8 @@
 
     <!-- Mobile header -->
     <div class="flex items-center justify-between px-4 py-2 md:hidden">
-      <button id="menu-button" aria-expanded="false" class="flex h-12 w-12 flex-col items-center justify-center space-y-1.5 focus:outline-none">
-        <span class="sr-only">Toggle menu</span>
-        <span data-bar="top" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
-        <span data-bar="middle" class="block h-0.5 w-8 bg-[#d7c9a9] transition-opacity duration-300 ease-in-out"></span>
-        <span data-bar="bottom" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
+      <button id="menu-button" class="menu-button flex h-12 w-12 items-center justify-center focus:outline-none" aria-label="Menu" aria-expanded="false">
+        <img src="svg/hamburger.svg" alt="" aria-hidden="true">
       </button>
       <a href="index.html" class="mx-auto"><img src="logo/logo1.png" alt="Pawsh logo" class="h-12"></a>
       <div class="w-8"></div>
@@ -169,30 +166,6 @@
   </footer>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuButton && mobileMenu) {
-      const topBar = menuButton.querySelector('[data-bar="top"]');
-      const middleBar = menuButton.querySelector('[data-bar="middle"]');
-      const bottomBar = menuButton.querySelector('[data-bar="bottom"]');
-
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
-
-        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', String(!isOpen));
-
-        if (topBar && middleBar && bottomBar) {
-          topBar.classList.toggle('translate-y-2');
-          topBar.classList.toggle('rotate-45');
-          middleBar.classList.toggle('opacity-0');
-          bottomBar.classList.toggle('-translate-y-2');
-          bottomBar.classList.toggle('-rotate-45');
-        }
-      });
-    }
-
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
       window.addEventListener('scroll', () => {
@@ -305,5 +278,6 @@
     }
 
   </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
