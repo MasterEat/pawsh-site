@@ -57,13 +57,15 @@
 
     <!-- Mobile header -->
     <div class="mobile-header md:hidden">
-      <button id="menu-button" aria-expanded="false" class="mobile-header__menu flex h-12 w-12 flex-col items-center justify-center space-y-1.5 focus:outline-none">
-        <span class="sr-only">Toggle menu</span>
-        <span data-bar="top" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
-        <span data-bar="middle" class="block h-0.5 w-8 bg-[#d7c9a9] transition-opacity duration-300 ease-in-out"></span>
-        <span data-bar="bottom" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
+      <button id="menu-button" class="menu-button mobile-header__menu flex h-12 w-12 items-center justify-center focus:outline-none" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-button__indicator" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <img src="svg/hamburger.svg" alt="" />
       </button>
-      <a href="index.html" class="mobile-header__logo"><img src="logo/logo1.png" alt="Pawsh logo" class="h-12"></a>
+      <a href="index.html" class="mobile-header__logo"><img src="logo/logo1.png" alt="Pawsh logo" class="h-16"></a>
       <div class="mobile-language-switcher text-[#d7c9a9]" aria-label="Language switcher"><span aria-current="true">GR</span> | <a href="en/about.html">EN</a></div>
     </div>
   </header>
@@ -149,31 +151,9 @@
     </div>
   </footer>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+  <script src="assets/js/main.js"></script>
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-  if (menuButton && mobileMenu) {
-    const topBar = menuButton.querySelector('[data-bar="top"]');
-    const middleBar = menuButton.querySelector('[data-bar="middle"]');
-    const bottomBar = menuButton.querySelector('[data-bar="bottom"]');
-
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('translate-x-full');
-      mobileMenu.classList.toggle('translate-x-0');
-
-      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-      menuButton.setAttribute('aria-expanded', String(!isOpen));
-
-      if (topBar && middleBar && bottomBar) {
-        topBar.classList.toggle('translate-y-2');
-        topBar.classList.toggle('rotate-45');
-        middleBar.classList.toggle('opacity-0');
-        bottomBar.classList.toggle('-translate-y-2');
-        bottomBar.classList.toggle('-rotate-45');
-      }
-    });
-  }
-
+    initMobileMenuButton();
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
       window.addEventListener('scroll', () => {
