@@ -147,143 +147,27 @@
     </div>
 
   <section class="hero">
-    <div class="slides">
-      <img src="assets/hero/salon1.png" alt="Σκυλάκι που ποζάρει χαρούμενο μετά τον καλλωπισμό στο Pawsh" class="slide active" fetchpriority="high">
-      <img src="assets/hero/salon2.png" alt="Εξειδικευμένος groomer περιποιείται σκύλο στο Pawsh" class="slide">
-      <img src="assets/hero/salon3.png" alt="Λουσάτος σκύλος με μπλε φουλάρι μέσα στο σαλόνι του Pawsh" class="slide">
-      <img src="assets/hero/salon4.png" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide">
-      <img src="assets/hero/salon5.png" alt="Σκυλάκι που στεγνώνει με πετσέτα στο Pawsh" class="slide">
-      <img src="assets/hero/salon6.png" alt="Σκύλος που απολαμβάνει μπάνιο αφρού στο Pawsh" class="slide">
-      <img src="assets/hero/salon7.png" alt="Groomer χτενίζει προσεκτικά σκύλο στο Pawsh" class="slide">
-      <img src="assets/hero/salon8.png" alt="Χαρούμενος σκύλος περιμένει λιχουδιά στο Pawsh" class="slide">
+
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('assets/hero/salon2.webp');"></div>
+      <div class="hero-slide" style="background-image: url('assets/hero/salon1.webp');"></div>
+      <div class="hero-slide" style="background-image: url('assets/hero/salon3.webp');"></div>
     </div>
+
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="Δες τις αξιολογήσεις του Pawsh στο Google">⭐ 5.0 από 80+ αξιολογήσεις στο Google</a>
-      <h1>Καλώς ήρθες στο Pawsh</h1>
-      <h2>For posh paws!</h2>
+      <h1>Κομμωτήριο Σκύλων στο Γαλάτσι</h1>
+      <p>Premium φροντίδα και καλλωπισμός για τον σκύλο σας</p>
 
+      <a href="#contact-form" class="btn">Κλείσε Ραντεβού</a>
+
+      <p class="trust-note">
+        ⭐ 5.0 στο Google από 80+ πελάτες
+      </p>
     </div>
+
   </section>
-
-  <style>
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      min-height: 70vh;
-      overflow: hidden;
-    }
-    .hero .slides {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .hero .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .hero .slide.active {
-      opacity: 1;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-      padding: 0 1.5rem;
-      color: var(--main-bg);
-    }
-    .hero-content h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-      color: #d7c9a9;
-    }
-    .hero-content h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      color: #d7c9a9;
-    }
-    .hero-cta {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--main-bg);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      border: 2px solid var(--main-bg);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .hero-cta:hover {
-      background: var(--main-bg);
-      color: var(--accent);
-    }
-    #services .hero-cta,
-    #reviews .hero-cta {
-      border: 2px solid transparent;
-    }
-    #services .hero-cta:hover,
-    #reviews .hero-cta:hover {
-      border: 2px solid #063d49;
-    }
-    @media (max-width: 767px) {
-      .hero {
-        height: clamp(22rem, 75vh, 32rem);
-        min-height: clamp(22rem, 75vh, 32rem);
-      }
-      .hero .slide {
-        object-position: center 30%;
-      }
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .hero-content h2 {
-        font-size: 1.25rem;
-      }
-    }
-    @media (min-width: 768px) {
-      .hero-content {
-        align-items: center;
-        text-align: center;
-        padding: 0 4rem;
-      }
-    }
-  </style>
-
-  <script>
-    const slides = document.querySelectorAll('.hero .slide');
-    let current = 0;
-    if (slides.length) {
-      slides[current].classList.add('active');
-      if (slides.length > 1) {
-        setInterval(() => {
-          slides[current].classList.remove('active');
-          current = (current + 1) % slides.length;
-          slides[current].classList.add('active');
-        }, 5000);
-      }
-    }
-  </script>
 
   <section id="philosophy" class="philosophy">
     <div class="philosophy-content">
@@ -619,5 +503,23 @@
       });
     }
   </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+
+  function showNextSlide() {
+    if (slides.length < 2) return;
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  if (slides.length) {
+    setInterval(showNextSlide, 5000);
+  }
+});
+</script>
 </body>
 </html>
