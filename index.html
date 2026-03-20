@@ -133,7 +133,7 @@
     </header>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-[#d7c9a9] text-[#063d49] transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 md:hidden"><button type="button" class="mobile-menu__close" aria-label="Close menu"><span aria-hidden="true">×</span></button>
       <nav class="flex flex-col space-y-4">
         <a href="index.html">Αρχική</a>
         <a href="about.html">Η Ιστορία μας</a>
@@ -145,7 +145,7 @@
             <div class="mt-auto flex flex-col items-center space-y-4 text-center">
         <a href="https://pawshpetbeautysalon.setmore.com" class="btn" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
         <a href="tel:+302104404084">Τηλέφωνο: +30 2104404084</a>
-        <a href="mailto:pawsh.petgroomingsalon@gmail.com">Ηλεκτρονικό ταχυδρομείο: pawsh.petgroomingsalon@gmail.com</a>
+        <a href="mailto:pawsh.petgroomingsalon@gmail.com" class="mobile-menu__email">Ηλεκτρονικό ταχυδρομείο: pawsh.petgroomingsalon@gmail.com</a>
         <a href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Αγίας Γλυκερίας 62, Γαλάτσι 111 47, Ελλάδα</a>
         <div class="flex space-x-4">
 
@@ -634,15 +634,24 @@
     const menuButton = document.getElementById("menu-button");
     const mobileMenu = document.querySelector(".mobile-menu");
     if (menuButton && mobileMenu) {
-      menuButton.addEventListener("click", () => {
-        menuButton.classList.toggle("open");
-        mobileMenu.classList.toggle("open");
-        mobileMenu.classList.toggle("translate-x-full");
-        mobileMenu.classList.toggle("translate-x-0");
+      const closeMenuButton = mobileMenu.querySelector('.mobile-menu__close');
 
-        const isOpen = menuButton.classList.contains("open");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
+      const setMenuState = (open) => {
+        menuButton.classList.toggle('open', open);
+        mobileMenu.classList.toggle('open', open);
+        mobileMenu.classList.toggle('translate-x-full', !open);
+        mobileMenu.classList.toggle('translate-x-0', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = !menuButton.classList.contains('open');
+        setMenuState(isOpen);
       });
+
+      if (closeMenuButton) {
+        closeMenuButton.addEventListener('click', () => setMenuState(false));
+      }
     }
 
     document.querySelectorAll('.faq-question').forEach(function (question) {
