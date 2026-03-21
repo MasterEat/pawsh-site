@@ -622,6 +622,13 @@ footer img.logo {
   margin: 0 0.5rem;
   cursor: pointer;
 }
+
+.me-credit {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
 @media (max-width: 600px) {
   footer {
     flex-direction: column;

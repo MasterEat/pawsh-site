@@ -275,3 +275,11 @@ a:hover {
     flex-direction: column;
   }
 }
+
+
+.me-credit {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 0.7;
+}
