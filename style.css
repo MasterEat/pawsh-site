@@ -139,6 +139,14 @@ header nav a {
     padding-top: 5.75rem;
   }
 
+  .mobile-menu__email {
+    display: block;
+    max-width: 100%;
+    font-size: 0.95rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
   .mobile-menu__close {
     position: absolute;
     top: 1rem;
