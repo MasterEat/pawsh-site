@@ -48,11 +48,13 @@
         </nav>
     </div>
     <div class="mobile-header md:hidden">
-      <button id="menu-button" aria-expanded="false" class="mobile-header__menu flex h-12 w-12 flex-col items-center justify-center space-y-1.5 focus:outline-none">
-        <span class="sr-only">Toggle menu</span>
-        <span data-bar="top" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
-        <span data-bar="middle" class="block h-0.5 w-8 bg-[#d7c9a9] transition-opacity duration-300 ease-in-out"></span>
-        <span data-bar="bottom" class="block h-0.5 w-8 origin-center bg-[#d7c9a9] transition-transform duration-300 ease-in-out"></span>
+      <button id="menu-button" class="menu-button mobile-header__menu flex h-12 w-12 items-center justify-center focus:outline-none" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-button__indicator" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <img src="svg/hamburger.svg" alt="" />
       </button>
       <a href="index.html" class="mobile-header__logo"><img src="logo/logo1.png" alt="Pawsh logo" class="h-12"></a>
       <div class="mobile-language-switcher text-[#d7c9a9]" aria-label="Language switcher"><span aria-current="true">GR</span> | <a href="en/contact.html">EN</a></div>
@@ -232,39 +234,10 @@
 
   <a href="#contact-form" class="sticky-booking-btn">Κλείσε ραντεβού τώρα</a>
   <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+  <script src="assets/js/main.js"></script>
 
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuButton && mobileMenu) {
-      const topBar = menuButton.querySelector('[data-bar="top"]');
-      const middleBar = menuButton.querySelector('[data-bar="middle"]');
-      const bottomBar = menuButton.querySelector('[data-bar="bottom"]');
-      const closeMenuButton = mobileMenu.querySelector('.mobile-menu__close');
-
-      const setMenuState = (open) => {
-        mobileMenu.classList.toggle('translate-x-full', !open);
-        mobileMenu.classList.toggle('translate-x-0', open);
-        menuButton.setAttribute('aria-expanded', String(open));
-
-        if (topBar && middleBar && bottomBar) {
-          topBar.classList.toggle('translate-y-2', open);
-          topBar.classList.toggle('rotate-45', open);
-          middleBar.classList.toggle('opacity-0', open);
-          bottomBar.classList.toggle('-translate-y-2', open);
-          bottomBar.classList.toggle('-rotate-45', open);
-        }
-      };
-
-      menuButton.addEventListener('click', () => {
-        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-        setMenuState(!isOpen);
-      });
-
-      if (closeMenuButton) {
-        closeMenuButton.addEventListener('click', () => setMenuState(false));
-      }
-    }
+    initMobileMenuButton();
 
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
