@@ -544,25 +544,28 @@ h1, h2 {
   .review-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
   }
 
   .review {
     background: #f5f5f5;
-    padding: 1rem;
+    padding: 1.15rem 1.15rem 1.1rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(6, 61, 73, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 220px;
+    min-height: 240px;
     overflow-y: auto;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
   .review:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
   }
 
   .review-carousel-btn {
@@ -571,13 +574,41 @@ h1, h2 {
 
   .stars {
     color: #ffd700;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
   }
 
   .review-author {
-    margin-top: 0.5rem;
-    font-weight: bold;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .review-rating {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 215, 0, 0.14);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 999px;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .review-text {
+    margin: 0;
+    line-height: 1.65;
+    color: #2b2b2b;
   }
 
   .reviews-actions {
@@ -586,8 +617,29 @@ h1, h2 {
 
   @media (max-width: 600px) {
     .review-list {
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      margin-top: 1rem;
     }
+
+    .review {
+      min-height: auto;
+      padding: 1rem;
+    }
+
+    .review-header {
+      margin-bottom: 0.65rem;
+    }
+
+    .review-author {
+      font-size: 0.98rem;
+    }
+
+    .review-text {
+      font-size: 0.96rem;
+      line-height: 1.58;
+    }
+
   }
 .contact-info {
   max-width: 960px;
