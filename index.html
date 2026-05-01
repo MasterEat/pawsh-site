@@ -324,7 +324,7 @@
 
     .reviews-celebration-image {
       display: block;
-      max-width: 240px;
+      max-width: 360px;
       width: 100%;
       margin: 20px auto 0;
       border-radius: 12px;
@@ -610,12 +610,14 @@
     <h3>100+ αξιολογήσεις στο Google</h3>
     <p>Σας ευχαριστούμε για την εμπιστοσύνη! Το Pawsh Pet Beauty Salon ξεπέρασε τις 100 αξιολογήσεις στο Google με βαθμολογία 5.0. Η αγάπη και η στήριξή σας μάς δίνουν δύναμη να προσφέρουμε καθημερινά προσεγμένη, ήρεμη και επαγγελματική φροντίδα σε κάθε κατοικίδιο.</p>
     <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">Δες όλες τις αξιολογήσεις στο Google</a>
-    <img 
-      src="./assets/reviews/pawsh-100-axiologiseis-google-galatsi.webp"
-      alt="Pawsh 100 αξιολογήσεις Google στο Γαλάτσι - καλλωπισμός σκύλων Αθήνα"
-      class="reviews-celebration-image"
-      loading="lazy"
-    >
+    <a href="./assets/reviews/pawsh-100-axiologiseis-google-galatsi.webp" target="_blank" rel="noopener" aria-label="Άνοιγμα εικόνας 100 αξιολογήσεων Pawsh σε μεγαλύτερο μέγεθος">
+      <img 
+        src="./assets/reviews/pawsh-100-axiologiseis-google-galatsi.webp"
+        alt="Pawsh 100 αξιολογήσεις Google στο Γαλάτσι - καλλωπισμός σκύλων Αθήνα"
+        class="reviews-celebration-image"
+        loading="lazy"
+      >
+    </a>
   </div>
 </section>
 
@@ -754,8 +756,8 @@
     const trustPopupClose = document.getElementById('trust-popup-close');
     if (trustPopup && trustPopupClose) {
       const popupStorageKey = 'pawsh_trust_popup_seen';
-      const popupDelayMs = 5000;
-      const popupScrollThreshold = 0.35;
+      const popupDelayMs = 2500;
+      const popupScrollThreshold = 0.15;
       let popupShown = false;
 
       const popupStorageAvailable = (() => {
