@@ -625,13 +625,30 @@
     </section>
 
 
-  <div id="trust-popup" class="trust-popup" role="dialog" aria-labelledby="trust-popup-title" aria-describedby="trust-popup-text" aria-live="polite" aria-hidden="true">
-    <button type="button" class="trust-popup__close" id="trust-popup-close" aria-label="Κλείσιμο">×</button>
-    <h3 id="trust-popup-title">Σας ευχαριστούμε! 🐾</h3>
-    <p id="trust-popup-text">Ξεπεράσαμε τις 100 αξιολογήσεις στο Google με βαθμολογία 5.0. Η εμπιστοσύνη σας είναι η μεγαλύτερη επιβράβευση για εμάς.</p>
-    <div class="trust-popup__actions">
-      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">Δες αξιολογήσεις</a>
-      <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Κλείσε ραντεβού</a>
+  <div id="reviews-popup" class="reviews-popup">
+    <div class="reviews-popup-card">
+      <button class="reviews-popup-close" aria-label="Κλείσιμο">×</button>
+
+      <img 
+        src="./assets/reviews/pawsh-100-axiologiseis-google-galatsi.webp"
+        alt="Pawsh 100 αξιολογήσεις Google στο Γαλάτσι - καλλωπισμός σκύλων Αθήνα"
+        loading="lazy"
+      />
+
+      <div class="reviews-popup-content">
+        <h3>Σας ευχαριστούμε! 🐾</h3>
+        <p>100+ αξιολογήσεις στο Google με βαθμολογία 5.0 ⭐</p>
+
+        <div class="reviews-popup-actions">
+          <a href="https://g.page/r/YOUR-GOOGLE-LINK/review" class="btn-primary">
+            Δες αξιολογήσεις
+          </a>
+          <a href="/contact.html" class="btn-secondary">
+            Κλείσε ραντεβού
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -750,72 +767,47 @@
     }
 
 
-    const trustPopup = document.getElementById('trust-popup');
-    const trustPopupClose = document.getElementById('trust-popup-close');
-    if (trustPopup && trustPopupClose) {
-      const popupStorageKey = 'pawsh_trust_popup_seen';
-      const popupDelayMs = 5000;
-      const popupScrollThreshold = 0.35;
-      let popupShown = false;
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById("reviews-popup");
+      const cookieBanner = document.getElementById('cookie-banner');
 
-      const popupStorageAvailable = (() => {
-        try {
-          const testKey = '__pawsh_trust_popup_test__';
-          localStorage.setItem(testKey, '1');
-          localStorage.removeItem(testKey);
-          return true;
-        } catch (error) {
-          return false;
-        }
-      })();
+      if (!popup) return;
+      if (localStorage.getItem("pawsh_reviews_popup_seen")) return;
 
-      const popupAlreadySeen = popupStorageAvailable && localStorage.getItem(popupStorageKey) === 'true';
+      const showPopup = () => popup.classList.add("active");
 
-      const hidePopup = () => {
-        trustPopup.classList.remove('is-visible');
-        trustPopup.setAttribute('aria-hidden', 'true');
-        if (popupStorageAvailable) {
-          localStorage.setItem(popupStorageKey, 'true');
-        }
+      const showWithDelay = () => {
+        setTimeout(() => {
+          if (!cookieBanner || !cookieBanner.classList.contains('is-visible')) {
+            showPopup();
+          }
+        }, 2500);
       };
 
-      const showPopup = () => {
-        if (popupShown || popupAlreadySeen) {
-          return;
-        }
-        popupShown = true;
-        trustPopup.classList.add('is-visible');
-        trustPopup.setAttribute('aria-hidden', 'false');
-        window.removeEventListener('scroll', onPopupScroll);
-      };
-
-      const onPopupScroll = () => {
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (scrollableHeight <= 0) {
-          return;
-        }
-        const scrollRatio = window.scrollY / scrollableHeight;
-        if (scrollRatio >= popupScrollThreshold) {
-          showPopup();
-        }
-      };
-
-      if (!popupAlreadySeen) {
-        const popupTimer = window.setTimeout(showPopup, popupDelayMs);
-        window.addEventListener('scroll', onPopupScroll, { passive: true });
-        trustPopupClose.addEventListener('click', () => {
-          window.clearTimeout(popupTimer);
-          hidePopup();
+      if (cookieBanner && cookieBanner.classList.contains('is-visible')) {
+        const observer = new MutationObserver(() => {
+          if (!cookieBanner.classList.contains('is-visible')) {
+            observer.disconnect();
+            showWithDelay();
+          }
         });
-
-        trustPopup.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            window.clearTimeout(popupTimer);
-            hidePopup();
-          });
-        });
+        observer.observe(cookieBanner, { attributes: true, attributeFilter: ['class'] });
+      } else {
+        showWithDelay();
       }
-    }
+
+      popup.querySelector(".reviews-popup-close").addEventListener("click", () => {
+        popup.classList.remove("active");
+        localStorage.setItem("pawsh_reviews_popup_seen", "true");
+      });
+
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.classList.remove("active");
+          localStorage.setItem("pawsh_reviews_popup_seen", "true");
+        }
+      });
+    });
 
     const cookieBanner = document.getElementById('cookie-banner');
     const cookieAccept = document.getElementById('cookie-accept');
