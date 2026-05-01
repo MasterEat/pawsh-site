@@ -166,7 +166,7 @@
       <img src="../assets/hero/salon4.webp" alt="Cute puppy in the arms of a groomer at Pawsh" class="slide slide--salon4">
     </div>
     <div class="hero-content">
-      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="See Pawsh reviews on Google">⭐ 5.0 from 80+ Google reviews</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="See Pawsh reviews on Google">⭐ 5.0 from 100+ Google reviews</a>
       <h1>Welcome to Pawsh</h1>
       <h2>For posh paws!</h2>
       <div class="hero-actions">
@@ -574,15 +574,33 @@
     <div class="reviews-actions">
       <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">See all Google reviews</a>
       <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Book Appointment</a>
-      <p class="cta-trust-note">⭐ 5.0 on Google from 80+ clients</p>
+      <p class="cta-trust-note">⭐ 5.0 from 100+ Google reviews</p>
     </div>
   </section>
 
-  
+<section class="reviews-thankyou" aria-label="100+ Google reviews">
+  <div class="reviews-thankyou__inner">
+    <h3>100+ Google reviews</h3>
+    <p>Thank you for your trust! Pawsh Pet Beauty Salon has reached 100+ Google reviews with a 5.0 rating. Your support inspires us to keep offering calm, careful and professional grooming for every pet.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">See all Google reviews</a>
+  </div>
+</section>
+
     <section class="map">
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Open the address in Google Maps</a>
       <iframe src="https://www.google.com/maps?q=62+Agias+Glykerias,+Galatsi,+111+47,+Greece&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
+
+  <div id="trust-popup" class="trust-popup" role="dialog" aria-labelledby="trust-popup-title" aria-describedby="trust-popup-text" aria-live="polite" aria-hidden="true">
+    <button type="button" class="trust-popup__close" id="trust-popup-close" aria-label="Close">×</button>
+    <h3 id="trust-popup-title">Thank you! 🐾</h3>
+    <p id="trust-popup-text">We have reached 100+ Google reviews with a 5.0 rating. Your trust means everything to us.</p>
+    <div class="trust-popup__actions">
+      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">See reviews</a>
+      <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Book appointment</a>
+    </div>
+  </div>
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-modal="true" aria-hidden="true">
     <h2 class="cookie-banner__heading">A quick note about cookies</h2>
@@ -697,6 +715,74 @@
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+
+    const trustPopup = document.getElementById('trust-popup');
+    const trustPopupClose = document.getElementById('trust-popup-close');
+    if (trustPopup && trustPopupClose) {
+      const popupStorageKey = 'pawsh_trust_popup_seen';
+      const popupDelayMs = 5000;
+      const popupScrollThreshold = 0.35;
+      let popupShown = false;
+
+      const popupStorageAvailable = (() => {
+        try {
+          const testKey = '__pawsh_trust_popup_test__';
+          localStorage.setItem(testKey, '1');
+          localStorage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      const popupAlreadySeen = popupStorageAvailable && localStorage.getItem(popupStorageKey) === 'true';
+
+      const hidePopup = () => {
+        trustPopup.classList.remove('is-visible');
+        trustPopup.setAttribute('aria-hidden', 'true');
+        if (popupStorageAvailable) {
+          localStorage.setItem(popupStorageKey, 'true');
+        }
+      };
+
+      const showPopup = () => {
+        if (popupShown || popupAlreadySeen) {
+          return;
+        }
+        popupShown = true;
+        trustPopup.classList.add('is-visible');
+        trustPopup.setAttribute('aria-hidden', 'false');
+        window.removeEventListener('scroll', onPopupScroll);
+      };
+
+      const onPopupScroll = () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight <= 0) {
+          return;
+        }
+        const scrollRatio = window.scrollY / scrollableHeight;
+        if (scrollRatio >= popupScrollThreshold) {
+          showPopup();
+        }
+      };
+
+      if (!popupAlreadySeen) {
+        const popupTimer = window.setTimeout(showPopup, popupDelayMs);
+        window.addEventListener('scroll', onPopupScroll, { passive: true });
+        trustPopupClose.addEventListener('click', () => {
+          window.clearTimeout(popupTimer);
+          hidePopup();
+        });
+
+        trustPopup.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            window.clearTimeout(popupTimer);
+            hidePopup();
+          });
+        });
+      }
     }
 
     const cookieBanner = document.getElementById('cookie-banner');
