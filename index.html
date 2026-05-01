@@ -166,7 +166,7 @@
       <img src="assets/hero/salon4.webp" alt="Χαριτωμένο κουτάβι στην αγκαλιά groomer στο Pawsh" class="slide slide--salon4">
     </div>
     <div class="hero-content">
-      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="Δες τις αξιολογήσεις του Pawsh στο Google">⭐ 5.0 από 93+ αξιολογήσεις στο Google</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="google-review-badge" target="_blank" rel="noopener" aria-label="Δες τις αξιολογήσεις του Pawsh στο Google">⭐ 5.0 από 100+ αξιολογήσεις στο Google</a>
       <h1>Καλώς ήρθες στο Pawsh</h1>
       <h2>Για κομψές πατούσες!</h2>
       <div class="hero-actions">
@@ -593,15 +593,33 @@
     <div class="reviews-actions">
       <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">Δες όλες τις αξιολογήσεις στο Google</a>
       <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Κλείσε Ραντεβού</a>
-      <p class="cta-trust-note">⭐ 5.0 στο Google από 93+ πελάτες</p>
+      <p class="cta-trust-note">⭐ 5.0 από 100+ αξιολογήσεις στο Google</p>
     </div>
   </section>
 
-  
+<section class="reviews-thankyou" aria-label="100+ αξιολογήσεις στο Google">
+  <div class="reviews-thankyou__inner">
+    <h3>100+ αξιολογήσεις στο Google</h3>
+    <p>Σας ευχαριστούμε για την εμπιστοσύνη! Το Pawsh Pet Beauty Salon ξεπέρασε τις 100 αξιολογήσεις στο Google με βαθμολογία 5.0. Η αγάπη και η στήριξή σας μάς δίνουν δύναμη να προσφέρουμε καθημερινά προσεγμένη, ήρεμη και επαγγελματική φροντίδα σε κάθε κατοικίδιο.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">Δες όλες τις αξιολογήσεις στο Google</a>
+  </div>
+</section>
+
     <section class="map">
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B3%CE%AF%CE%B1%CF%82+%CE%93%CE%BB%CF%85%CE%BA%CE%B5%CF%81%CE%AF%CE%B1%CF%82+62%2C+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9+111+47%2C+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%B1" target="_blank" rel="noopener">Άνοιξε τη διεύθυνση στο Google Maps</a>
       <iframe src="https://www.google.com/maps?q=Αγίας+Γλυκερίας+62,+Γαλάτσι,+111+47,+Ελλάδα&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
+
+
+  <div id="trust-popup" class="trust-popup" role="dialog" aria-labelledby="trust-popup-title" aria-describedby="trust-popup-text" aria-live="polite" aria-hidden="true">
+    <button type="button" class="trust-popup__close" id="trust-popup-close" aria-label="Κλείσιμο">×</button>
+    <h3 id="trust-popup-title">Σας ευχαριστούμε! 🐾</h3>
+    <p id="trust-popup-text">Ξεπεράσαμε τις 100 αξιολογήσεις στο Google με βαθμολογία 5.0. Η εμπιστοσύνη σας είναι η μεγαλύτερη επιβράβευση για εμάς.</p>
+    <div class="trust-popup__actions">
+      <a href="https://www.google.com/maps/search/?api=1&query=Pawsh%20Pet%20Beauty%20Salon%2C%20Agias%20Glykerias%2062%2C%20Galatsi" class="hero-cta hero-cta-secondary" target="_blank" rel="noopener">Δες αξιολογήσεις</a>
+      <a href="https://pawshpetbeautysalon.setmore.com" class="hero-cta" target="_blank" rel="noopener">Κλείσε ραντεβού</a>
+    </div>
+  </div>
 
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-modal="true" aria-hidden="true">
     <h2 class="cookie-banner__heading">Μια μικρή ενημέρωση για τα cookies</h2>
@@ -715,6 +733,74 @@
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+
+    const trustPopup = document.getElementById('trust-popup');
+    const trustPopupClose = document.getElementById('trust-popup-close');
+    if (trustPopup && trustPopupClose) {
+      const popupStorageKey = 'pawsh_trust_popup_seen';
+      const popupDelayMs = 5000;
+      const popupScrollThreshold = 0.35;
+      let popupShown = false;
+
+      const popupStorageAvailable = (() => {
+        try {
+          const testKey = '__pawsh_trust_popup_test__';
+          localStorage.setItem(testKey, '1');
+          localStorage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      const popupAlreadySeen = popupStorageAvailable && localStorage.getItem(popupStorageKey) === 'true';
+
+      const hidePopup = () => {
+        trustPopup.classList.remove('is-visible');
+        trustPopup.setAttribute('aria-hidden', 'true');
+        if (popupStorageAvailable) {
+          localStorage.setItem(popupStorageKey, 'true');
+        }
+      };
+
+      const showPopup = () => {
+        if (popupShown || popupAlreadySeen) {
+          return;
+        }
+        popupShown = true;
+        trustPopup.classList.add('is-visible');
+        trustPopup.setAttribute('aria-hidden', 'false');
+        window.removeEventListener('scroll', onPopupScroll);
+      };
+
+      const onPopupScroll = () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight <= 0) {
+          return;
+        }
+        const scrollRatio = window.scrollY / scrollableHeight;
+        if (scrollRatio >= popupScrollThreshold) {
+          showPopup();
+        }
+      };
+
+      if (!popupAlreadySeen) {
+        const popupTimer = window.setTimeout(showPopup, popupDelayMs);
+        window.addEventListener('scroll', onPopupScroll, { passive: true });
+        trustPopupClose.addEventListener('click', () => {
+          window.clearTimeout(popupTimer);
+          hidePopup();
+        });
+
+        trustPopup.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            window.clearTimeout(popupTimer);
+            hidePopup();
+          });
+        });
+      }
     }
 
     const cookieBanner = document.getElementById('cookie-banner');
