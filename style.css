@@ -1466,6 +1466,26 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
   font-weight: 600;
 }
 
+.gallery-cta-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border: 2px solid var(--main-bg);
+  color: var(--main-bg);
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+@media (hover: hover) {
+  .gallery-cta-button:hover {
+    background-color: var(--main-bg);
+    color: #1f2f2f;
+  }
+}
+
 .map-link {
   display: inline-block;
   margin: 0 0 1rem;
