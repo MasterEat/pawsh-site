@@ -240,6 +240,65 @@ header nav a {
   margin-right: auto;
 }
 
+
+.home-page .section.reviews {
+  padding-top: 3.25rem;
+  padding-bottom: 3rem;
+}
+
+.home-page .reviews-actions {
+  margin-top: 1.15rem;
+}
+
+.home-page .cta-trust-note {
+  color: #3f4a50;
+  text-shadow: none;
+}
+
+.home-page .section.reviews-thankyou {
+  padding-top: 1.5rem;
+  padding-bottom: 1.75rem;
+}
+
+.home-page .section.reviews-thankyou > .reviews-thankyou__inner {
+  max-width: 860px;
+}
+
+.home-page .section.map {
+  padding-top: 2.5rem;
+}
+
+.home-page .section.cta.center {
+  text-align: center;
+}
+
+.home-page .section.cta.center > p {
+  max-width: 700px;
+}
+
+.home-page .section.cta.center .hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.home-page .section.cta.center .hero-cta {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .home-page .section.cta.center .hero-cta-group {
+    width: 100%;
+  }
+
+  .home-page .section.cta.center .hero-cta-group .hero-cta {
+    width: min(320px, 100%);
+  }
+}
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
