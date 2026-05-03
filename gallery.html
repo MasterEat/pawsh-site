@@ -180,6 +180,17 @@
     </section>
     <p class="gallery-cta">Θέλετε να δείτε το επόμενο αποτέλεσμα στον δικό σας σκύλο; <a href="https://pawshpetbeautysalon.setmore.com" target="_blank" rel="noopener">Κλείστε ραντεβού</a>.</p>
   </main>
+
+  <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Προβολή εικόνας γκαλερί">
+    <button type="button" class="gallery-lightbox__close" aria-label="Κλείσιμο">×</button>
+    <button type="button" class="gallery-lightbox__nav gallery-lightbox__prev" aria-label="Προηγούμενη εικόνα">‹</button>
+    <figure class="gallery-lightbox__figure">
+      <img src="" alt="" class="gallery-lightbox__image">
+      <figcaption class="gallery-lightbox__caption"></figcaption>
+    </figure>
+    <button type="button" class="gallery-lightbox__nav gallery-lightbox__next" aria-label="Επόμενη εικόνα">›</button>
+  </div>
+
   <footer id="contact">
     <div class="footer-column">
       <h4>Στοιχεία Επικοινωνίας</h4>
@@ -336,6 +347,92 @@
         observer.observe(compare);
       });
     }
+
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'));
+    const lightbox = document.getElementById('gallery-lightbox');
+
+    if (galleryImages.length && lightbox) {
+      const lightboxImage = lightbox.querySelector('.gallery-lightbox__image');
+      const lightboxCaption = lightbox.querySelector('.gallery-lightbox__caption');
+      const closeButton = lightbox.querySelector('.gallery-lightbox__close');
+      const prevButton = lightbox.querySelector('.gallery-lightbox__prev');
+      const nextButton = lightbox.querySelector('.gallery-lightbox__next');
+      let activeIndex = -1;
+      let touchStartX = null;
+
+      const updateLightbox = (index) => {
+        const image = galleryImages[index];
+        if (!image) return;
+
+        activeIndex = index;
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt || 'Pawsh gallery image';
+        lightboxCaption.textContent = image.alt || 'Pawsh Pet Grooming – Gallery';
+      };
+
+      const openLightbox = (index) => {
+        updateLightbox(index);
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('gallery-lightbox-open');
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('gallery-lightbox-open');
+        activeIndex = -1;
+      };
+
+      const showNext = () => {
+        if (activeIndex < 0) return;
+        updateLightbox((activeIndex + 1) % galleryImages.length);
+      };
+
+      const showPrev = () => {
+        if (activeIndex < 0) return;
+        updateLightbox((activeIndex - 1 + galleryImages.length) % galleryImages.length);
+      };
+
+      galleryImages.forEach((image, index) => {
+        image.addEventListener('click', () => openLightbox(index));
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      prevButton.addEventListener('click', showPrev);
+      nextButton.addEventListener('click', showNext);
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('is-open')) return;
+
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showNext();
+        if (event.key === 'ArrowLeft') showPrev();
+      });
+
+      lightbox.addEventListener('touchstart', (event) => {
+        if (!event.touches || !event.touches.length) return;
+        touchStartX = event.touches[0].clientX;
+      }, { passive: true });
+
+      lightbox.addEventListener('touchend', (event) => {
+        if (touchStartX === null || !event.changedTouches || !event.changedTouches.length) return;
+        const touchEndX = event.changedTouches[0].clientX;
+        const deltaX = touchEndX - touchStartX;
+
+        if (Math.abs(deltaX) > 50) {
+          if (deltaX > 0) showPrev();
+          else showNext();
+        }
+
+        touchStartX = null;
+      }, { passive: true });
+    }
+
 
   </script>
 </body>
