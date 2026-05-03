@@ -52,54 +52,52 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const altTextMap = new Map([
-    [1, 'Σκύλος 1'],
-    [2, 'Σκύλος 2'],
-    [3, 'Σκύλος 3'],
-    [4, 'Σκύλος 4'],
-    [8, 'Σκύλος 8'],
-    [9, 'Σκύλος 9'],
-    [10, 'Σκύλος 10'],
-    [11, 'Σκύλος 11'],
-    [12, 'Σκύλος 12'],
-    [13, 'Σκύλος 13'],
-    [14, 'Σκύλος 14'],
-    [15, 'Σκύλος 15'],
-    [16, 'Σκύλος 16'],
-    [17, 'Σκύλος 17'],
-    [18, 'Σκύλος 18'],
-    [19, 'Σκύλος 19'],
-    [20, 'Σκύλος 20'],
-    [21, 'Σκύλος 21'],
-    [22, 'Σκύλος 22'],
-    [23, 'Σκύλος 23'],
-    [24, 'Σκύλος 24'],
-    [25, 'Σκύλος 25'],
-    [26, 'Σκύλος 26'],
-    [27, 'Σκύλος 27'],
-    [28, 'Σκύλος 28'],
-    [29, 'Σκύλος 29'],
-    [30, 'Σκύλος 30'],
-    [31, 'Σκύλος 31'],
-    [32, 'Σκύλος 32'],
-    [33, 'Σκύλος 33'],
-    [34, 'Σκύλος 34'],
-    [35, 'Σκύλος 35'],
-    [36, 'Σκύλος 36'],
-    [37, 'Σκύλος 37'],
-  ]);
+  const galleryImages = [
+    { src: 'assets/images/dogs/pet-grooming-galatsi-mixed-dog-bandana.webp.webp', alt: 'καλλωπισμός σκύλου στο Pawsh Pet Grooming Γαλάτσι με μπαντάνα' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-akita-xalarosi.webp.webp', alt: 'χαλαρός σκύλος μετά από περιποίηση στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-labrador-retriever.webp.webp', alt: 'κούρεμα και φροντίδα labrador στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-leykos-skylos-kanapes.webp.webp', alt: 'λευκός σκύλος σε καναπέ μετά το grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-husky-bandana.webp.webp', alt: 'husky με μπαντάνα μετά από καλλωπισμό σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-three-dogs-group.webp.webp', alt: 'τρία σκυλάκια μετά από περιποίηση σκύλου στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-staffordshire-xamogelo.webp.webp', alt: 'χαμογελαστός σκύλος μετά από grooming στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-beige-fiogkos.webp.webp', alt: 'poodle με φιόγκο μετά από καλλωπισμό σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-mikros-skylos-bandana-kokkini.webp.webp', alt: 'μικρός σκύλος με κόκκινη μπαντάνα στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-bowtie.webp.webp', alt: 'κούρεμα σκύλου pomeranian στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-corgi-mix.webp.webp', alt: 'περιποίηση σκύλου corgi mix στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-french-bulldog-kanapes.webp.webp', alt: 'french bulldog σε καναπέ μετά από grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd.webp.webp', alt: 'γερμανικός ποιμενικός μετά από καλλωπισμό στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-spitz-leyko-kourema.webp.webp', alt: 'κούρεμα σκύλου spitz στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-kanapes.webp.webp', alt: 'περιποίηση σκύλου german shepherd στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-mix.webp.webp', alt: 'german shepherd mix μετά από περιποίηση στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-mikros-skylos-aspro-mavro.webp.webp', alt: 'ασπρόμαυρος μικρός σκύλος μετά από grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-beagle-bandana.webp.webp', alt: 'beagle με μπαντάνα μετά από καλλωπισμό σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-large-mixed-dog-sofa.webp.webp', alt: 'μεγάλος σκύλος σε καναπέ μετά από περιποίηση στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-xalarosi.webp.webp', alt: 'χαλαρός γερμανικός ποιμενικός μετά από grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-black-mixed-dog.webp.webp', alt: 'μαύρος mixed σκύλος μετά από καλλωπισμό στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-maltese-roz-koritsaki.webp.webp', alt: 'maltese με ροζ αξεσουάρ μετά από κούρεμα σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-pitbull-blue-sofa.webp.webp', alt: 'pitbull σε μπλε καναπέ μετά από περιποίηση στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-cocker-spaniel-kallopismos.webp.webp', alt: 'καλλωπισμός cocker spaniel στο Pawsh Pet Grooming Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-fiogkos-mavros.webp.webp', alt: 'pomeranian με μαύρο φιόγκο μετά από grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-megalos-skylos-kanapes-mple.webp.webp', alt: 'μεγάλος σκύλος μετά από περιποίηση σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-spitz-leyko-fiogkos.webp.webp', alt: 'λευκό spitz με φιόγκο στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-large-black-dog-sofa.webp.webp', alt: 'μαύρος μεγάλος σκύλος σε καναπέ μετά από καλλωπισμό στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-golden-retriever-kanapes.webp.webp', alt: 'golden retriever μετά από grooming στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-sofa.webp.webp', alt: 'περιποίηση σκύλου pomeranian στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-pug-blue-sofa.webp.webp', alt: 'κούρεμα σκύλου pug στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-yorkshire-terrier-bowtie.webp.webp', alt: 'yorkshire terrier μετά από καλλωπισμό στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-mixed-dog-colorful-bandana.webp.webp', alt: 'σκύλος με πολύχρωμη μπαντάνα μετά από περιποίηση στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-megalos-skylos-kanapes-kafe.webp.webp', alt: 'μεγάλος σκύλος σε καφέ καναπέ μετά από grooming στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-black-white-small-dog-bow.webp.webp', alt: 'μικρός ασπρόμαυρος σκύλος με φιόγκο στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-kourema-fiogkos.webp.webp', alt: 'κούρεμα poodle με φιόγκο στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-kafe-kourema.webp.webp', alt: 'καφέ poodle μετά από περιποίηση σκύλου στο Pawsh' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-golden-mixed-dog.webp.webp', alt: 'golden mixed σκύλος μετά από καλλωπισμό στο Pawsh Pet Grooming' },
+    { src: 'assets/images/dogs/pet-grooming-galatsi-fluffy-brown-dog.webp.webp', alt: 'αφράτος καφέ σκύλος μετά από grooming στο Pawsh Γαλάτσι' }
+  ];
 
   const slidesData = [];
   const slides = [];
-  const totalImages = 37;
-  const imageFilePrefix = 'dog';
-  const galleryPathPrefix = (gallerySection.dataset.galleryPathPrefix || '.').replace(/\/$/, '');
 
-  for (let i = 1; i <= totalImages; i += 1) {
-    const imageFileName = `${imageFilePrefix}${i}.jpg`;
-    const imageSrc = `${galleryPathPrefix}/dogs/${imageFileName}`;
-    const imageAlt = altTextMap.get(i) || `Pawsh gallery photo ${i}`;
-
+  galleryImages.forEach(({ src, alt }, index) => {
     const slide = document.createElement('div');
     slide.className = 'pawsh-gallery-slide';
     slide.setAttribute('role', 'listitem');
@@ -107,24 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'pawsh-gallery-slide-button';
-    button.setAttribute('aria-label', `Μεγέθυνση: ${imageAlt}`);
+    button.setAttribute('aria-label', `Μεγέθυνση: ${alt}`);
 
     const img = document.createElement('img');
-    img.src = imageSrc;
-    img.alt = imageAlt;
+    img.src = src;
+    img.alt = alt;
     img.decoding = 'async';
     img.draggable = false;
-    if (i > 3) {
-      img.loading = 'lazy';
-    }
+    img.loading = index > 3 ? 'lazy' : 'eager';
 
     button.appendChild(img);
     slide.appendChild(button);
     track.appendChild(slide);
 
-    slidesData.push({ src: imageSrc, alt: imageAlt });
+    slidesData.push({ src, alt });
     slides.push({ slide, button });
-  }
+  });
 
   if (!slides.length) {
     return;
