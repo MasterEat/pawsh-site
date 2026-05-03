@@ -1114,9 +1114,26 @@ footer img.logo {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(6, 61, 73, 0.35), rgba(6, 61, 73, 0));
+  background: rgba(0, 0, 0, 0.25);
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.pawsh-gallery-slide-button::before {
+  content: 'Δες αποτέλεσμα';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .pawsh-gallery-slide-button:focus-visible {
@@ -1136,11 +1153,13 @@ footer img.logo {
 @media (hover: hover) {
   .pawsh-gallery-slide-button:hover img,
   .pawsh-gallery-slide-button:focus-visible img {
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .pawsh-gallery-slide-button:hover::after,
-  .pawsh-gallery-slide-button:focus-visible::after {
+  .pawsh-gallery-slide-button:focus-visible::after,
+  .pawsh-gallery-slide-button:hover::before,
+  .pawsh-gallery-slide-button:focus-visible::before {
     opacity: 1;
   }
 }
