@@ -228,6 +228,18 @@ header nav a {
   background-color: #efe6d3;
 }
 
+.home-page .section {
+  max-width: none;
+  margin: 0;
+  padding: 4rem 1rem;
+}
+
+.home-page .section > * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
