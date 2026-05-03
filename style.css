@@ -219,6 +219,15 @@ header nav a {
   }
 }
 
+
+.home-page .section {
+  background-color: #d7c9a9;
+}
+
+.home-page .section.alt {
+  background-color: #efe6d3;
+}
+
 section {
   padding: 4rem 1rem;
   max-width: 960px;
