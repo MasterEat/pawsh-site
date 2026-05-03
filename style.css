@@ -1527,11 +1527,16 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 @media (max-width: 640px) {
   .gallery-paw-bg .gallery-grid {
+    display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px;
+    gap: 12px !important;
+    padding: 0 0.75rem;
   }
 
   .gallery-paw-bg .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 14px;
   }
 }
