@@ -1493,7 +1493,7 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 }
 
 
- .gallery-paw-bg .gallery-grid {
+.gallery-paw-bg .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 18px;
@@ -1521,7 +1521,6 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 @media (max-width: 640px) {
   .gallery-paw-bg .gallery-grid {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px;
   }
