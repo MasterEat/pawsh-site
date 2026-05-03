@@ -759,20 +759,6 @@
       });
     }
 
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const carouselImage = document.querySelector('#gallery .pawsh-gallery-slide img[src*="pet-grooming-galatsi-labrador-retriever.webp"]');
-      if (!carouselImage) return;
-
-      carouselImage.src = 'assets/images/pet-grooming-galatsi-large-mixed-dog-sofa.webp';
-      carouselImage.alt = 'Μεγάλος ημίαιμος σκύλος μετά από grooming στο Γαλάτσι';
-
-      const triggerButton = carouselImage.closest('.pawsh-gallery-slide-button');
-      if (triggerButton) {
-        triggerButton.setAttribute('aria-label', 'Μεγέθυνση: Μεγάλος ημίαιμος σκύλος μετά από grooming στο Γαλάτσι');
-      }
-    });
-
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {
       window.addEventListener('scroll', () => {

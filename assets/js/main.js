@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-akita-xalarosi.webp'), alt: 'περιποίηση σκύλου akita στο Pawsh Pet Grooming Γαλάτσι' }
   ];
 
-  const slidesData = [];
   const slides = [];
 
   galleryImages.forEach(({ src, alt }, index) => {
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slide.appendChild(button);
     track.appendChild(slide);
 
-    slidesData.push({ src, alt });
     slides.push({ slide, button });
   });
 
@@ -161,13 +159,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let touchStartY = 0;
 
   const clampIndex = (index) => {
-    const total = slidesData.length;
+    const total = slides.length;
     return (index + total) % total;
+  };
+
+  const getSlideData = (index) => {
+    const slide = slides[clampIndex(index)];
+    const image = slide?.button.querySelector('img');
+    return {
+      src: image?.currentSrc || image?.src || '',
+      alt: image?.alt || ''
+    };
   };
 
   const showImage = (index) => {
     currentIndex = clampIndex(index);
-    const { src, alt } = slidesData[currentIndex];
+    const { src, alt } = getSlideData(currentIndex);
     lightboxImage.src = src;
     lightboxImage.alt = alt;
     lightboxCaption.textContent = alt;
