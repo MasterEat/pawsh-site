@@ -447,11 +447,23 @@
   </section>
 
 <h2 class="pawsh-gallery-heading">Pawsh Models</h2>
-<section id="gallery" class="pawsh-gallery-section" aria-label="Dog gallery" data-gallery-path-prefix="..">
+<section id="gallery" class="section pawsh-gallery-section alt" aria-label="Dog gallery" data-gallery-path-prefix="..">
   <div class="pawsh-gallery-container">
-    <div class="pawsh-gallery-scroller" tabindex="0" aria-label="Pawsh photo collection" role="list">
+    <button type="button" class="pawsh-gallery-nav pawsh-gallery-nav-prev" aria-label="Previous photos">
+      <span aria-hidden="true">&#10094;</span>
+    </button>
+    <div class="pawsh-gallery-scroller" aria-label="Pawsh photo collection" role="list">
       <div class="pawsh-gallery-track"></div>
     </div>
+    <button type="button" class="pawsh-gallery-nav pawsh-gallery-nav-next" aria-label="Next photos">
+      <span aria-hidden="true">&#10095;</span>
+    </button>
+    <article class="pawsh-gallery-cta" aria-label="Booking call to action">
+      <p class="cta-lead">Want your dog to look like this?</p>
+      <p>Book your appointment at Pawsh Pet Grooming.</p>
+      <a href="https://pawshpetbeautysalon.setmore.com" class="pawsh-gallery-cta-button" target="_blank" rel="noopener">Book Appointment</a>
+      <a href="gallery.html" class="pawsh-gallery-cta-button pawsh-gallery-cta-secondary">View Full Gallery</a>
+    </article>
   </div>
   <div class="pawsh-gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" hidden>
     <button type="button" class="pawsh-gallery-lightbox-close" aria-label="Close gallery">&times;</button>

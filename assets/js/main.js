@@ -54,15 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+
+  const pathPrefixRaw = (gallerySection.dataset.galleryPathPrefix || '').trim();
+  const pathPrefix = pathPrefixRaw.replace(/\/+$/, '');
+  const resolveGalleryPath = (path) => {
+    if (!pathPrefix) {
+      return path;
+    }
+    return `${pathPrefix}/${path.replace(/^\/+/, '')}`;
+  };
   const galleryImages = [
-    { src: 'assets/images/pet-grooming-galatsi-poodle-kourema-fiogkos.webp', alt: 'κούρεμα σκύλου poodle στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-german-shepherd-kanapes.webp', alt: 'περιποίηση σκύλου german shepherd στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-pomeranian-bowtie.webp', alt: 'περιποίηση σκύλου pomeranian στο Pawsh Pet Grooming Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-husky-bandana.webp', alt: 'κούρεμα σκύλου husky στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-labrador-retriever.webp', alt: 'περιποίηση σκύλου labrador retriever στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-yorkshire-terrier-bowtie.webp', alt: 'κούρεμα σκύλου yorkshire terrier στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-golden-retriever-kanapes.webp', alt: 'περιποίηση σκύλου golden retriever στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/pet-grooming-galatsi-akita-xalarosi.webp', alt: 'περιποίηση σκύλου akita στο Pawsh Pet Grooming Γαλάτσι' }
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-poodle-kourema-fiogkos.webp'), alt: 'κούρεμα σκύλου poodle στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-german-shepherd-kanapes.webp'), alt: 'περιποίηση σκύλου german shepherd στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-pomeranian-bowtie.webp'), alt: 'περιποίηση σκύλου pomeranian στο Pawsh Pet Grooming Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-husky-bandana.webp'), alt: 'κούρεμα σκύλου husky στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-labrador-retriever.webp'), alt: 'περιποίηση σκύλου labrador retriever στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-yorkshire-terrier-bowtie.webp'), alt: 'κούρεμα σκύλου yorkshire terrier στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-golden-retriever-kanapes.webp'), alt: 'περιποίηση σκύλου golden retriever στο Pawsh Γαλάτσι' },
+    { src: resolveGalleryPath('assets/images/pet-grooming-galatsi-akita-xalarosi.webp'), alt: 'περιποίηση σκύλου akita στο Pawsh Pet Grooming Γαλάτσι' }
   ];
 
   const slidesData = [];
