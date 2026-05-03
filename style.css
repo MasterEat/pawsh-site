@@ -1469,21 +1469,31 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 .gallery-cta-button {
   display: inline-block;
+  margin-left: 10px;
   margin-top: 12px;
-  padding: 10px 18px;
-  border: 2px solid var(--main-bg);
-  color: var(--main-bg);
+  padding: 10px 20px;
+  border: 2px solid #064851;
+  color: #064851;
+  background: transparent;
   text-decoration: none;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
-  transition: all 0.25s ease;
+  line-height: 1;
+  vertical-align: middle;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.gallery-cta-button:visited {
+  color: #064851;
 }
 
 @media (hover: hover) {
-  .gallery-cta-button:hover {
-    background-color: var(--main-bg);
-    color: #1f2f2f;
+  .gallery-cta-button:hover,
+  .gallery-cta-button:focus-visible {
+    background-color: #064851;
+    color: #d7c9a9;
+    transform: translateY(-1px);
   }
 }
 
