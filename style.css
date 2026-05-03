@@ -1436,7 +1436,8 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 @media (max-width: 640px) {
   .gallery-paw-bg .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px;
   }
 
@@ -1447,7 +1448,7 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 @media (max-width: 360px) {
   .gallery-paw-bg .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
 
