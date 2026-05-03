@@ -98,9 +98,12 @@
   </div>
 
   <main class="py-8">
-    <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-wide text-[#063d49] mb-8">Γκαλερί – Πριν / Μετά</h1>
-    <p class="gallery-intro">Δείτε στιγμές από πραγματικά grooming ραντεβού στο Pawsh Pet Beauty Salon και την προσεγμένη δουλειά που γίνεται με ηρεμία, λεπτομέρεια και σεβασμό σε κάθε σκύλο.</p>
-    <section class="gallery-grid" aria-label="Gallery σκύλων μετά τον καλλωπισμό">
+    <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-wide text-[#063d49] mb-8">Gallery Pawsh – Καλλωπισμός &amp; Μεταμορφώσεις</h1>
+
+    <section class="gallery-page-section" aria-labelledby="gallery-results-title">
+      <h2 id="gallery-results-title" class="gallery-section-title">Gallery Αποτελεσμάτων</h2>
+      <p class="gallery-intro">Δες στιγμές από περιποιήσεις σκύλων στο Pawsh Pet Grooming.</p>
+      <div class="gallery-grid" aria-label="Gallery σκύλων μετά τον καλλωπισμό">
       <img src="./assets/images/pet-grooming-galatsi-poodle-kourema-fiogkos.webp" alt="Καλλωπισμός poodle στο Γαλάτσι με φιόγκο – επαγγελματικό pet grooming Pawsh" loading="eager" decoding="async" fetchpriority="high">
       <img src="./assets/images/pet-grooming-galatsi-german-shepherd-kanapes.webp" alt="Γερμανικός ποιμενικός μετά από grooming σε καναπέ στο Γαλάτσι" loading="eager" decoding="async">
       <img src="./assets/images/pet-grooming-galatsi-pomeranian-bowtie.webp" alt="Pomeranian με παπιγιόν μετά από καλλωπισμό στο Pawsh Γαλάτσι" loading="lazy" decoding="async">
@@ -138,9 +141,13 @@
       <img src="./assets/images/pet-grooming-galatsi-pomeranian-fiogkos-mavros.webp" alt="Pomeranian με μαύρο φιόγκο μετά από pet grooming στο Pawsh στο Γαλάτσι" loading="lazy" decoding="async">
       <img src="./assets/images/pet-grooming-galatsi-fluffy-brown-dog.webp" alt="Χνουδωτός καφέ σκύλος μετά από grooming στο Γαλάτσι" loading="lazy" decoding="async">
       <img src="./assets/images/pet-grooming-galatsi-mikros-skylos-aspro-mavro.webp" alt="Μικρό ασπρόμαυρο σκυλάκι μετά από καλλωπισμό στο Pawsh Γαλάτσι" loading="lazy" decoding="async">
+      </div>
     </section>
 
-    <section class="pawsh-compare-grid" aria-label="Σύγκριση φωτογραφιών πριν και μετά">
+    <section class="gallery-page-section" aria-labelledby="gallery-before-after-title">
+      <h2 id="gallery-before-after-title" class="gallery-section-title">Πριν &amp; Μετά</h2>
+      <p class="gallery-intro">Σύγκρινε το αποτέλεσμα πριν και μετά την περιποίηση.</p>
+      <div class="pawsh-compare-grid" aria-label="Σύγκριση φωτογραφιών πριν και μετά">
       <div class="pawsh-compare">
         <img class="pc-after" src="before&amp;after/1*.jpg" alt="Σκύλος 1 μετά τον καλλωπισμό στο Pawsh Pet Beauty Salon" loading="lazy">
         <img class="pc-before" src="before&amp;after/1.jpg" alt="Σκύλος 1 πριν τον καλλωπισμό στο Pawsh Pet Beauty Salon" loading="lazy">
@@ -176,6 +183,7 @@
         <img class="pc-before" src="before&amp;after/6.jpg" alt="Σκύλος 6 πριν τον καλλωπισμό στο Pawsh Pet Beauty Salon" loading="lazy">
         <input type="range" class="pc-slider" min="0" max="100" value="50" aria-label="Σύγκριση πριν και μετά – Καλλωπισμός 6">
         <div class="pc-handle"><span></span></div>
+      </div>
       </div>
     </section>
     <p class="gallery-cta">Θέλετε να δείτε το επόμενο αποτέλεσμα στον δικό σας σκύλο; <a href="https://pawshpetbeautysalon.setmore.com" target="_blank" rel="noopener">Κλείστε ραντεβού</a>.</p>
@@ -348,7 +356,7 @@
       });
     }
 
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'));
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img, .pawsh-compare img'));
     const lightbox = document.getElementById('gallery-lightbox');
 
     if (galleryImages.length && lightbox) {

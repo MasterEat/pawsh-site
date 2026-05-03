@@ -741,25 +741,19 @@ footer img.logo {
 
 /* Paw background boxes for gallery */
 .pawsh-compare-grid {
-  max-width: min(1100px, 92vw);
-  margin: 3rem auto 0;
-  padding: 0 1rem 3rem;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .pawsh-compare-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .pawsh-compare {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  box-shadow: 0 24px 48px rgba(6, 61, 73, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
   background: #0f2d34;
   aspect-ratio: 4 / 5;
   isolation: isolate;
@@ -851,8 +845,14 @@ footer img.logo {
 }
 
 @media (max-width: 640px) {
+  .pawsh-compare-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .pawsh-compare {
     aspect-ratio: 3 / 4;
+    border-radius: 14px;
   }
 }
 
@@ -862,6 +862,20 @@ footer img.logo {
   transition: transform 0.3s ease;
   overflow: hidden;
   aspect-ratio: 1 / 1;
+}
+
+
+.gallery-page-section {
+  margin-bottom: 2.5rem;
+}
+
+.gallery-section-title {
+  max-width: 1180px;
+  margin: 0 auto 0.5rem;
+  padding: 0 1rem;
+  color: #063d49;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
 }
 
 /* Gallery page base styles */
