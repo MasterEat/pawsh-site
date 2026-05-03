@@ -1069,17 +1069,26 @@ footer img.logo {
 }
 
 .pawsh-gallery-container {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .pawsh-gallery-scroller {
   margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
 .pawsh-gallery-track {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
   gap: 0.85rem;
 }
 
@@ -1137,6 +1146,7 @@ footer img.logo {
 }
 
 .pawsh-gallery-cta {
+  grid-column: 1 / -1;
   margin: 1.25rem auto 0;
   max-width: 520px;
   background: linear-gradient(135deg, #063d49, #0c5565);
@@ -1160,6 +1170,23 @@ footer img.logo {
   padding: 0.55rem 1.2rem;
 }
 
+.pawsh-gallery-cta-secondary {
+  background: #f3ece0;
+  color: #063d49;
+  margin-left: 0.4rem;
+}
+
+.pawsh-gallery-nav {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: #063d49;
+  color: #fff;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
 .pawsh-gallery-lightbox {
   position: fixed;
   inset: 0;
@@ -1180,20 +1207,19 @@ footer img.logo {
 
 body.pawsh-gallery-no-scroll { overflow: hidden; }
 
-@media (min-width: 430px) {
-  .pawsh-gallery-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 767px) {
+  .pawsh-gallery-container { grid-template-columns: 1fr; }
+  .pawsh-gallery-nav { display: none; }
+  .pawsh-gallery-track { grid-auto-columns: minmax(72vw, 1fr); }
+  .pawsh-gallery-cta-secondary { display: block; margin: 0.6rem auto 0; width: fit-content; }
 }
 
 @media (min-width: 768px) {
-  .pawsh-gallery-track {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-flow: dense;
-  }
-  .pawsh-gallery-slide:nth-child(5n) { grid-row: span 2; }
+  .pawsh-gallery-track { grid-auto-columns: minmax(220px, 1fr); }
 }
 
 @media (min-width: 1200px) {
-  .pawsh-gallery-track { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .pawsh-gallery-track { grid-auto-columns: minmax(250px, 1fr); }
 }
 
 .cookie-banner {
