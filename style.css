@@ -1452,8 +1452,7 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
   }
 }
 
-.gallery-intro,
-.gallery-cta {
+.gallery-intro {
   max-width: 760px;
   margin: 0 auto 2rem;
   padding: 0 1rem;
@@ -1461,39 +1460,62 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
   color: var(--secondary);
 }
 
-.gallery-cta {
-  margin-top: 2rem;
-  margin-bottom: 0;
-  font-weight: 600;
+.gallery-bottom-cta {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  padding: 0 1rem;
 }
 
-.gallery-cta-button {
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 12px;
-  padding: 10px 20px;
+.gallery-bottom-cta p {
+  margin: 0 0 1rem;
+  color: #3f3f3f;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.gallery-cta-button,
+.gallery-cta-button:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 22px;
   border: 2px solid #064851;
-  color: #064851;
-  background: transparent;
+  background-color: #064851;
+  color: #d7c9a9;
   text-decoration: none;
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.95rem;
   line-height: 1;
-  vertical-align: middle;
   transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-.gallery-cta-button:visited {
-  color: #064851;
+.gallery-cta-button:focus-visible {
+  outline: 3px solid rgba(6, 72, 81, 0.35);
+  outline-offset: 3px;
 }
 
 @media (hover: hover) {
-  .gallery-cta-button:hover,
-  .gallery-cta-button:focus-visible {
-    background-color: #064851;
-    color: #d7c9a9;
+  .gallery-cta-button:hover {
+    background-color: transparent;
+    color: #064851;
     transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-bottom-cta {
+    margin: 2.5rem auto 1.5rem;
+  }
+
+  .gallery-bottom-cta p {
+    font-size: 0.98rem;
+  }
+
+  .gallery-cta-button,
+  .gallery-cta-button:visited {
+    width: min(100%, 260px);
   }
 }
 
