@@ -1342,19 +1342,23 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 .cookie-banner {
   position: fixed;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(640px, calc(100% - 2rem));
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  max-width: 640px;
+  max-height: 40vh;
+  overflow-y: auto;
   background: rgba(6, 61, 73, 0.96);
   color: #fefaf0;
-  padding: 1.75rem;
-  border-radius: 1.25rem;
-  box-shadow: 0 22px 45px rgba(6, 61, 73, 0.35);
-  border: 2px solid #d7c9a9;
+  padding: 0.875rem 1rem;
+  border-radius: 0.875rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d7c9a9;
   z-index: 9999;
   display: none;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .cookie-banner.is-visible {
@@ -1362,27 +1366,28 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 }
 
 .cookie-banner__heading {
-  margin: 0 0 0.5rem;
-  font-size: 1.35rem;
+  margin: 0;
+  font-size: 1.05rem;
   color: #d7c9a9;
 }
 
 .cookie-banner p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .cookie-banner__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .cookie-banner__button {
-  flex: 1 0 auto;
-  padding: 0.75rem 1.5rem;
+  flex: 0 0 auto;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.85rem;
   border-radius: 999px;
   border: none;
   font-weight: 600;
@@ -1407,6 +1412,7 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
   align-items: center;
   gap: 0.35rem;
   color: #fefaf0;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: underline;
 }
@@ -1434,24 +1440,24 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 
 .cookie-banner__fine-print {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
   color: rgba(254, 250, 240, 0.8);
 }
 
 @media (max-width: 640px) {
   .cookie-banner {
-    bottom: 1rem;
     width: calc(100% - 1.5rem);
-    padding: 1.5rem;
+    max-height: 35vh;
+    padding: 0.75rem;
+  }
+
+  .cookie-banner p {
+    font-size: 0.85rem;
   }
 
   .cookie-banner__actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cookie-banner__button {
-    width: 100%;
+    align-items: center;
   }
 }
 
