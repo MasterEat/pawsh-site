@@ -745,17 +745,6 @@
       });
     });
 
-    const gallerySlides = document.querySelectorAll('.pawsh-gallery-track .pawsh-gallery-slide img');
-    const fifthGalleryImage = gallerySlides[4];
-    if (fifthGalleryImage) {
-      fifthGalleryImage.src = 'assets/images/pet-grooming-galatsi-golden-retriever-kanapes.webp';
-      fifthGalleryImage.alt = 'περιποίηση σκύλου golden retriever στο Pawsh Γαλάτσι';
-      const fifthSlideButton = fifthGalleryImage.closest('.pawsh-gallery-slide-button');
-      if (fifthSlideButton) {
-        fifthSlideButton.setAttribute('aria-label', `Μεγέθυνση: ${fifthGalleryImage.alt}`);
-      }
-    }
-
     // Review carousel for mobile
     const reviewList = document.querySelector('.review-list');
     const prevReview = document.querySelector('.review-carousel-btn.prev');
