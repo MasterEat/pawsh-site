@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const scroller = gallerySection.querySelector('.pawsh-gallery-scroller');
   const track = gallerySection.querySelector('.pawsh-gallery-track');
   const lightbox = gallerySection.querySelector('.pawsh-gallery-lightbox');
+  const galleryPrevButton = gallerySection.querySelector('.pawsh-gallery-nav-prev');
+  const galleryNextButton = gallerySection.querySelector('.pawsh-gallery-nav-next');
 
   if (!scroller || !track || !lightbox) {
     return;
@@ -53,45 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const galleryImages = [
-    { src: 'assets/images/dogs/pet-grooming-galatsi-mixed-dog-bandana.webp.webp', alt: 'καλλωπισμός σκύλου στο Pawsh Pet Grooming Γαλάτσι με μπαντάνα' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-akita-xalarosi.webp.webp', alt: 'χαλαρός σκύλος μετά από περιποίηση στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-labrador-retriever.webp.webp', alt: 'κούρεμα και φροντίδα labrador στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-leykos-skylos-kanapes.webp.webp', alt: 'λευκός σκύλος σε καναπέ μετά το grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-husky-bandana.webp.webp', alt: 'husky με μπαντάνα μετά από καλλωπισμό σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-three-dogs-group.webp.webp', alt: 'τρία σκυλάκια μετά από περιποίηση σκύλου στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-staffordshire-xamogelo.webp.webp', alt: 'χαμογελαστός σκύλος μετά από grooming στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-beige-fiogkos.webp.webp', alt: 'poodle με φιόγκο μετά από καλλωπισμό σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-mikros-skylos-bandana-kokkini.webp.webp', alt: 'μικρός σκύλος με κόκκινη μπαντάνα στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-bowtie.webp.webp', alt: 'κούρεμα σκύλου pomeranian στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-corgi-mix.webp.webp', alt: 'περιποίηση σκύλου corgi mix στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-french-bulldog-kanapes.webp.webp', alt: 'french bulldog σε καναπέ μετά από grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd.webp.webp', alt: 'γερμανικός ποιμενικός μετά από καλλωπισμό στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-spitz-leyko-kourema.webp.webp', alt: 'κούρεμα σκύλου spitz στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-kanapes.webp.webp', alt: 'περιποίηση σκύλου german shepherd στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-mix.webp.webp', alt: 'german shepherd mix μετά από περιποίηση στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-mikros-skylos-aspro-mavro.webp.webp', alt: 'ασπρόμαυρος μικρός σκύλος μετά από grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-beagle-bandana.webp.webp', alt: 'beagle με μπαντάνα μετά από καλλωπισμό σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-large-mixed-dog-sofa.webp.webp', alt: 'μεγάλος σκύλος σε καναπέ μετά από περιποίηση στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-german-shepherd-xalarosi.webp.webp', alt: 'χαλαρός γερμανικός ποιμενικός μετά από grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-black-mixed-dog.webp.webp', alt: 'μαύρος mixed σκύλος μετά από καλλωπισμό στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-maltese-roz-koritsaki.webp.webp', alt: 'maltese με ροζ αξεσουάρ μετά από κούρεμα σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-pitbull-blue-sofa.webp.webp', alt: 'pitbull σε μπλε καναπέ μετά από περιποίηση στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-cocker-spaniel-kallopismos.webp.webp', alt: 'καλλωπισμός cocker spaniel στο Pawsh Pet Grooming Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-fiogkos-mavros.webp.webp', alt: 'pomeranian με μαύρο φιόγκο μετά από grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-megalos-skylos-kanapes-mple.webp.webp', alt: 'μεγάλος σκύλος μετά από περιποίηση σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-spitz-leyko-fiogkos.webp.webp', alt: 'λευκό spitz με φιόγκο στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-large-black-dog-sofa.webp.webp', alt: 'μαύρος μεγάλος σκύλος σε καναπέ μετά από καλλωπισμό στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-golden-retriever-kanapes.webp.webp', alt: 'golden retriever μετά από grooming στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-pomeranian-sofa.webp.webp', alt: 'περιποίηση σκύλου pomeranian στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-pug-blue-sofa.webp.webp', alt: 'κούρεμα σκύλου pug στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-yorkshire-terrier-bowtie.webp.webp', alt: 'yorkshire terrier μετά από καλλωπισμό στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-mixed-dog-colorful-bandana.webp.webp', alt: 'σκύλος με πολύχρωμη μπαντάνα μετά από περιποίηση στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-megalos-skylos-kanapes-kafe.webp.webp', alt: 'μεγάλος σκύλος σε καφέ καναπέ μετά από grooming στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-black-white-small-dog-bow.webp.webp', alt: 'μικρός ασπρόμαυρος σκύλος με φιόγκο στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-kourema-fiogkos.webp.webp', alt: 'κούρεμα poodle με φιόγκο στο Pawsh Γαλάτσι' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-poodle-kafe-kourema.webp.webp', alt: 'καφέ poodle μετά από περιποίηση σκύλου στο Pawsh' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-golden-mixed-dog.webp.webp', alt: 'golden mixed σκύλος μετά από καλλωπισμό στο Pawsh Pet Grooming' },
-    { src: 'assets/images/dogs/pet-grooming-galatsi-fluffy-brown-dog.webp.webp', alt: 'αφράτος καφέ σκύλος μετά από grooming στο Pawsh Γαλάτσι' }
+    { src: 'assets/images/pet-grooming-galatsi-poodle-kourema-fiogkos.webp', alt: 'κούρεμα σκύλου poodle στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-german-shepherd-kanapes.webp', alt: 'περιποίηση σκύλου german shepherd στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-pomeranian-bowtie.webp', alt: 'περιποίηση σκύλου pomeranian στο Pawsh Pet Grooming Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-husky-bandana.webp', alt: 'κούρεμα σκύλου husky στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-labrador-retriever.webp', alt: 'περιποίηση σκύλου labrador retriever στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-yorkshire-terrier-bowtie.webp', alt: 'κούρεμα σκύλου yorkshire terrier στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-golden-retriever-kanapes.webp', alt: 'περιποίηση σκύλου golden retriever στο Pawsh Γαλάτσι' },
+    { src: 'assets/images/pet-grooming-galatsi-akita-xalarosi.webp', alt: 'περιποίηση σκύλου akita στο Pawsh Pet Grooming Γαλάτσι' }
   ];
 
   const slidesData = [];
@@ -224,6 +195,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const showPreviousImage = () => {
     showImage(currentIndex - 1);
   };
+
+  const getScrollStep = () => {
+    const firstSlide = slides[0]?.slide;
+    if (!firstSlide) {
+      return scroller.clientWidth * 0.8;
+    }
+    return firstSlide.getBoundingClientRect().width + 14;
+  };
+
+  if (galleryPrevButton && galleryNextButton) {
+    galleryPrevButton.addEventListener('click', () => {
+      scroller.scrollBy({ left: -getScrollStep() * 2, behavior: 'smooth' });
+    });
+    galleryNextButton.addEventListener('click', () => {
+      scroller.scrollBy({ left: getScrollStep() * 2, behavior: 'smooth' });
+    });
+  }
 
   slides.forEach(({ slide, button }, index) => {
     button.addEventListener('click', () => openLightbox(index));
