@@ -949,6 +949,44 @@ footer img.logo {
   margin-bottom: 2.5rem;
 }
 
+.gallery-tabs {
+  max-width: 1280px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.gallery-tab-button {
+  appearance: none;
+  border: 1px solid rgba(6, 61, 73, 0.24);
+  background: #fff;
+  color: #063d49;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: all 0.2s ease;
+}
+
+.gallery-tab-button.active {
+  background: #063d49;
+  color: #f3ede0;
+  border-color: #063d49;
+  box-shadow: 0 10px 22px rgba(6, 61, 73, 0.2);
+}
+
+.gallery-tab-button:focus-visible {
+  outline: 3px solid rgba(6, 61, 73, 0.35);
+  outline-offset: 2px;
+}
+
+.gallery-tab-panel:not(.active) {
+  display: none;
+}
+
 .gallery-section-title {
   max-width: 1180px;
   margin: 0 auto 0.5rem;
@@ -1526,6 +1564,18 @@ body.pawsh-gallery-no-scroll { overflow: hidden; }
 }
 
 @media (max-width: 640px) {
+  .gallery-tabs {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-tab-button {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-height: 44px;
+    padding: 0.65rem 0.8rem;
+    text-align: center;
+  }
+
   .gallery-paw-bg .gallery-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
