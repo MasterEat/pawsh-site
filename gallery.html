@@ -98,9 +98,13 @@
   </div>
 
   <main class="py-8">
-    <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-wide text-[#063d49] mb-8">Gallery Pawsh – Καλλωπισμός &amp; Μεταμορφώσεις</h1>
+    <h1 class="text-center text-3xl md:text-4xl font-semibold tracking-wide text-[#063d49] mb-4">Gallery Pawsh – Αποτελέσματα &amp; Πριν/Μετά</h1>
+    <div class="gallery-tabs" role="tablist" aria-label="Εναλλαγή ενότητας γκαλερί">
+      <button type="button" class="gallery-tab-button active" id="gallery-tab-results" role="tab" aria-selected="true" aria-controls="gallery-panel-results">Αποτελέσματα</button>
+      <button type="button" class="gallery-tab-button" id="gallery-tab-before-after" role="tab" aria-selected="false" aria-controls="gallery-panel-before-after">Πριν &amp; Μετά</button>
+    </div>
 
-    <section class="gallery-page-section" aria-labelledby="gallery-results-title">
+    <section class="gallery-page-section gallery-tab-panel active" id="gallery-panel-results" role="tabpanel" aria-labelledby="gallery-tab-results">
       <h2 id="gallery-results-title" class="gallery-section-title">Gallery Αποτελεσμάτων</h2>
       <p class="gallery-intro">Δες στιγμές από περιποιήσεις σκύλων στο Pawsh Pet Grooming.</p>
       <div class="gallery-grid" aria-label="Gallery σκύλων μετά τον καλλωπισμό">
@@ -144,7 +148,7 @@
       </div>
     </section>
 
-    <section class="gallery-page-section" aria-labelledby="gallery-before-after-title">
+    <section class="gallery-page-section gallery-tab-panel" id="gallery-panel-before-after" role="tabpanel" aria-labelledby="gallery-tab-before-after" hidden>
       <h2 id="gallery-before-after-title" class="gallery-section-title">Πριν &amp; Μετά</h2>
       <p class="gallery-intro">Σύγκρινε το αποτέλεσμα πριν και μετά την περιποίηση.</p>
       <div class="pawsh-compare-grid" aria-label="Σύγκριση φωτογραφιών πριν και μετά">
@@ -260,6 +264,30 @@
 
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    const tabButtons = Array.from(document.querySelectorAll('.gallery-tab-button'));
+    const tabPanels = Array.from(document.querySelectorAll('.gallery-tab-panel'));
+    if (tabButtons.length && tabPanels.length) {
+      const setActiveTab = (tabId) => {
+        tabButtons.forEach((button) => {
+          const isActive = button.id === tabId;
+          const panelId = button.getAttribute('aria-controls');
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          button.classList.toggle('active', isActive);
+          button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+
+          if (panel) {
+            panel.classList.toggle('active', isActive);
+            panel.hidden = !isActive;
+          }
+        });
+      };
+
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => setActiveTab(button.id));
       });
     }
 
