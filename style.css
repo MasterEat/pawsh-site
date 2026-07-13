@@ -2157,16 +2157,9 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(218, 194, 137, 0.28);
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.18));
   line-height: 0;
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
 }
 
 .award-badge-link {
@@ -2178,9 +2171,9 @@ footer a {
 
 .header-award-badge:hover,
 .header-award-badge:focus-visible {
-  background: rgba(255, 255, 255, 0.17);
+  opacity: 0.92;
   transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+  filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.22));
 }
 
 .award-badge-link:hover,
@@ -2199,7 +2192,7 @@ footer a {
   display: block;
   width: clamp(145px, 12vw, 165px);
   height: auto;
-  filter: brightness(1.08);
+  object-fit: contain;
 }
 
 .award-section {
@@ -2232,21 +2225,29 @@ footer a {
 }
 
 .award-badge-link {
-  margin-top: 1.35rem;
-  max-width: 300px;
-  width: min(100%, 300px);
+  margin-top: 1.15rem;
+  width: 110px;
+  max-width: 110px;
+  line-height: 0;
 }
 
 .award-badge-image {
   display: block;
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
 }
 
 @media (max-width: 899px) {
   .header-award-badge {
     display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .award-section .award-badge-image {
+    width: 90px;
+    height: 90px;
   }
 }
 
