@@ -2153,7 +2153,22 @@ footer a {
   gap: 0.5rem;
 }
 
-.header-award-badge,
+.header-award-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(218, 194, 137, 0.28);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  line-height: 0;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
 .award-badge-link {
   display: inline-flex;
   align-items: center;
@@ -2162,7 +2177,12 @@ footer a {
 }
 
 .header-award-badge:hover,
-.header-award-badge:focus-visible,
+.header-award-badge:focus-visible {
+  background: rgba(255, 255, 255, 0.17);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+}
+
 .award-badge-link:hover,
 .award-badge-link:focus-visible {
   opacity: 0.88;
@@ -2179,6 +2199,7 @@ footer a {
   display: block;
   width: clamp(145px, 12vw, 165px);
   height: auto;
+  filter: brightness(1.08);
 }
 
 .award-section {
