@@ -17,6 +17,83 @@ a {
   text-decoration: none;
 }
 
+.summer-closure-banner[hidden] {
+  display: none;
+}
+
+.summer-closure-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.5rem 3.5rem 0.5rem 1rem;
+  box-sizing: border-box;
+  background: var(--main-bg);
+  color: var(--accent);
+  text-align: center;
+}
+
+.summer-closure-banner__message {
+  margin: 0;
+  max-width: 70rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.summer-closure-banner__title {
+  font-weight: 700;
+}
+
+.summer-closure-banner__close {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.summer-closure-banner__close:hover,
+.summer-closure-banner__close:focus-visible {
+  background: rgba(6, 61, 73, 0.1);
+}
+
+.summer-closure-banner__close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .summer-closure-banner {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 0.75rem;
+  }
+
+  .summer-closure-banner__message {
+    font-size: 0.8125rem;
+  }
+
+  .summer-closure-banner__title {
+    display: block;
+  }
+}
+
 .radial-icon {
   display: inline-flex;
   align-items: center;
